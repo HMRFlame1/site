@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCircuit Championship | Call of Duty Competitive</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Impact&amp;family=Arial:wght@400;700&amp;display=swap');
+        
+        :root {
+            --gc-red: #cc0000;
+            --gc-dark-red: #990000;
+            --gc-white: #ffffff;
+            --gc-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: "Eurostile", "Eurostile LT Std", "Arial Black", Impact, Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(to bottom, #1a1a1a, #111111);
+            border-bottom: 3px solid #cc0000;
+            padding: 8px 0;
+            font-size: 12px;
+        }
+        
+        .top-bar-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar-left {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .top-bar-right a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 18px;
+            transition: color 0.2s;
+        }
+        
+        .top-bar-right a:hover {
+            color: #cc0000;
+        }
+        
+        /* Main Header */
+        .main-header {
+            background: #111111;
+            border-bottom: 3px solid #333;
+            padding: 14px 0;
+        }
+        
+        .header-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .logo img {
+            height: 52px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-family: "Eurostile", "Eurostile LT Std", "Arial Black", Impact, Arial, Helvetica, sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #cc0000;
+            text-shadow: 2px 2px 0 #000000;
+            letter-spacing: 1px;
+        }
+        
+        /* Nav removed per request */
+        
+        /* News Ticker */
+        .news-ticker {
+            background: #1a0000;
+            border-bottom: 2px solid #cc0000;
+            padding: 6px 0;
+            overflow: hidden;
+        }
+        
+        .ticker-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        
+        marquee {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Hero Banner */
+        .hero {
+            background: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/be_orig.jpg') center/cover no-repeat;
+            border-bottom: 5px solid #cc0000;
+            padding: 65px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.58);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #cc0000;
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 18px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            border: 2px solid #ff3333;
+        }
+        
+        .hero h1 {
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 58px;
+            color: #ffffff;
+            text-shadow: 4px 4px 0 #000000;
+            margin-bottom: 6px;
+            letter-spacing: 4px;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .hero .tagline {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 28px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: 3px solid #cc0000;
+            transition: all 0.15s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #cc0000;
+            color: #ffffff;
+        }
+        
+        .btn-primary:hover {
+            background: #ff0000;
+            border-color: #ff6666;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        
+        .btn-secondary:hover {
+            background: #ffffff;
+            color: #cc0000;
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background: #ffffff;
+            color: #222222;
+        }
+        
+        .section-title {
+            font-family: "Eurostile", "Eurostile LT Std", "Arial Black", Impact, Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            color: #cc0000;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #cc0000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .content-grid {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .sidebar {
+            width: 340px;
+            flex-shrink: 0;
+        }
+        
+        /* Cards & Boxes */
+        .about-box, .event-card, .news-card, .highlight-card {
+            background: #1a1a1a;
+            border: 2px solid #444444;
+            padding: 18px;
+            margin-bottom: 18px;
+            transition: border-color 0.2s;
+        }
+        
+        .about-box p, .about-box li, .about-box strong, .event-card, .news-card p, .highlight-card p {
+            color: #e0e0e0;
+        }
+        
+        .about-box h3, .event-card h4, .news-card h4, .highlight-card h4 {
+            color: #cc0000;
+        }
+        
+        .about-box:hover, .event-card:hover, .news-card:hover {
+            border-color: #cc0000;
+        }
+        
+        .about-box h3 {
+            color: #cc0000;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .about-box p, .about-box li {
+            font-size: 13.5px;
+            color: #111111;
+            margin-bottom: 8px;
+        }
+        
+        .about-box ul {
+            padding-left: 18px;
+            margin: 12px 0;
+        }
+        
+        .about-box li {
+            margin-bottom: 6px;
+        }
+        
+        /* Stats */
+        /* Stats row removed per request */
+        
+        /* News Cards */
+        .news-card {
+            padding: 14px;
+        }
+        
+        .news-date {
+            color: #cc0000;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .news-card h4 {
+            color: #ffffff;
+            font-size: 15px;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .news-card p {
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-bottom: 10px;
+        }
+        
+        .news-card a {
+            color: #cc0000;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .news-card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #161616;
+            border: 2px solid #333333;
+            font-size: 13px;
+        }
+        
+        th {
+            background: #2a0000;
+            color: #ffffff;
+            padding: 11px 10px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #cc0000;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #333333;
+            color: #e0e0e0;
+        }
+        
+        tr:hover td {
+            background: #1f1f1f;
+        }
+        
+        .team-name {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        /* Event Card */
+        .event-card {
+            border: 3px solid #cc0000;
+            padding: 20px;
+        }
+        
+        .event-card h4 {
+            color: #cc0000;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        
+        .event-meta {
+            color: #888888;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        
+        .prize {
+            color: #00cc66;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+        .account-note {
+            background: #2a0000;
+            border-left: 4px solid #cc0000;
+            padding: 10px 14px;
+            font-size: 12px;
+            color: #ffcccc;
+            margin: 14px 0;
+        }
+        
+        /* Standings Image */
+        .standings-img {
+            width: 100%;
+            border: 3px solid #cc0000;
+            background: #111;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+        }
+        
+        .modal-content {
+            background: #111111;
+            margin: 6% auto;
+            padding: 0;
+            border: 4px solid #cc0000;
+            width: 620px;
+            max-width: 94%;
+            box-shadow: 0 0 40px rgba(204, 0, 0, 0.6);
+        }
+        
+        .modal-header {
+            background: #2a0000;
+            padding: 14px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #cc0000;
+        }
+        
+        .modal-header h2 {
+            color: #ffffff;
+            font-size: 18px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .close {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            color: #cc0000;
+        }
+        
+        .modal-body {
+            padding: 24px;
+        }
+        
+        .modal-body label {
+            display: block;
+            color: #cccccc;
+            font-size: 12px;
+            margin-bottom: 4px;
+            margin-top: 12px;
+        }
+        
+        .modal-body input {
+            width: 100%;
+            padding: 10px 12px;
+            background: #1a1a1a;
+            border: 2px solid #444;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .modal-body input:focus {
+            border-color: #cc0000;
+            outline: none;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .signed-up-count {
+            background: #1a1a1a;
+            border: 2px solid #cc0000;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .signed-up-count span {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .success-modal .modal-content {
+            border-color: #00cc66;
+        }
+        
+        /* Splash / Intro Logo */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease;
+        }
+        
+        #splash img {
+            max-width: 420px;
+            width: 80%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 30px rgba(204,0,0,0.5));
+        }
+        
+        #splash .splash-text {
+            color: #ffffff;
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 42px;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 #cc0000;
+            margin-bottom: 8px;
+        }
+        
+        #splash .splash-sub {
+            color: #cc0000;
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .enter-btn {
+            margin-top: 30px;
+            padding: 12px 40px;
+            background: transparent;
+            color: #fff;
+            border: 3px solid #cc0000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .enter-btn:hover {
+            background: #cc0000;
+            color: #fff;
+        }
+        
+        /* Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+        
+        .highlight-card {
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .highlight-card h4 {
+            color: #cc0000;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-card p {
+            font-size: 13px;
+            color: #aaa;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #111111;
+            border-top: 4px solid #cc0000;
+            padding: 30px 0 20px;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        
+        .footer-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .footer-links a {
+            color: #888888;
+            text-decoration: none;
+            margin-right: 18px;
+        }
+        
+        .footer-links a:hover {
+            color: #cc0000;
+        }
+        
+        .disclaimer {
+            color: #555555;
+            font-size: 11px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 1500px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+        
+        /* Red fade effect at bottom half (matching reference image) */
+        .red-bottom-fade {
+            position: relative;
+        }
+        .red-bottom-fade::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.25) 35%, #8B0000 55%, #4a0000 75%, #2a0000);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .return-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 28px;
+            background: #cc0000;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+            border: 2px solid #ff3333;
+            transition: all 0.2s;
+        }
+        
+        .return-btn:hover {
+            background: #fff;
+            color: #cc0000;
+        }
+        
+        .retro-border {
+            border-image: linear-gradient(#cc0000, #660000) 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- SPLASH / INTRO LOGO -->
+    <div id="splash">
+        <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit Logo">
+        <div class="splash-text">THE GAMECIRCUIT CHAMPIONSHIP</div>
+        <div class="splash-sub">CALL OF DUTY • BLACK OPS 2 • 2026 COMPETITIVE SEASON</div>
+        <button class="enter-btn" onclick="enterSite()">ENTER THE CIRCUIT</button>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <strong>GAMECIRCUIT COMPETITIVE</strong> &nbsp;|&nbsp; EST. 2026 &nbsp;|&nbsp; 
+                <span style="color:#00cc66;">●</span> <span id="signedUpTop">1,892</span> COMPETITORS REGISTERED
+            </div>
+            <div class="top-bar-right">
+                <a href="https://www.gamecircuit.co.uk" target="_blank">MAIN SITE</a>
+                <a href="https://discord.gg/6ffMvhcj6S" target="_blank">DISCORD</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit Logo" style="height:48px;">
+                <div>
+                    <div class="logo-text">GAMECIRCUIT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                ★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★ 
+                Prestige League Match Week 3 results now live • European Championship qualification race heating up • Black Ops 2 Season Patch Notes &amp; Ruleset updated on Discord ★ 
+                New Player Cards dropping this weekend • Watch all matches on GameCircuit.tv
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">2026 COMPETITIVE SEASON • BLACK OPS 2</div>
+            
+            <h1>GAMECIRCUIT CHAMPIONSHIP 2026</h1>
+            <div class="subtitle">CALL OF DUTY BLACK OPS II</div>
+            <div class="tagline">THE OFFICIAL HOME OF COMPETITIVE CALL OF DUTY ON GAMECIRCUIT — CONSOLE ONLY,<br> PURE CLASSIC ESPORTS</div>
+            
+            <!-- Hero buttons removed per request -->
+        </div>
+    </div>
+
+    <!-- Watch Your Favorite Teams Battle LIVE! (inspired by classic MLG layout) -->
+    <div style="max-width:1680px; margin: 0 auto; padding: 20px 20px 10px;">
+        <h2 style="font-family: 'Eurostile', Impact, Arial Black, sans-serif; color: #cc0000; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; text-align: center;">Watch Your Favorite Teams Battle LIVE!</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
+            <!-- Team Card 1 -->
+            <div onclick="watchLive()" style="background: #1a1a1a; border: 3px solid #cc0000; padding: 12px; cursor: pointer; position: relative; transition: transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" style="height:52px; width:52px; object-fit:contain; background:#fff;4px; border:2px solid #333;">
+                    <div style="color:#fff; font-size:17px; font-weight:bold;">Team Name</div>
+                </div>
+                <div style="color:#ffcc00; font-size:12px; font-weight:bold; letter-spacing:0.5px;">PlayerName | PlayerName | PlayerName | PlayerName</div>
+                <div style="position:absolute; top:14px; right:14px; background:#cc0000; color:#fff; font-size:10px; padding:2px 10px; font-weight:bold;">LIVE</div>
+            </div>
+            
+            <!-- Team Card 2 -->
+            <div onclick="watchLive()" style="background: #1a1a1a; border: 3px solid #cc0000; padding: 14px; cursor: pointer; position: relative; transition: transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" style="height:52px; width:52px; object-fit:contain; background:#fff; padding:4px; border:2px solid #333;">
+                    <div style="color:#fff; font-size:17px; font-weight:bold;">Team Name</div>
+                </div>
+                <div style="color:#ffcc00; font-size:12px; font-weight:bold; letter-spacing:0.5px;">PlayerName | PlayerName | PlayerName | PlayerName</div>
+                <div style="position:absolute; top:14px; right:14px; background:#cc0000; color:#fff; font-size:10px; padding:2px 10px; font-weight:bold;">LIVE</div>
+            </div>
+            
+            <!-- Team Card 3 -->
+            <div onclick="watchLive()" style="background: #1a1a1a; border: 3px solid #cc0000; padding: 12px; cursor: pointer; position: relative; transition: transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" style="height:52px; width:52px; object-fit:contain; background:#fff; padding:4px; border:2px solid #333;">
+                    <div style="color:#fff; font-size:17px; font-weight:bold;">Team Name</div>
+                </div>
+                <div style="color:#ffcc00; font-size:12px; font-weight:bold; letter-spacing:0.5px;">PlayerName | PlayerName | PlayerName | PlayerName</div>
+                <div style="position:absolute; top:14px; right:14px; background:#cc0000; color:#fff; font-size:10px; padding:2px 10px; font-weight:bold;">LIVE</div>
+            </div>
+            
+            <!-- Team Card 4 -->
+            <div onclick="watchLive()" style="background: #1a1a1a; border: 3px solid #cc0000; padding: 14px; cursor: pointer; position: relative; transition: transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" style="height:52px; width:52px; object-fit:contain; background:#fff; padding:4px; border:2px solid #333;">
+                    <div style="color:#fff; font-size:17px; font-weight:bold;">Team Name</div>
+                </div>
+                <div style="color:#ffcc00; font-size:12px; font-weight:bold; letter-spacing:0.5px;">PlayerName | PlayerName | PlayerName | PlayerName</div>
+                <div style="position:absolute; top:14px; right:14px; background:#cc0000; color:#fff; font-size:10px; padding:2px 10px; font-weight:bold;">LIVE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Matches + Standings side-by-side (moved per request) -->
+    <div style="max-width:1680px; margin: 0 auto 25px; padding: 0 20px; display: flex; gap: 24px; flex-wrap: wrap;">
+        
+        <!-- Upcoming Prestige Matches -->
+        <div style="flex: 1; min-width: 520px;">
+            <h2 class="section-title" style="margin-bottom:10px;">UPCOMING PRESTIGE LEAGUE MATCHES</h2>
+            <table style="font-size:13px; border:2px solid #cc0000;">
+                <tr>
+                    <th style="width:125px; background:#2a0000;">DATE / TIME</th>
+                    <th>MATCH</th>
+                    <th style="width:70px; text-align:center; background:#2a0000;">FORMAT</th>
+                    <th style="width:80px; text-align:center; background:#2a0000;">WATCH</th>
+                </tr>
+                <tr>
+                    <td>July 18 • 7:00 PM</td>
+                    <td><span class="team-name">Team Name</span> vs <span class="team-name">Team Name</span></td>
+                    <td style="text-align:center;">Bo5</td>
+                    <td style="text-align:center;"><a href="#" style="color:#cc0000; font-weight:bold;" onclick="watchLive()">LIVE</a></td>
+                </tr>
+                <tr>
+                    <td>July 19 • 3:30 PM</td>
+                    <td><span class="team-name">Team Name</span> vs <span class="team-name">Team Name</span></td>
+                    <td style="text-align:center;">Bo5</td>
+                    <td style="text-align:center;"><a href="#" style="color:#cc0000; font-weight:bold;" onclick="watchLive()">LIVE</a></td>
+                </tr>
+                <tr>
+                    <td>July 20 • 8:00 PM</td>
+                    <td><span class="team-name">Team Name</span> vs <span class="team-name">Team Name</span></td>
+                    <td style="text-align:center;">Bo5</td>
+                    <td style="text-align:center;"><a href="#" style="color:#cc0000; font-weight:bold;" onclick="watchLive()">LIVE</a></td>
+                </tr>
+                <tr>
+                    <td>July 22 • 6:30 PM</td>
+                    <td><span class="team-name">Team Name</span> vs <span class="team-name">Team Name</span></td>
+                    <td style="text-align:center;">Bo5</td>
+                    <td style="text-align:center;"><a href="#" style="color:#cc0000; font-weight:bold;" onclick="watchLive()">LIVE</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Prestige League Standings - Scrollable list (no image) -->
+        <div style="flex: 1; min-width: 420px;">
+            <h2 class="section-title" style="margin-bottom:10px;">PRESTIGE LEAGUE STANDINGS</h2>
+            <div style="max-height: 285px; overflow-y: auto; border: 3px solid #cc0000; background:#161616;">
+                <table style="font-size:12.5px; width:100%;">
+                    <tr>
+                        <th style="width:32px; background:#2a0000;">#</th>
+                        <th style="background:#2a0000;">TEAM</th>
+                        <th style="width:70px; text-align:center; background:#2a0000;">PTS</th>
+                        <th style="width:55px; text-align:center; background:#2a0000;">W-L</th>
+                    </tr>
+                    <tr><td class="rank">1</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold; color:#ffcc00;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">2</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">3</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">4</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">5</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">6</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">7</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">8</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">9</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                    <tr><td class="rank">10</td><td class="team-name">Team Name</td><td style="text-align:center; font-weight:bold;">0</td><td style="text-align:center;">0-0</td></tr>
+                </table>
+            </div>
+            <div style="text-align:right; margin-top:6px;">
+                <a href="#" style="color:#cc0000; font-size:12px; font-weight:bold;">FULL STANDINGS →</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Tabs under league promotion / hero area -->
+    <div style="max-width:1680px; margin: 0 auto 20px; padding: 0 20px;">
+        <div class="tab-bar" style="display:flex; gap:4px; border-bottom: 3px solid #cc0000; margin-bottom:10px;">
+            <button onclick="switchTab(0)" class="tab-btn active" style="padding:10px 24px; background:#cc0000; color:#fff; border:none; font-weight:bold; cursor:pointer; font-size:13px; text-transform:uppercase;">Tournaments</button>
+            <button onclick="switchTab(1)" class="tab-btn" style="padding:10px 24px; background:#222; color:#fff; border:none; font-weight:bold; cursor:pointer; font-size:13px; text-transform:uppercase;">Info</button>
+            <button onclick="switchTab(2)" class="tab-btn" style="padding:10px 24px; background:#222; color:#fff; border:none; font-weight:bold; cursor:pointer; font-size:13px; text-transform:uppercase;">Free Agents</button>
+            <button onclick="switchTab(3)" class="tab-btn" style="padding:10px 24px; background:#222; color:#fff; border:none; font-weight:bold; cursor:pointer; font-size:13px; text-transform:uppercase;">Live</button>
+        </div>
+        
+        <!-- Tab Content Panels -->
+        <div id="tab-0" class="tab-panel" style="display:block;">
+            <div style="max-width:980px; margin:0 auto;">
+                <div class="event-card" style="border: 3px solid #cc0000; padding: 20px; background:#1a1a1a;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px;">
+                        <div>
+                            <h4>KICKOFF TOURNAMENT 2026</h4>
+                            <div class="event-meta" style="color:#888;">JUNE 1, 2026 &nbsp;•&nbsp; ONLINE</div>
+                            <div style="margin: 8px 0 4px;">
+                                <span style="background:#cc0000; color:white; padding:3px 10px; font-size:11px; font-weight:bold;">16 TEAM</span>
+                                <span style="background:#003300; color:#00cc66; padding:3px 10px; font-size:11px; margin-left:6px;">SINGLE ELIM</span>
+                            </div>
+                            <div style="font-size:13px; color:#ccc;">100 Series Points • £50 Prize Pool • <strong>FREE ENTRY</strong></div>
+                        </div>
+                        <div style="text-align:right; min-width:120px;">
+                            <div style="font-size:11px; color:#888;">PRIZE POOL</div>
+                            <div class="prize" style="color:#00cc66; font-weight:bold; font-size:22px;">£50</div>
+                            <div style="font-size:11px; color:#00cc66; margin-top:2px;">+ 100 PTS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-note" style="background:#2a0000; border-left:4px solid #cc0000; padding:10px 14px; font-size:12px; color:#ffcccc; margin:14px 0;">
+                        ⚠️ You must have a GameCircuit account to be accepted into this tournament. Sign-ups close May 28, 2026.
+                    </div>
+                    
+                    <div style="margin-top:12px;">
+                        <button onclick="openSignupModal()" class="btn btn-primary" style="padding:11px 26px; font-size:13px;">SIGN UP NOW</button>
+                        <a href="#" style="margin-left:14px; color:#cc0000; font-size:13px; text-decoration:none; font-weight:bold;" onclick="document.getElementById('standings-section').scrollIntoView({ behavior: 'smooth' })">VIEW FULL BRACKET →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tab-1" class="tab-panel" style="display:none;">
+            <div class="about-box" style="max-width:980px; margin:0 auto; padding:22px;">
+                <h3 style="color:#cc0000; font-size:18px; margin-bottom:14px;">THE GAMECIRCUIT BLACK OPS 2 COMPETITIVE SEASON</h3>
+                
+                <p style="color:#111111; font-size:14px; line-height:1.55;">The GameCircuit Black Ops 2 Competitive Season is a community-driven, open-format competitive series built to bring back the classic circuit experience from the golden era of esports. Designed for all skill levels, GameCircuit combines a Prestige League, monthly open tournaments, and a year-ending European Championship — giving every team a clear path to compete, improve, and earn their place among the best.</p>
+                
+                <p style="color:#111111; font-size:14px; line-height:1.55; margin-top:10px;"><strong>We're taking it back to the glory days!</strong> Enjoy no GA's, straightforward bans, and the timeless thrill of a classic title — console only.</p>
+                
+                <p style="color:#111111; font-size:14px; line-height:1.55; margin-top:10px;">Earn Series Points by placing well in tournaments and league matches. These points determine your seeding for the next event.</p>
+                
+                <p style="color:#111111; font-size:14px; line-height:1.55; margin-top:10px;">Across the year, teams compete in the GameCircuit season with multiple GC Open events. Every match and tournament matters. Points earned feed into seeding and qualification for the Championship. Whether you're a seasoned competitor or an up-and-coming roster, the circuit rewards consistency, grind, and passion.</p>
+                
+                <ul style="color:#111111; font-size:14px; margin:14px 0 14px 20px; line-height:1.5;">
+                    <li><strong>Transparent Progression:</strong> Earn points, climb standings, and fight for qualification</li>
+                    <li><strong>Multiple Entry Points:</strong> Prestige League, open tournaments, and playoffs throughout the year</li>
+                    <li><strong>Casted Events &amp; Player Features:</strong> Tournament coverage bringing attention to teams and players</li>
+                    <li><strong>Prize Payouts:</strong> Rewarding top placements at league playoffs, opens, and the Championship</li>
+                    <li><strong>Community-Focused:</strong> Competitive structure built for players, not corporations</li>
+                </ul>
+                
+                <p style="color:#cc0000; font-weight:bold; font-size:14px; margin-top:8px;">You must have a GameCircuit account to be accepted into any event or tournament.</p>
+            </div>
+        </div>
+        <div id="tab-2" class="tab-panel" style="display:none;">
+            <div class="about-box" style="max-width:900px; margin:0 auto; text-align:center;">
+                <h3 style="color:#cc0000;">FREE AGENTS</h3>
+                <p style="color:#111;">Looking for a team or need a 4th? Post in our Discord #free-agents channel or contact GameCircuitSupport@gmail.com. Active free agents are listed weekly on the main site.</p>
+                <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="btn btn-primary" style="margin-top:10px; display:inline-block; text-decoration:none;">JOIN DISCORD TO FIND A TEAM</a>
+            </div>
+        </div>
+        <div id="tab-3" class="tab-panel" style="display:none;">
+            <div style="text-align:center; padding:30px; background:#1a1a1a; border:2px solid #cc0000;">
+                <h3 style="color:#cc0000;">LIVE NOW</h3>
+                <p style="color:#e0e0e0; font-size:15px;">Prestige League matches are streaming live on GameCircuit.tv</p>
+                <button onclick="watchLive()" class="btn btn-primary" style="margin-top:15px; padding:14px 40px;">OPEN LIVE STREAM</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note: Tab content is managed above. Tournaments tab can be expanded with more content if needed. -->
+        
+        <!-- WHO TO WATCH -->
+        <div style="max-width:1680px; margin: 0 auto 30px; padding: 0 20px;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">WHO TO WATCH</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+                <!-- Who to Watch Box 1 -->
+                <div style="background: #111111; border: 3px solid #cc0000; padding: 10px; position: relative; overflow: hidden; cursor: pointer;" onclick="watchLive()">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block; border: 2px solid #333;">
+                    <div style="position: absolute; bottom: 20px; left: 0; right: 0; background: rgba(0,0,0,0.75); padding: 10px 15px; text-align: center;">
+                        <div style="color: #ffffff; font-size: 22px; font-weight: bold; letter-spacing: 1px;">TEAM NAME</div>
+                        <div style="color: #cc0000; font-size: 28px; font-weight: bold; margin-top: 2px;">&lt;&lt;</div>
+                    </div>
+                </div>
+                
+                <!-- Who to Watch Box 2 -->
+                <div style="background: #111111; border: 3px solid #cc0000; padding: 10px; position: relative; overflow: hidden; cursor: pointer;" onclick="watchLive()">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block; border: 2px solid #333;">
+                    <div style="position: absolute; bottom: 20px; left: 0; right: 0; background: rgba(0,0,0,0.75); padding: 10px 15px; text-align: center;">
+                        <div style="color: #ffffff; font-size: 22px; font-weight: bold; letter-spacing: 1px;">TEAM NAME</div>
+                        <div style="color: #cc0000; font-size: 28px; font-weight: bold; margin-top: 2px;">&lt;&lt;</div>
+                    </div>
+                </div>
+                
+                <!-- Who to Watch Box 3 -->
+                <div style="background: #111111; border: 3px solid #cc0000; padding: 10px; position: relative; overflow: hidden; cursor: pointer;" onclick="watchLive()">
+                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block; border: 2px solid #333;">
+                    <div style="position: absolute; bottom: 20px; left: 0; right: 0; background: rgba(0,0,0,0.75); padding: 10px 15px; text-align: center;">
+                        <div style="color: #ffffff; font-size: 22px; font-weight: bold; letter-spacing: 1px;">TEAM NAME</div>
+                        <div style="color: #cc0000; font-size: 28px; font-weight: bold; margin-top: 2px;">&lt;&lt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Return to Main Site -->
+        <div style="text-align:center; margin-top:40px;">
+            <a href="https://www.gamecircuit.co.uk" target="_blank" class="return-btn">← RETURN TO GAMECIRCUIT.CO.UK</a>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <div class="footer red-bottom-fade">
+        <div class="footer-content">
+            <div>
+                <strong style="color:#cc0000; font-size:15px;">GAMECIRCUIT</strong><br>
+                <span style="color:#666;">© 2026 GameCircuit. All Rights Reserved. Console Only Competitive.</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.gamecircuit.co.uk" target="_blank">Main Site</a>
+                <a href="https://discord.gg/6ffMvhcj6S" target="_blank">Discord</a>
+                <a href="#">Rules &amp; Settings</a>
+                <a href="#">Series Points System</a>
+                <a href="#">Contact Support</a>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            This is the official GameCircuit Call of Duty Competitive portal for the 2026 Black Ops 2 season. 
+            All events require a free GameCircuit account. Not affiliated with Activision or any third-party esports orgs. 
+            Console only. No GA's. Pure competition.
+        </div>
+    </div>
+
+    <!-- SIGN UP MODAL -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>KICKOFF TOURNAMENT 2026 — SIGN UP</h2>
+                <span class="close" onclick="closeSignupModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="signed-up-count">
+                    <span id="signupCount">7</span> / 16 TEAMS SIGNED UP
+                </div>
+                
+                <p style="font-size:13px; color:#aaa; margin-bottom:14px;">Fill out the form below. <strong>At least 2 players required to register a team.</strong></p>
+                
+                <form id="signupForm" onsubmit="submitSignup(event)">
+                    <label>DISCORD NAME (required)</label>
+                    <input type="text" id="discordName" placeholder="YourDiscord#1234" required>
+                    
+                    <label>TWITTER @ (optional)</label>
+                    <input type="text" id="twitterHandle" placeholder="@yourhandle">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>PLAYER 1 PSN (required)</label>
+                            <input type="text" id="psn1" placeholder="PSN_ID_1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>PLAYER 2 PSN (required)</label>
+                            <input type="text" id="psn2" placeholder="PSN_ID_2" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>PLAYER 3 PSN (optional)</label>
+                            <input type="text" id="psn3" placeholder="PSN_ID_3">
+                        </div>
+                        <div class="form-group">
+                            <label>PLAYER 4 PSN (optional)</label>
+                            <input type="text" id="psn4" placeholder="PSN_ID_4">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top:18px; display:flex; gap:12px;">
+                        <button type="submit" class="btn btn-primary" style="flex:1; padding:12px;">SUBMIT SIGN UP</button>
+                        <button type="button" onclick="closeSignupModal()" class="btn btn-secondary" style="flex:1; padding:12px;">CANCEL</button>
+                    </div>
+                </form>
+                
+                <div style="font-size:11px; color:#666; margin-top:14px; text-align:center;">
+                    By signing up you confirm you have a GameCircuit account and agree to the ruleset.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="modal success-modal">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#003300; border-bottom-color:#00cc66;">
+                <h2>✅ SIGN UP SUCCESSFUL</h2>
+                <span class="close" onclick="closeSuccessModal()">&times;</span>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                <p style="font-size:15px; margin-bottom:16px;">Thank you! Your team has been registered for the Kickoff Tournament.</p>
+                
+                <div style="background:#1a1a1a; padding:14px; border:2px solid #00cc66; margin:16px 0;">
+                    <p style="color:#00cc66; font-weight:bold; margin-bottom:8px;">NEXT STEPS</p>
+                    <p style="font-size:13px;">Please join our Discord for the full bracket, match times, and all important information.</p>
+                </div>
+                
+                <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="btn btn-primary" style="padding:14px 40px; font-size:14px; text-decoration:none; display:inline-block;">JOIN DISCORD NOW</a>
+                
+                <div style="margin-top:20px; font-size:12px; color:#888;">
+                    A confirmation has been sent to GameCircuitSupport@gmail.com
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watch Live Modal -->
+    <div id="liveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔴 GAMECIRCUIT LIVE — PRESTIGE LEAGUE</h2>
+                <span class="close" onclick="closeLiveModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="stream-placeholder" id="streamArea" style="height:340px; background:#000; border:3px solid #333; display:flex; align-items:center; justify-content:center; flex-direction:column; cursor:pointer;">
+                    <div style="text-align:center; color:#555;">
+                        <div style="font-size:52px; margin-bottom:8px;">▶</div>
+                        <div style="font-size:18px; color:#cc0000; font-weight:bold;">LIVE FROM GAMECIRCUIT SERVERS</div>
+                        <div style="margin-top:6px; font-size:14px;">Click to start stream simulation</div>
+                    </div>
+                </div>
+                
+                <div class="stream-info" style="text-align:center; margin-top:14px;">
+                    <h3 style="color:#fff;">Vortex vs Aether — Prestige League Week 3</h3>
+                    <p style="color:#888; font-size:13px;">Map 2 of 5 • Search &amp; Destroy • Score: 3-2 Vortex</p>
+                    
+                    <div style="margin-top:14px;">
+                        <button onclick="startStream()" class="btn btn-primary" style="padding:10px 28px;">START STREAM</button>
+                        <button onclick="closeLiveModal()" class="btn btn-secondary" style="padding:10px 28px; margin-left:10px;">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Splash screen fade
+        function enterSite() {
+            const splash = document.getElementById('splash');
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 800);
+        }
+        
+        // Auto fade splash after 3.5 seconds if not clicked
+        setTimeout(() => {
+            const splash = document.getElementById('splash');
+            if (splash.style.display !== 'none') {
+                splash.style.transition = 'opacity 1.2s ease';
+                splash.style.opacity = '0';
+                setTimeout(() => {
+                    if (splash.parentNode) splash.parentNode.removeChild(splash);
+                }, 1200);
+            }
+        }, 3500);
+        
+        // Fake account check
+        function fakeAccountCheck() {
+            const username = prompt("Enter your GameCircuit username or email:", "ProPlayer92");
+            if (username) {
+                alert("Welcome back, " + username + "!\n\nAccount Status: VERIFIED\nPrestige League Rank: #14\nSeries Points: 1240");
+            }
+        }
+        
+        // Sign up count (persisted in session via localStorage)
+        let signedUpTeams = parseInt(localStorage.getItem('gcSignedUpTeams') || '7');
+        
+        function updateSignedUpDisplays() {
+            const countEl = document.getElementById('signupCount');
+            if (countEl) countEl.textContent = signedUpTeams;
+            
+            const topEl = document.getElementById('signedUpTop');
+            if (topEl) topEl.textContent = (1800 + signedUpTeams * 12).toLocaleString();
+        }
+        
+        // Open signup modal
+        function openSignupModal() {
+            const modal = document.getElementById('signupModal');
+            modal.style.display = 'block';
+            updateSignedUpDisplays();
+            
+            // Reset form
+            document.getElementById('signupForm').reset();
+        }
+        
+        function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+        
+        // Submit signup
+        function submitSignup(e) {
+            e.preventDefault();
+            
+            const discord = document.getElementById('discordName').value.trim();
+            const twitter = document.getElementById('twitterHandle').value.trim();
+            const psn1 = document.getElementById('psn1').value.trim();
+            const psn2 = document.getElementById('psn2').value.trim();
+            const psn3 = document.getElementById('psn3').value.trim();
+            const psn4 = document.getElementById('psn4').value.trim();
+            
+            // Validate at least 2 PSN
+            let psnCount = 0;
+            if (psn1) psnCount++;
+            if (psn2) psnCount++;
+            if (psn3) psnCount++;
+            if (psn4) psnCount++;
+            
+            if (psnCount < 2) {
+                alert("You must register at least 2 players (PSN names) to sign up a team.");
+                return;
+            }
+            
+            if (!discord) {
+                alert("Discord name is required.");
+                return;
+            }
+            
+            // "Send email" via mailto
+            const subject = encodeURIComponent("Tournament Sign Up - Kickoff 2026");
+            const body = encodeURIComponent(
+                `Discord Name: ${discord}\n` +
+                `Twitter: ${twitter || 'N/A'}\n` +
+                `Player 1 PSN: ${psn1}\n` +
+                `Player 2 PSN: ${psn2}\n` +
+                `Player 3 PSN: ${psn3 || 'N/A'}\n` +
+                `Player 4 PSN: ${psn4 || 'N/A'}\n\n` +
+                `Team registered for Kickoff Tournament 2026`
+            );
+            
+            // Trigger mailto
+            window.open(`mailto:GameCircuitSupport@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            
+            // Update count
+            signedUpTeams++;
+            if (signedUpTeams > 16) signedUpTeams = 16;
+            localStorage.setItem('gcSignedUpTeams', signedUpTeams);
+            
+            // Close signup, show success
+            closeSignupModal();
+            
+            setTimeout(() => {
+                showSuccessModal();
+                updateSignedUpDisplays();
+            }, 450);
+        }
+        
+        function showSuccessModal() {
+            document.getElementById('successModal').style.display = 'block';
+        }
+        
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+        
+        // Live stream modal
+        function watchLive() {
+            const modal = document.getElementById('liveModal');
+            modal.style.display = 'block';
+            
+            const streamArea = document.getElementById('streamArea');
+            streamArea.innerHTML = `
+                <div style="text-align:center; color:#555;">
+                    <div style="font-size:48px; margin-bottom:10px;">▶</div>
+                    <div style="font-size:17px; color:#cc0000; font-weight:bold;">LIVE FROM GAMECIRCUIT</div>
+                    <div style="margin-top:6px; font-size:13px;">Click to start stream simulation</div>
+                </div>
+            `;
+            streamArea.onclick = startStream;
+        }
+        
+        function closeLiveModal() {
+            document.getElementById('liveModal').style.display = 'none';
+        }
+        
+        function startStream() {
+            const streamArea = document.getElementById('streamArea');
+            streamArea.innerHTML = `
+                <div style="width:100%; height:100%; background: linear-gradient(#1a0000, #000000); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                    <div style="text-align:center; z-index:2; padding:10px;">
+                        <div style="color:#ff3333; font-size:13px; font-weight:bold; letter-spacing:2px; margin-bottom:6px;">LIVE • HD 720p • GAMECIRCUIT.TV</div>
+                        <div style="color:#ffffff; font-size:24px; font-weight:bold; text-shadow: 2px 2px 4px #000;">VORTEX 6 — 4 AETHER</div>
+                        <div style="color:#cc0000; margin-top:5px; font-size:13px;">MAP 3 • HARDPOINT • 1:48 REMAINING</div>
+                        
+                        <div style="margin-top:16px; font-size:12px; color:#888;">
+                            Players: Rambo • BigTymer • Sharp • Assass1n<br>
+                            Viewers: 4,219 • Chat enabled
+                        </div>
+                    </div>
+                    
+                    <!-- Fake scanlines -->
+                    <div style="position:absolute; top:0; left:0; right:0; bottom:0; background: repeating-linear-gradient(transparent, transparent 3px, rgba(255,255,255,0.025) 3px, rgba(255,255,255,0.025) 6px); pointer-events:none;"></div>
+                </div>
+            `;
+            
+            // Fake chat messages (if chat box existed, but simplified here)
+            setTimeout(() => {
+                const info = streamArea.parentNode.querySelector('.stream-info');
+                if (info) {
+                    info.innerHTML += `<div style="margin-top:8px; font-size:11px; color:#00cc66;">Chat active • 312 messages</div>`;
+                }
+            }, 2200);
+        }
+        
+        // Close modals on outside click
+        window.onclick = function(event) {
+            const modals = ['signupModal', 'successModal', 'liveModal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        
+        // Viewer count simulation removed with stats bar
+        
+        // Initialize
+        function init() {
+            updateSignedUpDisplays();
+            
+            // Easter egg console
+            console.log('%c[GameCircuit 2026] Welcome to the Competitive Call of Duty portal. Console only. No GA\'s. Glory days await.', 'color:#cc0000');
+            
+            // Keyboard shortcut hint
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "?" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault();
+                    const about = document.getElementById('about-section');
+                    if (about) about.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        
+        function switchTab(tabIndex) {
+            // Hide all panels
+            document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.style.background = '#222';
+                b.style.color = '#fff';
+            });
+            // Show selected
+            const panel = document.getElementById('tab-' + tabIndex);
+            if (panel) panel.style.display = 'block';
+            // Activate button
+            const btns = document.querySelectorAll('.tab-btn');
+            if (btns[tabIndex]) {
+                btns[tabIndex].style.background = '#cc0000';
+                btns[tabIndex].style.color = '#fff';
+            }
+            
+            // Special actions
+            if (tabIndex === 3) {
+                // Live tab - optionally auto open stream hint
+                setTimeout(() => {
+                    const liveHint = confirm("Open the live stream player now?");
+                    if (liveHint) watchLive();
+                }, 600);
+            }
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
