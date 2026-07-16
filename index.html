@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Anton&amp;display=swap');
-      
+     
         :root {
             --accent-red: #FF0000;
         }
-      
+     
         body {
             background-color: #ffffff;
             color: #1f2937;
             font-family: 'Inter', system_ui, sans-serif;
         }
-      
+     
         .esports-card {
             background-color: #111111;
             border: 1px solid #FF0000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-      
+     
         .esports-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
@@ -32,7 +32,7 @@
         .mlg-table {
             font-size: 14px;
         }
-      
+     
         .mlg-table th {
             background-color: #1a1a1a;
             color: #FF0000;
@@ -43,12 +43,12 @@
             padding: 12px 14px;
             text-align: left;
         }
-      
+     
         .mlg-table td {
             padding: 12px 14px;
             border-bottom: 1px solid #222222;
         }
-      
+     
         .mlg-table tr:hover {
             background-color: #151515;
         }
@@ -59,7 +59,7 @@
             letter-spacing: 0.5px;
             color: #FF0000;
         }
-      
+     
         .sidebar-tab.active {
             color: #FF0000;
             border-bottom: 2px solid #FF0000;
@@ -69,7 +69,7 @@
             border: 1px solid #333333;
             transition: all 0.2s ease;
         }
-      
+     
         .feature-box:hover {
             border-color: #FF0000;
             background-color: #1a1a1a;
@@ -82,7 +82,7 @@
             background-position: center;
             height: 260px;
         }
-      
+     
         .who-to-watch-card::after {
             content: '';
             position: absolute;
@@ -101,7 +101,7 @@
         .dark-panel, .esports-card, .feature-box, .sidebar-tab-content, .mlg-table td {
             color: #f1f1f1;
         }
-      
+     
         .dark-panel .text-gray-400,
         .dark-panel .text-gray-500,
         .esports-card .text-gray-400,
@@ -114,7 +114,7 @@
             overflow-y: auto;
             scroll-behavior: smooth;
         }
-        
+       
         /* ========== NEW NEWS TICKER ========== */
         .news-ticker {
             background-color: #0a0a0a;
@@ -122,19 +122,19 @@
             overflow: hidden;
             padding: 14px 0;
         }
-        
+       
         .ticker-wrapper {
             overflow: hidden;
             width: 100%;
         }
-        
+       
         .ticker-content {
             display: flex;
             align-items: center;
             white-space: nowrap;
             animation: ticker-scroll 18s linear infinite;
         }
-        
+       
         .ticker-item {
             display: inline-flex;
             align-items: center;
@@ -145,12 +145,12 @@
             letter-spacing: 0.4px;
             font-family: 'Inter', system_ui, sans-serif;
         }
-        
+       
         .ticker-item strong {
             font-weight: 700;
             color: #fff;
         }
-        
+       
         @keyframes ticker-scroll {
             from {
                 transform: translateX(0);
@@ -159,15 +159,24 @@
                 transform: translateX(-50%);
             }
         }
-        
+       
         /* Pause ticker on hover */
         .news-ticker:hover .ticker-content {
             animation-play-state: paused;
         }
+        
+        /* Custom scrollbar for free agents list */
+        #free-agents-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        #free-agents-list::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden">
-  
+ 
     <!-- Top Navigation Bar -->
     <nav class="bg-black border-b border-[#FF0000] sticky top-0 z-50">
         <div class="max-w-screen-2xl mx-auto">
@@ -191,7 +200,7 @@
             </div>
         </div>
     </nav>
-    
+   
     <!-- HERO / BANNER -->
     <div class="hero-bg min-h-[620px] flex items-center justify-center border-b border-[#222222] relative">
         <div class="max-w-screen-2xl mx-auto px-8 text-center relative z-10">
@@ -199,7 +208,7 @@
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
     </div>
-    
+   
     <!-- ========== NEW NEWS TICKER ========== -->
     <div class="news-ticker">
         <div class="ticker-wrapper">
@@ -208,7 +217,7 @@
                 <span class="ticker-item">
                     ★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★
                 </span>
-                
+               
                 <!-- Duplicate for seamless infinite loop -->
                 <span class="ticker-item">
                     ★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★
@@ -216,14 +225,14 @@
             </div>
         </div>
     </div>
-    
+   
     <!-- MAIN CONTENT -->
     <div class="w-full pt-[3px] pb-[3px]">
-      
+     
         <!-- FEATURED TEAMS -->
         <div class="dark-panel border border-[#FF0000] p-8 mb-[5px]">
             <h3 class="uppercase text-sm tracking-[2px] font-bold text-[#FF0000] mb-6">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
-          
+         
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <!-- Team 1 -->
                 <div class="esports-card p-5 flex items-start gap-x-4">
@@ -237,7 +246,7 @@
                         <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
                     </div>
                 </div>
-              
+             
                 <!-- Team 2 -->
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -250,7 +259,7 @@
                         <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
                     </div>
                 </div>
-              
+             
                 <!-- Team 3 -->
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -263,7 +272,7 @@
                         <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
                     </div>
                 </div>
-              
+             
                 <!-- Team 4 -->
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -278,22 +287,22 @@
                 </div>
             </div>
         </div>
-      
+     
         <!-- TABLES + SIDEBAR -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-          
+         
             <!-- UPCOMING + STANDINGS -->
             <div class="lg:col-span-9">
                 <div class="dark-panel border border-[#FF0000] p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                      
+                     
                         <!-- UPCOMING -->
                         <div class="lg:col-span-7">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                                 <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                             </div>
-                          
+                         
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -336,19 +345,19 @@
                                     </tr>
                                 </tbody>
                             </table>
-                          
+                         
                             <div class="text-center mt-4">
                                 <span class="text-sm text-gray-500">Celebrate the skill, excitement, and unforgettable moments that define the pinnacle of European competitive Call of Duty!</span>
                             </div>
                         </div>
-                      
+                     
                         <!-- STANDINGS -->
                         <div class="lg:col-span-5">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">PRESTIGE LEAGUE STANDINGS</h4>
                                 <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                             </div>
-                          
+                         
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -395,7 +404,7 @@
                     </div>
                 </div>
             </div>
-          
+         
             <!-- SIDEBAR -->
             <div class="lg:col-span-3">
                 <div class="dark-panel border border-[#FF0000] p-8">
@@ -409,37 +418,111 @@
                         <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
                                 class="sidebar-tab px-4 py-2.5 hover:text-white">LIVE</button>
                     </div>
-                  
+                 
                     <div id="sidebar-tab-0" class="sidebar-tab-content text-sm">
                         <div class="uppercase text-xs tracking-widest text-[#FF0000] mb-1 mt-3">UPCOMING TOURNAMENT</div>
                         <div class="font-bold text-xl leading-none mb-1">KICKOFF TOURNAMENT</div>
                         <div class="text-xs text-gray-400 mb-3">01/06/2026 • FREE ENTRY</div>
-                      
+                     
                         <button onclick="openSignUpModal()"
                                 class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
                             REGISTER YOUR TEAM
                         </button>
-                      
+                     
                         <div class="text-center mt-3">
                             <span class="text-xs text-gray-500">0 / 16 teams signed up</span>
                         </div>
                     </div>
-                  
+                 
                     <div id="sidebar-tab-1" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">HOW THE CHAMPIONSHIP WORKS</h5>
                         <p class="text-xs text-gray-400">Teams earn Series Points through Open Tournaments and Prestige League play.</p>
                     </div>
-                  
+                 
+                    <!-- ========== FREE AGENTS TAB - NEW RICH CONTENT ========== -->
                     <div id="sidebar-tab-2" class="sidebar-tab-content text-sm hidden">
-                        <h5 class="font-bold text-[#FF0000] mb-2 mt-3">FREE AGENTS</h5>
-                        <p class="text-xs text-gray-400">Join our Discord to connect with free agents.</p>
+                        <h5 class="font-bold text-[#FF0000] mb-3 mt-1">LATEST FREE AGENTS</h5>
+                        
+                        <!-- Free Agents List -->
+                        <div id="free-agents-list" 
+                             class="space-y-2.5 mb-5 max-h-[260px] overflow-y-auto pr-2">
+                            <!-- Populated dynamically by JavaScript -->
+                        </div>
+                        
+                        <div class="border-t border-[#333] pt-4">
+                            <h6 class="uppercase text-xs tracking-widest text-[#FF0000] mb-2">JOIN THE FREE AGENT POOL</h6>
+                            
+                            <form id="free-agent-form" onsubmit="submitFreeAgent(event)">
+                                <div class="space-y-3">
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">GAMERTAG / PSN / XBL</label>
+                                        <input type="text" id="fa-gamertag" 
+                                               class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none" 
+                                               placeholder="YourTag#1234" required>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="text-xs text-gray-400 block mb-1">PLATFORM</label>
+                                            <select id="fa-platform" 
+                                                    class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none">
+                                                <option>Xbox 360</option>
+                                                <option>PlayStation 3</option>
+                                                <option>PC (Plutonium)</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="text-xs text-gray-400 block mb-1">PREFERRED ROLE</label>
+                                            <select id="fa-role" 
+                                                    class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none">
+                                                <option>Slayer / SMG</option>
+                                                <option>Main AR</option>
+                                                <option>Flex / OBJ</option>
+                                                <option>Support / Anchor</option>
+                                                <option>Any</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">AVAILABILITY</label>
+                                        <input type="text" id="fa-availability" 
+                                               class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none" 
+                                               placeholder="Evenings (BST) / Weekends" required>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">SHORT BIO / NOTES</label>
+                                        <textarea id="fa-bio" rows="2" 
+                                                  class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none resize-y" 
+                                                  placeholder="Experienced BO2 player, 2k+ hours..."></textarea>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">DISCORD TAG (for contact)</label>
+                                        <input type="text" id="fa-discord" 
+                                               class="w-full bg-[#1a1a1a] border border-[#333] text-white text-sm px-3 py-2 rounded focus:border-[#FF0000] outline-none" 
+                                               placeholder="username#0000" required>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit"
+                                        class="mt-4 w-full py-2.5 bg-[#FF0000] hover:bg-red-700 transition-colors text-white font-bold text-sm tracking-wider rounded">
+                                    SUBMIT FREE AGENT PROFILE
+                                </button>
+                                
+                                <p class="text-[10px] text-center text-gray-500 mt-2">Your profile will appear in the list above instantly.</p>
+                            </form>
+                        </div>
                     </div>
-                  
+                    <!-- ========== END FREE AGENTS TAB ========== -->
+                 
                     <div id="sidebar-tab-3" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">LIVE MATCHES</h5>
                         <p class="text-xs text-gray-400">No matches currently live.</p>
                     </div>
-                  
+                 
                     <div class="mt-4 pt-4 border-t border-[#333]">
                         <div class="uppercase text-xs tracking-widest text-gray-500 mb-2">HIGHLIGHTS &amp; FEATURES</div>
                         <div class="grid grid-cols-3 gap-2 text-center text-xs">
@@ -461,12 +544,12 @@
             </div>
         </div>
     </div>
-    
+   
     <!-- WHO TO WATCH -->
     <div class="bg-black border-t border-b border-[#222222] py-[5px]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <h2 class="text-center text-5xl font-black tracking-[3px] text-red-500 mb-[5px]">WHO TO WATCH</h2>
-          
+         
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div class="who-to-watch-card rounded-sm flex items-end p-6"
                      style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
@@ -489,7 +572,7 @@
             </div>
         </div>
     </div>
-    
+   
     <!-- Footer -->
     <div class="max-w-screen-2xl mx-auto px-8 py-10 text-center">
         <a href="https://www.gamecircuit.co.uk"
@@ -499,27 +582,67 @@
         </a>
         <p class="text-xs text-gray-500 tracking-widest mt-5">THE GAMECIRCUIT CHAMPIONSHIP • POWERED BY GAMECIRCUIT • BLACK OPS II 2026</p>
     </div>
+   
+    <!-- Tournament Signup Modal -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="dark-panel border border-[#FF0000] p-8 max-w-md w-full mx-4 rounded">
+            <h3 class="text-xl font-bold mb-4">Register Your Team</h3>
+            <form onsubmit="submitSignUp(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm text-gray-400">Team Name</label>
+                        <input type="text" class="w-full bg-[#1a1a1a] border border-[#333] px-4 py-2 rounded mt-1" required>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-400">Captain Discord</label>
+                        <input type="text" class="w-full bg-[#1a1a1a] border border-[#333] px-4 py-2 rounded mt-1" required>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button type="button" onclick="closeSignUpModal()" 
+                            class="flex-1 py-3 border border-[#333] hover:bg-[#222] rounded font-bold">CANCEL</button>
+                    <button type="submit" 
+                            class="flex-1 py-3 bg-green-500 hover:bg-green-600 text-black font-bold rounded">SUBMIT REGISTRATION</button>
+                </div>
+            </form>
+        </div>
+    </div>
     
+    <!-- Success Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="dark-panel border border-green-500 p-8 max-w-sm w-full mx-4 rounded text-center">
+            <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Registration Received!</h3>
+            <p class="text-sm text-gray-400">Thank you. We'll review your team and contact you via Discord shortly.</p>
+            <button onclick="closeSuccessModal()" 
+                    class="mt-6 px-8 py-2 bg-green-500 hover:bg-green-600 text-black font-bold rounded">CLOSE</button>
+        </div>
+    </div>
+   
     <script>
         let currentSidebarTab = 0;
+        
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
-          
+         
             const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
             activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
-          
+         
             document.getElementById('sidebar-tab-' + tabIndex).classList.remove('hidden');
             currentSidebarTab = tabIndex;
         }
+        
         function openSignUpModal() {
             document.getElementById('signup-modal').classList.remove('hidden');
             document.getElementById('signup-modal').classList.add('flex');
         }
+        
         function closeSignUpModal() {
             document.getElementById('signup-modal').classList.remove('flex');
             document.getElementById('signup-modal').classList.add('hidden');
         }
+        
         function submitSignUp(event) {
             event.preventDefault();
             closeSignUpModal();
@@ -528,14 +651,173 @@
                 document.getElementById('success-modal').classList.add('flex');
             }, 300);
         }
+        
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.remove('flex');
             document.getElementById('success-modal').classList.add('hidden');
         }
+        
+        // ========== FREE AGENTS FEATURE ==========
+        let freeAgents = [
+            {
+                gamertag: "ReaperzLegacy",
+                platform: "Xbox 360",
+                role: "Main AR",
+                availability: "Evenings & Weekends (BST)",
+                bio: "8+ years competitive BO2 experience. Former GB player looking for serious team.",
+                discord: "reaperzlegacy#2841"
+            },
+            {
+                gamertag: "UKSlayerz",
+                platform: "PC (Plutonium)",
+                role: "Slayer / SMG",
+                availability: "Weekends primarily",
+                bio: "Active grinder with strong comms. Ready to compete in kickoff tournament.",
+                discord: "ukslayerz#9912"
+            },
+            {
+                gamertag: "OpticGhost07",
+                platform: "PlayStation 3",
+                role: "Flex / OBJ",
+                availability: "Evenings BST",
+                bio: "Experienced obj player. Good map knowledge and team player.",
+                discord: "opticghost07#4455"
+            },
+            {
+                gamertag: "BlackOpsVet88",
+                platform: "Xbox 360",
+                role: "Any",
+                availability: "Most evenings",
+                bio: "Veteran looking to return to the scene. Positive attitude and reliable.",
+                discord: "bovet88#7733"
+            }
+        ];
+        
+        function renderFreeAgents() {
+            const container = document.getElementById('free-agents-list');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            freeAgents.forEach((agent) => {
+                const card = document.createElement('div');
+                card.className = 'bg-[#1a1a1a] border border-[#333333] hover:border-[#FF0000] transition-colors p-3 rounded text-xs';
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-1">
+                        <div class="min-w-0 flex-1">
+                            <div class="font-bold text-white truncate">${agent.gamertag}</div>
+                            <div class="text-[#FF0000] text-[10px] font-medium">${agent.platform} • ${agent.role}</div>
+                        </div>
+                        <button onclick="contactAgent('${agent.discord.replace(/'/g, "\\'")}')" 
+                                class="ml-2 flex-shrink-0 text-[10px] px-2.5 py-0.5 bg-[#FF0000] hover:bg-red-700 text-white font-bold rounded transition-colors">
+                            CONTACT
+                        </button>
+                    </div>
+                    <div class="text-gray-400 text-[10px] leading-snug mb-1">${agent.bio}</div>
+                    <div class="text-[10px] text-gray-500">🕒 ${agent.availability}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        function contactAgent(discordTag) {
+            const modalHTML = `
+                <div class="fixed inset-0 bg-black/90 flex items-center justify-center z-[200]" onclick="this.remove()">
+                    <div onclick="event.stopImmediatePropagation()" class="dark-panel border-2 border-[#FF0000] p-6 max-w-sm w-full mx-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-xl text-[#FF0000]">Contact Free Agent</h4>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">Add this player on Discord to discuss teaming up:</p>
+                        
+                        <div class="bg-black border border-[#FF0000]/50 px-5 py-4 rounded-lg font-mono text-center text-xl tracking-[2px] mb-5 text-white">
+                            ${discordTag}
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button onclick="this.closest('.fixed').remove()" 
+                                    class="flex-1 py-2.5 text-sm border border-[#444] hover:bg-[#222] rounded font-medium transition-colors">
+                                CLOSE
+                            </button>
+                            <button onclick="copyDiscordTag('${discordTag.replace(/'/g, "\\'")}', this)" 
+                                    class="flex-1 py-2.5 text-sm bg-[#FF0000] hover:bg-red-700 text-white font-bold rounded transition-colors flex items-center justify-center gap-x-2">
+                                <i class="fas fa-copy"></i> 
+                                <span>COPY TAG</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function copyDiscordTag(tag, buttonElement) {
+            navigator.clipboard.writeText(tag).then(() => {
+                const originalHTML = buttonElement.innerHTML;
+                buttonElement.innerHTML = `<i class="fas fa-check"></i> <span>COPIED!</span>`;
+                buttonElement.disabled = true;
+                
+                setTimeout(() => {
+                    const modal = buttonElement.closest('.fixed');
+                    if (modal) modal.remove();
+                }, 900);
+            }).catch(() => {
+                const modal = buttonElement.closest('.fixed');
+                if (modal) modal.remove();
+                alert('Discord tag: ' + tag);
+            });
+        }
+        
+        function submitFreeAgent(event) {
+            event.preventDefault();
+            
+            const newAgent = {
+                gamertag: document.getElementById('fa-gamertag').value.trim(),
+                platform: document.getElementById('fa-platform').value,
+                role: document.getElementById('fa-role').value,
+                availability: document.getElementById('fa-availability').value.trim(),
+                bio: document.getElementById('fa-bio').value.trim() || 'No additional notes provided.',
+                discord: document.getElementById('fa-discord').value.trim()
+            };
+            
+            // Add to top of list (latest first)
+            freeAgents.unshift(newAgent);
+            
+            // Re-render
+            renderFreeAgents();
+            
+            // Reset form
+            document.getElementById('free-agent-form').reset();
+            
+            // Success feedback
+            const feedback = document.createElement('div');
+            feedback.className = 'mt-3 text-center';
+            feedback.innerHTML = `
+                <div class="inline-flex items-center gap-x-2 text-green-400 text-xs font-bold bg-green-900/30 px-4 py-1.5 rounded-full">
+                    <i class="fas fa-check-circle"></i> 
+                    <span>PROFILE ADDED TO FREE AGENTS LIST!</span>
+                </div>
+            `;
+            
+            const formContainer = document.getElementById('free-agent-form').parentNode;
+            const oldFeedback = formContainer.querySelector('.mt-3');
+            if (oldFeedback) oldFeedback.remove();
+            
+            formContainer.appendChild(feedback);
+            
+            setTimeout(() => {
+                if (feedback.parentNode) feedback.parentNode.removeChild(feedback);
+            }, 2800);
+        }
+        
         function init() {
             document.getElementById('sidebar-tab-btn-0').classList.add('active', 'border-b-2', 'border-[#FF0000]');
             document.getElementById('sidebar-tab-0').classList.remove('hidden');
+            
+            // Initialize free agents
+            renderFreeAgents();
         }
+        
         window.onload = init;
     </script>
 </body>
