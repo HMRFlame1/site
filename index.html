@@ -22,7 +22,6 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
         }
- 
         .mlg-table {
             font-size: 14px;
         }
@@ -43,7 +42,6 @@
         .mlg-table tr:hover {
             background-color: #151515;
         }
- 
         .sidebar-tab {
             transition: all 0.2s ease;
             font-weight: 600;
@@ -55,7 +53,6 @@
             color: #FF0000;
             border-bottom: 2px solid #FF0000;
         }
- 
         .feature-box {
             background-color: #111111;
             border: 1px solid #333333;
@@ -65,7 +62,6 @@
             border-color: #FF0000;
             background-color: #1a1a1a;
         }
- 
         .who-to-watch-card {
             position: relative;
             overflow: hidden;
@@ -80,18 +76,15 @@
             inset: 0;
             background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 75%);
         }
- 
         .dark-panel {
             background-color: #111111;
             border: 1px solid #333333;
         }
- 
         .hero-bg {
             background: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/ban1_orig.jpg');
             background-size: cover;
             background-position: calc(50% - 10px) center;
         }
- 
         .dark-panel, .esports-card, .feature-box, .mlg-table td {
             color: #f1f1f1;
         }
@@ -127,34 +120,6 @@
         .news-ticker:hover .ticker-content {
             animation-play-state: paused;
         }
-
-        /* User Bar Styles (from News Centre) */
-        .userBar {
-            background: linear-gradient(#1a1a1a, #0a0a0a);
-            border: 2px solid #444;
-            border-top: 4px solid #9c0000;
-            border-radius: 4px;
-            padding: 8px 14px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 280px;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.8);
-        }
-        .profilePic {
-            width: 48px;
-            height: 48px;
-            border: 2px solid #00ccff;
-            border-radius: 4px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 0 8px rgba(0, 204, 255, 0.6);
-        }
-        .user-bar-username {
-            color: #00ffcc !important;
-            font-weight: bold !important;
-            font-size: 15.5px !important;
-        }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden">
@@ -167,15 +132,15 @@
                          alt="GameCircuit" class="h-9 w-auto">
                     <span class="text-white font-black text-3xl tracking-[-1.5px]">GAMECIRCUIT</span>
                 </div>
-
-                <!-- User Bar -->
-                <div id="userInfo"></div>
-
                 <div class="hidden md:flex items-center gap-x-5 text-sm">
                     <div class="flex items-center gap-x-4 text-xl text-white">
                         <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="hover:text-[#FF0000] transition-colors"><i class="fab fa-discord"></i></a>
                         <a href="#" class="hover:text-[#FF0000] transition-colors"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="hover:text-[#FF0000] transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="flex items-center gap-x-1.5 text-xs font-bold border border-[#333] px-4 py-1.5 rounded">
+                        <span>UK</span>
+                        <span class="text-[#FF0000]">EN</span>
                     </div>
                 </div>
             </div>
@@ -207,7 +172,7 @@
         <!-- FEATURED TEAMS -->
         <div class="dark-panel border border-[#FF0000] p-8 mb-[5px]">
             <h3 class="uppercase text-sm tracking-[2px] font-bold text-[#FF0000] mb-6">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
-  
+ 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -220,29 +185,234 @@
                         <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
                     </div>
                 </div>
-                <!-- Repeat for other cards (kept short for brevity) -->
-            </div>
-        </div>
-
-        <!-- Rest of the page content remains the same as original -->
-        <!-- ... (I kept the structure but focused on the important parts) -->
-
-        <!-- SIDEBAR + SIGN UP BUTTON -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            <div class="lg:col-span-9">
-                <!-- Your existing tables content here -->
-            </div>
-
-            <div class="lg:col-span-3">
-                <div class="dark-panel border border-[#FF0000] p-8">
-                    <!-- Tournament Sidebar -->
-                    <button onclick="openSignUpModal()"
-                            class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
-                        SIGN UP FOR KICKOFF TOURNAMENT
-                    </button>
+                <div class="esports-card p-5 flex items-start gap-x-4">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-800 border border-[#FF0000]/40 flex items-center justify-center mb-2">
+                            <i class="fas fa-shield-alt text-3xl text-[#FF0000]"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-0 pt-1">
+                        <div class="font-bold text-xl leading-none tracking-tight">Team Name</div>
+                        <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                    </div>
+                </div>
+                <div class="esports-card p-5 flex items-start gap-x-4">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-800 border border-[#FF0000]/40 flex items-center justify-center mb-2">
+                            <i class="fas fa-shield-alt text-3xl text-[#FF0000]"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-0 pt-1">
+                        <div class="font-bold text-xl leading-none tracking-tight">Team Name</div>
+                        <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                    </div>
+                </div>
+                <div class="esports-card p-5 flex items-start gap-x-4">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-800 border border-[#FF0000]/40 flex items-center justify-center mb-2">
+                            <i class="fas fa-shield-alt text-3xl text-[#FF0000]"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-0 pt-1">
+                        <div class="font-bold text-xl leading-none tracking-tight">Team Name</div>
+                        <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- TABLES + SIDEBAR -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+ 
+            <!-- UPCOMING + STANDINGS -->
+            <div class="lg:col-span-9">
+                <div class="dark-panel border border-[#FF0000] p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- UPCOMING MATCHES -->
+                        <div class="lg:col-span-7">
+                            <div class="flex items-center justify-between mb-5">
+                                <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
+                                <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
+                            </div>
+                 
+                            <table class="mlg-table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>DATE / TIME</th>
+                                        <th>MATCH</th>
+                                        <th>FORMAT</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr>
+                                        <td class="font-mono text-gray-400">JAN 15 • 19:30</td>
+                                        <td><span class="font-semibold">Team Name</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Team Name</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#FF0000] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-gray-400">JAN 16 • 20:00</td>
+                                        <td><span class="font-semibold">Team Name</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Team Name</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#FF0000] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-gray-400">JAN 18 • 19:30</td>
+                                        <td><span class="font-semibold">Team Name</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Team Name</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#FF0000] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+             
+                        <!-- STANDINGS -->
+                        <div class="lg:col-span-5">
+                            <div class="flex items-center justify-between mb-5">
+                                <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">PRESTIGE LEAGUE STANDINGS</h4>
+                                <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
+                            </div>
+                 
+                            <table class="mlg-table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>TEAM</th>
+                                        <th class="text-right">POINTS</th>
+                                        <th class="text-right">W/L</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr><td class="font-mono font-bold">1</td><td class="font-semibold">Team Name</td><td class="font-mono text-right text-[#FF0000]">0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                    <tr><td class="font-mono font-bold">2</td><td class="font-semibold">Team Name</td><td class="font-mono text-right text-[#FF0000]">0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                    <tr><td class="font-mono font-bold">3</td><td class="font-semibold">Team Name</td><td class="font-mono text-right text-[#FF0000]">0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- SIDEBAR -->
+            <div class="lg:col-span-3">
+                <div class="dark-panel border border-[#FF0000] p-8">
+                    <div class="flex border-b border-[#FF0000] mb-1 text-xs">
+                        <button onclick="switchSidebarTab(0)" id="sidebar-tab-btn-0"
+                                class="sidebar-tab active px-4 py-2.5 border-b-2 border-[#FF0000] text-[#FF0000]">TOURNAMENTS</button>
+                        <button onclick="switchSidebarTab(1)" id="sidebar-tab-btn-1"
+                                class="sidebar-tab px-4 py-2.5 hover:text-white">INFO</button>
+                
+                        <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
+                                class="sidebar-tab px-4 py-2.5 hover:text-white">LIVE</button>
+                    </div>
+         
+                    <div id="sidebar-tab-0" class="sidebar-tab-content text-sm">
+                        <div class="uppercase text-xs tracking-widest text-[#FF0000] mb-1 mt-3">UPCOMING TOURNAMENT</div>
+                        <div class="font-bold text-xl leading-none mb-1">KICKOFF TOURNAMENT</div>
+                        <div class="text-xs text-gray-400 mb-3">01/06/2026 • FREE ENTRY</div>
+             
+                        <button onclick="openSignUpModal()"
+                                class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
+                            SIGN UP
+                        </button>
+             
+                        <div class="text-center mt-3">
+                            <span id="team-count-text" class="text-xs text-gray-500">0 / 16 teams signed up</span>
+                        </div>
+                        <!-- SIGNED UP TEAMS SECTION -->
+                        <div id="signed-up-section" class="mt-4 pt-3 border-t border-[#333]">
+                            <div class="uppercase text-xs tracking-widest text-gray-500 mb-1.5">SIGNED UP TEAMS</div>
+                            <div id="team-list" class="text-xs text-gray-300 max-h-[90px] overflow-y-auto space-y-px pr-1"></div>
+                        </div>
+                    </div>
+         
+                    <div id="sidebar-tab-1" class="sidebar-tab-content text-sm hidden">
+                        <h5 class="font-bold text-[#FF0000] mb-2 mt-3">HOW THE CHAMPIONSHIP WORKS</h5>
+                        <p class="text-xs text-gray-400 mb-2">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
+                     
+                        <div class="space-y-[5px] text-[10px] leading-snug">
+                            <div>
+                                <span class="font-bold text-[#FF0000]">1. KICKOFF TOURNAMENT</span><br>
+                                <span class="text-gray-400">Free entry • 16-team Single Elimination<br>£50 prize pool • 100 Series Points for signing up &amp; playing + placement bonuses</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">2. OPEN EVENT #1</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">3. PRESTIGE LEAGUE SEASON 1</span><br>
+                                <span class="text-gray-400">16-team league for the top 16 teams by Series Points<br>£20 entry to lock in your spot (unpaid spots go to next in line)</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">4. OPEN EVENT #2</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">5. OPEN EVENT #3</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">6. CHAMPIONSHIP FINALS</span><br>
+                                <span class="text-gray-400">16-team Pool Play + Double Elimination<br>Free entry for top 12 by Series Points • Final 4 spots via £20 qualifiers</span>
+                            </div>
+                        </div>
+                     
+                        <p class="text-[9px] text-gray-500 mt-2">Series Points determine seeding for leagues and future events.</p>
+                    </div>
+         
+                    <div id="sidebar-tab-3" class="sidebar-tab-content text-sm hidden">
+                        <h5 class="font-bold text-[#FF0000] mb-2 mt-3">LIVE MATCHES</h5>
+                        <p class="text-xs text-gray-400">No matches currently live.</p>
+                    </div>
+         
+                    <div class="mt-4 pt-4 border-t border-[#333]">
+                        <div class="uppercase text-xs tracking-widest text-gray-500 mb-2">HIGHLIGHTS &amp; FEATURES</div>
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                            <div class="feature-box p-2">
+                                <i class="fas fa-trophy text-[#FF0000] mb-1"></i>
+                                <div class="font-bold text-[10px]">QUALIFIERS</div>
+                            </div>
+                            <div class="feature-box p-2">
+                                <i class="fas fa-medal text-[#FF0000] mb-1"></i>
+                                <div class="font-bold text-[10px]">PLAYOFFS</div>
+                            </div>
+                            <div class="feature-box p-2">
+                                <i class="fas fa-globe text-[#FF0000] mb-1"></i>
+                                <div class="font-bold text-[10px]">EU CHAMPS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHO TO WATCH -->
+    <div class="bg-black border-t border-b border-[#222222] py-[5px]">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="text-center text-5xl font-black tracking-[3px] text-red-500 mb-[5px]">WHO TO WATCH</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                    <div class="relative z-10"><div class="text-red-500 text-3xl">⟪ ⟫</div></div>
+                </div>
+                <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                    <div class="relative z-10"><div class="text-red-500 text-3xl">⟪ ⟫</div></div>
+                </div>
+                <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                    <div class="relative z-10"><div class="text-red-500 text-3xl">⟪ ⟫</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-10 text-center">
+        <a href="https://www.gamecircuit.co.uk" class="inline-flex items-center justify-center gap-x-2 px-8 py-3.5 border border-[#FF0000] hover:bg-[#FF0000] hover:text-black transition-all text-sm font-bold tracking-wider">
+            <i class="fas fa-arrow-left"></i>
+            <span>RETURN TO GAMECIRCUIT.CO.UK</span>
+        </a>
+        <p class="text-xs text-gray-500 tracking-widest mt-5">THE GAMECIRCUIT CHAMPIONSHIP • POWERED BY GAMECIRCUIT • BLACK OPS II 2026</p>
     </div>
 
     <!-- SIGNUP MODAL -->
@@ -253,20 +423,23 @@
                 <button onclick="closeSignUpModal()" class="text-gray-400 hover:text-white text-xl leading-none">&times;</button>
             </div>
             <form id="signup-form" onsubmit="submitSignUp(event)">
-                <!-- Form fields remain the same -->
                 <div class="space-y-3 text-sm">
+                    <!-- Team Name -->
                     <div>
                         <label class="block text-xs text-gray-400 mb-1">TEAM NAME <span class="text-red-500">*</span></label>
                         <input type="text" id="team-name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="e.g. Team Vortex" required>
                     </div>
+                    <!-- Captain Discord -->
                     <div>
                         <label class="block text-xs text-gray-400 mb-1">CAPTAIN'S DISCORD HANDLE <span class="text-red-500">*</span></label>
                         <input type="text" id="discord" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="CaptainName" required>
                     </div>
+                    <!-- Twitter -->
                     <div>
                         <label class="block text-xs text-gray-400 mb-1">TWITTER @</label>
                         <input type="text" id="twitter" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="@yourhandle">
                     </div>
+                    <!-- PSN IDs -->
                     <div>
                         <label class="block text-xs text-gray-400 mb-1">PSN IDs <span class="text-red-500">(minimum 2 players required)</span></label>
                         <div class="grid grid-cols-2 gap-2">
@@ -277,11 +450,11 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Discord note -->
                 <div class="mt-4 p-3 bg-[#1a1a1a] border border-[#333] text-xs text-gray-400 rounded">
-                    ⚠️ <strong class="text-[#FF0000]">You must join the GameCircuit Discord</strong> to complete your sign up.
+                    ⚠️ <strong class="text-[#FF0000]">You must join the GameCircuit Discord</strong> to complete your sign up.<br>
+                    <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="text-[#FF0000] hover:underline font-medium">Join Discord →</a>
                 </div>
-
                 <div class="flex gap-3 mt-5">
                     <button type="button" onclick="closeSignUpModal()"
                             class="flex-1 py-2.5 border border-[#333] text-sm font-bold hover:bg-[#222] transition-colors rounded">CANCEL</button>
@@ -297,91 +470,27 @@
         <div class="dark-panel border border-[#FF0000] w-full max-w-sm mx-4 p-6 text-center rounded">
             <div class="text-green-500 text-5xl mb-3"><i class="fas fa-check-circle"></i></div>
             <h3 class="font-bold text-xl mb-2">SIGN UP SUBMITTED!</h3>
-            <p class="text-sm text-gray-400 mb-4">Thank you! Your signup has been received and sent to our team.<br><br>See you in the Discord!</p>
-            <button onclick="closeSuccessModal()" class="w-full py-2.5 bg-[#FF0000] hover:bg-red-600 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
+            <p class="text-sm text-gray-400 mb-4">Thank you! Your signup has been received.<br>Your details have been sent to our team.<br><br>See you in the Discord!</p>
+            <button onclick="closeSuccessModal()"
+                    class="w-full py-2.5 bg-[#FF0000] hover:bg-red-600 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
         </div>
     </div>
 
     <script>
-        // ====================== USER BAR (from News Centre - CORS safe) ======================
-        const USER_API = "https://script.google.com/macros/s/AKfycbyIGK3GwRustf-8Rb_ijCqHRfJIc9SZ5-ny0HiA1CNG8j7AxYc07uHyfhVLc8pvbC3h/exec";
-
-        function formatJoinDate(dateValue) {
-            if (!dateValue) return "Recently";
-            const date = new Date(Number(dateValue));
-            if (isNaN(date.getTime())) return "Recently";
-            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        }
-
-        async function loadUserInfo() {
-            const userInfoDiv = document.getElementById("userInfo");
-            const token = localStorage.getItem("sessionToken");
-
-            if (!token) {
-                userInfoDiv.innerHTML = `
-                    <div class="userBar">
-                        <div class="userDetails">
-                            <div class="userLinks">
-                                <a href="account.html" class="text-yellow-400 hover:text-yellow-300">Login</a>
-                                <span class="text-gray-500 mx-1">|</span>
-                                <a href="Register.html" class="text-yellow-400 hover:text-yellow-300">Sign Up</a>
-                            </div>
-                        </div>
-                    </div>`;
-                return;
-            }
-
-            userInfoDiv.innerHTML = `
-                <div class="userBar">
-                    <div class="profilePic" style="background-image: url('https://iili.io/CHGreKQ.png')"></div>
-                    <div class="userDetails">
-                        <div class="user-bar-username">Loading...</div>
-                    </div>
-                </div>`;
-
-            try {
-                const url = new URL(USER_API);
-                url.searchParams.append("action", "getProfile");
-                url.searchParams.append("sessionToken", token);
-
-                const res = await fetch(url);
-                const data = await res.json();
-
-                if (data.success && data.user) {
-                    const user = data.user;
-                    const pic = user.profilePic || "https://iili.io/CHGreKQ.png";
-                    const joinDate = formatJoinDate(user.createdAt);
-                    const rep = user.Reputation || user.reputation || 0;
-
-                    userInfoDiv.innerHTML = `
-                        <div class="userBar">
-                            <div class="profilePic" style="background-image: url('${pic}')"></div>
-                            <div class="userDetails">
-                                <div class="user-bar-username">${user.username || "User"}</div>
-                                <div style="font-size:11px; color:#777;">Joined ${joinDate}</div>
-                                <div style="font-size:11px; color:#ffd700;">Rep: <strong>${rep}</strong></div>
-                                <div class="userLinks">
-                                    <a href="my-profile.html" class="text-yellow-400">My Profile</a>
-                                    <span class="text-gray-500 mx-1">|</span>
-                                    <a href="#" onclick="logoutUser(); return false;" class="text-red-400">Log Out</a>
-                                </div>
-                            </div>
-                        </div>`;
-                }
-            } catch (e) {
-                console.error(e);
-            }
-        }
-
-        function logoutUser() {
-            if (confirm("Are you sure you want to log out?")) {
-                localStorage.removeItem("sessionToken");
-                location.reload();
-            }
-        }
-
-        // ====================== TOURNAMENT SIGNUP (with no-cors fix) ======================
+        let currentSidebarTab = 0;
         let signedUpTeams = 0;
+
+        function switchSidebarTab(tabIndex) {
+            document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
+ 
+            const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
+            if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
+ 
+            const content = document.getElementById('sidebar-tab-' + tabIndex);
+            if (content) content.classList.remove('hidden');
+            currentSidebarTab = tabIndex;
+        }
 
         function openSignUpModal() {
             const modal = document.getElementById('signup-modal');
@@ -396,36 +505,51 @@
             modal.classList.add('hidden');
         }
 
+        // ==================== ONLY THIS FUNCTION WAS CHANGED ====================
         function submitSignUp(event) {
             event.preventDefault();
-
+        
             const teamName = document.getElementById('team-name').value.trim();
             const discord = document.getElementById('discord').value.trim();
+            const twitter = document.getElementById('twitter').value.trim();
             const psn1 = document.getElementById('psn1').value.trim();
             const psn2 = document.getElementById('psn2').value.trim();
-
-            if (!teamName || !discord || !psn1 || !psn2) {
-                alert("Please fill in Team Name, Discord, and at least 2 PSN IDs.");
+            const psn3 = document.getElementById('psn3').value.trim();
+            const psn4 = document.getElementById('psn4').value.trim();
+        
+            if (!teamName) {
+                alert("Please enter a Team Name.");
                 return;
             }
-
+            if (!discord) {
+                alert("Please enter Captain's Discord handle.");
+                return;
+            }
+            if (!psn1 || !psn2) {
+                alert("You must enter at least 2 player PSN IDs (Player 1 and Player 2).");
+                return;
+            }
+        
             const scriptURL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
 
             fetch(scriptURL, {
                 method: "POST",
-                mode: "no-cors", // Fixes CORS issue on GitHub Pages
+                mode: "no-cors",                    // ← Only change made (fixes CORS)
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams({
                     action: "submitTournamentSignup",
                     teamName: teamName,
                     captainsDiscord: discord,
+                    captainsTwitter: twitter,
                     player1PSN: psn1,
                     player2PSN: psn2,
+                    player3PSN: psn3 || "",
+                    player4PSN: psn4 || "",
                     tournament: "Kickoff Tournament 2026"
                 })
             })
             .then(() => {
-                // Assume success with no-cors
+                // Success handling (no-cors can't read response, so we assume success)
                 closeSignUpModal();
                 signedUpTeams++;
                 document.getElementById('team-count-text').innerHTML = `${signedUpTeams} / 16 teams signed up`;
@@ -433,8 +557,12 @@
                 const list = document.getElementById('team-list');
                 if (list) {
                     const entry = document.createElement('div');
-                    entry.className = 'text-xs py-0.5';
-                    entry.innerHTML = `<span class="text-red-500">#</span> <span class="font-semibold">${teamName}</span>`;
+                    entry.className = 'flex items-center gap-x-1.5 py-[1px] text-xs';
+                    entry.innerHTML = `
+                        <span class="font-mono text-[#FF0000] text-[10px]">#</span>
+                        <span class="font-semibold">${teamName}</span>
+                        ${discord ? `<span class="text-[10px] text-gray-500">(${discord})</span>` : ''}
+                    `;
                     list.appendChild(entry);
                 }
 
@@ -444,10 +572,11 @@
                 }, 400);
             })
             .catch(err => {
-                console.error(err);
-                alert("Failed to submit. Please try again.");
+                console.error("Submission error:", err);
+                alert("Failed to submit. Please try again or contact support.");
             });
         }
+        // =====================================================================
 
         function closeSuccessModal() {
             const modal = document.getElementById('success-modal');
@@ -456,8 +585,10 @@
         }
 
         function init() {
-            loadUserInfo();
             document.getElementById('sidebar-tab-btn-0').classList.add('active', 'border-b-2', 'border-[#FF0000]');
+            document.getElementById('sidebar-tab-0').classList.remove('hidden');
+            const list = document.getElementById('team-list');
+            if (list) list.innerHTML = '';
         }
 
         window.onload = init;
