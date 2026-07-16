@@ -172,7 +172,6 @@
         <!-- FEATURED TEAMS -->
         <div class="dark-panel border border-[#FF0000] p-8 mb-[5px]">
             <h3 class="uppercase text-sm tracking-[2px] font-bold text-[#FF0000] mb-6">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
- 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -223,7 +222,6 @@
 
         <!-- TABLES + SIDEBAR -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
- 
             <!-- UPCOMING + STANDINGS -->
             <div class="lg:col-span-9">
                 <div class="dark-panel border border-[#FF0000] p-8">
@@ -234,7 +232,7 @@
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                                 <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                             </div>
-                 
+                
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -266,14 +264,14 @@
                                 </tbody>
                             </table>
                         </div>
-             
+            
                         <!-- STANDINGS -->
                         <div class="lg:col-span-5">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">PRESTIGE LEAGUE STANDINGS</h4>
                                 <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                             </div>
-                 
+                
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -293,7 +291,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <!-- SIDEBAR -->
             <div class="lg:col-span-3">
                 <div class="dark-panel border border-[#FF0000] p-8">
@@ -302,21 +300,21 @@
                                 class="sidebar-tab active px-4 py-2.5 border-b-2 border-[#FF0000] text-[#FF0000]">TOURNAMENTS</button>
                         <button onclick="switchSidebarTab(1)" id="sidebar-tab-btn-1"
                                 class="sidebar-tab px-4 py-2.5 hover:text-white">INFO</button>
-                
+               
                         <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
                                 class="sidebar-tab px-4 py-2.5 hover:text-white">LIVE</button>
                     </div>
-         
+        
                     <div id="sidebar-tab-0" class="sidebar-tab-content text-sm">
                         <div class="uppercase text-xs tracking-widest text-[#FF0000] mb-1 mt-3">UPCOMING TOURNAMENT</div>
                         <div class="font-bold text-xl leading-none mb-1">KICKOFF TOURNAMENT</div>
                         <div class="text-xs text-gray-400 mb-3">01/06/2026 • FREE ENTRY</div>
-             
+            
                         <button onclick="openSignUpModal()"
                                 class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
                             SIGN UP
                         </button>
-             
+            
                         <div class="text-center mt-3">
                             <span id="team-count-text" class="text-xs text-gray-500">0 / 16 teams signed up</span>
                         </div>
@@ -326,11 +324,11 @@
                             <div id="team-list" class="text-xs text-gray-300 max-h-[90px] overflow-y-auto space-y-px pr-1"></div>
                         </div>
                     </div>
-         
+        
                     <div id="sidebar-tab-1" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">HOW THE CHAMPIONSHIP WORKS</h5>
                         <p class="text-xs text-gray-400 mb-2">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
-                     
+                    
                         <div class="space-y-[5px] text-[10px] leading-snug">
                             <div>
                                 <span class="font-bold text-[#FF0000]">1. KICKOFF TOURNAMENT</span><br>
@@ -357,15 +355,15 @@
                                 <span class="text-gray-400">16-team Pool Play + Double Elimination<br>Free entry for top 12 by Series Points • Final 4 spots via £20 qualifiers</span>
                             </div>
                         </div>
-                     
+                    
                         <p class="text-[9px] text-gray-500 mt-2">Series Points determine seeding for leagues and future events.</p>
                     </div>
-         
+        
                     <div id="sidebar-tab-3" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">LIVE MATCHES</h5>
                         <p class="text-xs text-gray-400">No matches currently live.</p>
                     </div>
-         
+        
                     <div class="mt-4 pt-4 border-t border-[#333]">
                         <div class="uppercase text-xs tracking-widest text-gray-500 mb-2">HIGHLIGHTS &amp; FEATURES</div>
                         <div class="grid grid-cols-3 gap-2 text-center text-xs">
@@ -483,10 +481,8 @@
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
- 
             const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
             if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
- 
             const content = document.getElementById('sidebar-tab-' + tabIndex);
             if (content) content.classList.remove('hidden');
             currentSidebarTab = tabIndex;
@@ -505,10 +501,10 @@
             modal.classList.add('hidden');
         }
 
-        // ==================== ONLY THIS FUNCTION WAS CHANGED ====================
+        // ==================== FIXED SUBMIT FUNCTION ====================
         function submitSignUp(event) {
             event.preventDefault();
-        
+       
             const teamName = document.getElementById('team-name').value.trim();
             const discord = document.getElementById('discord').value.trim();
             const twitter = document.getElementById('twitter').value.trim();
@@ -516,7 +512,7 @@
             const psn2 = document.getElementById('psn2').value.trim();
             const psn3 = document.getElementById('psn3').value.trim();
             const psn4 = document.getElementById('psn4').value.trim();
-        
+       
             if (!teamName) {
                 alert("Please enter a Team Name.");
                 return;
@@ -529,12 +525,12 @@
                 alert("You must enter at least 2 player PSN IDs (Player 1 and Player 2).");
                 return;
             }
-        
+       
             const scriptURL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
 
             fetch(scriptURL, {
                 method: "POST",
-                mode: "no-cors",                    // ← Only change made (fixes CORS)
+                mode: "no-cors",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams({
                     action: "submitTournamentSignup",
@@ -549,7 +545,7 @@
                 })
             })
             .then(() => {
-                // Success handling (no-cors can't read response, so we assume success)
+                // Success
                 closeSignUpModal();
                 signedUpTeams++;
                 document.getElementById('team-count-text').innerHTML = `${signedUpTeams} / 16 teams signed up`;
