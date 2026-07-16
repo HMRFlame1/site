@@ -8,28 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Anton&amp;display=swap');
-  
         body {
             background-color: #ffffff;
             color: #1f2937;
             font-family: 'Inter', system_ui, sans-serif;
         }
-  
         .esports-card {
             background-color: #111111;
             border: 1px solid #FF0000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-  
         .esports-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
         }
-     
+   
         .mlg-table {
             font-size: 14px;
         }
-  
         .mlg-table th {
             background-color: #1a1a1a;
             color: #FF0000;
@@ -40,16 +36,14 @@
             padding: 12px 14px;
             text-align: left;
         }
-  
         .mlg-table td {
             padding: 12px 14px;
             border-bottom: 1px solid #222222;
         }
-  
         .mlg-table tr:hover {
             background-color: #151515;
         }
-     
+   
         .sidebar-tab {
             transition: all 0.2s ease;
             font-weight: 600;
@@ -57,23 +51,21 @@
             letter-spacing: 0.5px;
             color: #FF0000;
         }
-  
         .sidebar-tab.active {
             color: #FF0000;
             border-bottom: 2px solid #FF0000;
         }
-     
+   
         .feature-box {
             background-color: #111111;
             border: 1px solid #333333;
             transition: all 0.2s ease;
         }
-  
         .feature-box:hover {
             border-color: #FF0000;
             background-color: #1a1a1a;
         }
-     
+   
         .who-to-watch-card {
             position: relative;
             overflow: hidden;
@@ -82,48 +74,46 @@
             background-position: center;
             height: 260px;
         }
-  
         .who-to-watch-card::after {
             content: '';
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 75%);
         }
-     
+   
         .dark-panel {
             background-color: #111111;
             border: 1px solid #333333;
         }
-     
+   
         .hero-bg {
             background: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/ban1_orig.jpg');
             background-size: cover;
             background-position: calc(50% - 10px) center;
         }
-     
+   
         .dark-panel, .esports-card, .feature-box, .mlg-table td {
             color: #f1f1f1;
         }
-  
         .news-ticker {
             background-color: #0a0a0a;
             border-bottom: 1px solid #222222;
             overflow: hidden;
             padding: 14px 0;
         }
-    
+  
         .ticker-wrapper {
             overflow: hidden;
             width: 100%;
         }
-    
+  
         .ticker-content {
             display: flex;
             align-items: center;
             white-space: nowrap;
             animation: ticker-scroll 18s linear infinite;
         }
-    
+  
         .ticker-item {
             display: inline-flex;
             align-items: center;
@@ -133,12 +123,12 @@
             font-weight: 500;
             letter-spacing: 0.4px;
         }
-    
+  
         @keyframes ticker-scroll {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
         }
-    
+  
         .news-ticker:hover .ticker-content {
             animation-play-state: paused;
         }
@@ -168,13 +158,11 @@
             </div>
         </div>
     </nav>
- 
     <!-- HERO / BANNER -->
     <div class="hero-bg min-h-[620px] flex items-center justify-center border-b border-[#222222] relative">
         <div class="max-w-screen-2xl mx-auto px-8 text-center relative z-10"></div>
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
     </div>
- 
     <!-- NEWS TICKER -->
     <div class="news-ticker">
         <div class="ticker-wrapper">
@@ -188,14 +176,12 @@
             </div>
         </div>
     </div>
- 
     <!-- MAIN CONTENT -->
     <div class="w-full pt-[3px] pb-[3px]">
-  
         <!-- FEATURED TEAMS -->
         <div class="dark-panel border border-[#FF0000] p-8 mb-[5px]">
             <h3 class="uppercase text-sm tracking-[2px] font-bold text-[#FF0000] mb-6">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
-      
+    
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <div class="esports-card p-5 flex items-start gap-x-4">
                     <div>
@@ -243,10 +229,9 @@
                 </div>
             </div>
         </div>
-  
         <!-- TABLES + SIDEBAR -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-      
+    
             <!-- UPCOMING + STANDINGS -->
             <div class="lg:col-span-9">
                 <div class="dark-panel border border-[#FF0000] p-8">
@@ -257,7 +242,7 @@
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                                 <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                             </div>
-                      
+                    
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -289,14 +274,14 @@
                                 </tbody>
                             </table>
                         </div>
-                  
+                
                         <!-- STANDINGS -->
                         <div class="lg:col-span-5">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="uppercase text-[#FF0000] text-sm tracking-[1.5px] font-bold">PRESTIGE LEAGUE STANDINGS</h4>
                                 <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                             </div>
-                      
+                    
                             <table class="mlg-table w-full">
                                 <thead>
                                     <tr>
@@ -316,7 +301,7 @@
                     </div>
                 </div>
             </div>
-      
+    
             <!-- SIDEBAR -->
             <div class="lg:col-span-3">
                 <div class="dark-panel border border-[#FF0000] p-8">
@@ -325,36 +310,65 @@
                                 class="sidebar-tab active px-4 py-2.5 border-b-2 border-[#FF0000] text-[#FF0000]">TOURNAMENTS</button>
                         <button onclick="switchSidebarTab(1)" id="sidebar-tab-btn-1"
                                 class="sidebar-tab px-4 py-2.5 hover:text-white">INFO</button>
-                     
+                   
                         <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
                                 class="sidebar-tab px-4 py-2.5 hover:text-white">LIVE</button>
                     </div>
-              
+            
                     <div id="sidebar-tab-0" class="sidebar-tab-content text-sm">
                         <div class="uppercase text-xs tracking-widest text-[#FF0000] mb-1 mt-3">UPCOMING TOURNAMENT</div>
                         <div class="font-bold text-xl leading-none mb-1">KICKOFF TOURNAMENT</div>
                         <div class="text-xs text-gray-400 mb-3">01/06/2026 • FREE ENTRY</div>
-                  
+                
                         <button onclick="openSignUpModal()"
                                 class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
                             REGISTER YOUR TEAM
                         </button>
-                  
+                
                         <div class="text-center mt-3">
                             <span class="text-xs text-gray-500">0 / 16 teams signed up</span>
                         </div>
                     </div>
-              
+            
                     <div id="sidebar-tab-1" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">HOW THE CHAMPIONSHIP WORKS</h5>
-                        <p class="text-xs text-gray-400">Teams earn Series Points through Open Tournaments and Prestige League play.</p>
+                        <p class="text-xs text-gray-400 mb-2">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
+                        
+                        <div class="space-y-[5px] text-[10px] leading-snug">
+                            <div>
+                                <span class="font-bold text-[#FF0000]">1. KICKOFF TOURNAMENT</span><br>
+                                <span class="text-gray-400">Free entry • 16-team Single Elimination<br>£50 prize pool • 100 Series Points for signing up &amp; playing + placement bonuses</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">2. OPEN EVENT #1</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">3. PRESTIGE LEAGUE SEASON 1</span><br>
+                                <span class="text-gray-400">16-team league for the top 16 teams by Series Points<br>£20 entry to lock in your spot (unpaid spots go to next in line)</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">4. OPEN EVENT #2</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">5. OPEN EVENT #3</span><br>
+                                <span class="text-gray-400">£15 entry per team • 32-team Single Elimination<br>Bo3 until Winners Final &amp; Losers Final • Prize pool based on sign-ups</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-[#FF0000]">6. CHAMPIONSHIP FINALS</span><br>
+                                <span class="text-gray-400">16-team Pool Play + Double Elimination<br>Free entry for top 12 by Series Points • Final 4 spots via £20 qualifiers</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-[9px] text-gray-500 mt-2">Series Points determine seeding for leagues and future events.</p>
                     </div>
-              
+            
                     <div id="sidebar-tab-3" class="sidebar-tab-content text-sm hidden">
                         <h5 class="font-bold text-[#FF0000] mb-2 mt-3">LIVE MATCHES</h5>
                         <p class="text-xs text-gray-400">No matches currently live.</p>
                     </div>
-              
+            
                     <div class="mt-4 pt-4 border-t border-[#333]">
                         <div class="uppercase text-xs tracking-widest text-gray-500 mb-2">HIGHLIGHTS &amp; FEATURES</div>
                         <div class="grid grid-cols-3 gap-2 text-center text-xs">
@@ -376,7 +390,6 @@
             </div>
         </div>
     </div>
- 
     <!-- WHO TO WATCH -->
     <div class="bg-black border-t border-b border-[#222222] py-[5px]">
         <div class="max-w-screen-2xl mx-auto px-8">
@@ -394,7 +407,6 @@
             </div>
         </div>
     </div>
- 
     <!-- Footer -->
     <div class="max-w-screen-2xl mx-auto px-8 py-10 text-center">
         <a href="https://www.gamecircuit.co.uk" class="inline-flex items-center justify-center gap-x-2 px-8 py-3.5 border border-[#FF0000] hover:bg-[#FF0000] hover:text-black transition-all text-sm font-bold tracking-wider">
@@ -403,32 +415,31 @@
         </a>
         <p class="text-xs text-gray-500 tracking-widest mt-5">THE GAMECIRCUIT CHAMPIONSHIP • POWERED BY GAMECIRCUIT • BLACK OPS II 2026</p>
     </div>
- 
     <script>
         let currentSidebarTab = 0;
-     
+   
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
-      
+    
             const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
             if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
-      
+    
             const content = document.getElementById('sidebar-tab-' + tabIndex);
             if (content) content.classList.remove('hidden');
             currentSidebarTab = tabIndex;
         }
-     
+   
         function openSignUpModal() {
             document.getElementById('signup-modal').classList.remove('hidden');
             document.getElementById('signup-modal').classList.add('flex');
         }
-     
+   
         function closeSignUpModal() {
             document.getElementById('signup-modal').classList.remove('flex');
             document.getElementById('signup-modal').classList.add('hidden');
         }
-     
+   
         function submitSignUp(event) {
             event.preventDefault();
             closeSignUpModal();
@@ -437,17 +448,17 @@
                 document.getElementById('success-modal').classList.add('flex');
             }, 300);
         }
-     
+   
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.remove('flex');
             document.getElementById('success-modal').classList.add('hidden');
         }
-     
+   
         function init() {
             document.getElementById('sidebar-tab-btn-0').classList.add('active', 'border-b-2', 'border-[#FF0000]');
             document.getElementById('sidebar-tab-0').classList.remove('hidden');
         }
-     
+   
         window.onload = init;
     </script>
 </body>
