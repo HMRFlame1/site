@@ -326,7 +326,13 @@
                         </button>
                 
                         <div class="text-center mt-3">
-                            <span class="text-xs text-gray-500">0 / 16 teams signed up</span>
+                            <span id="team-count-text" class="text-xs text-gray-500">0 / 16 teams signed up</span>
+                        </div>
+
+                        <!-- SIGNED UP TEAMS SECTION -->
+                        <div id="signed-up-section" class="mt-4 pt-3 border-t border-[#333]">
+                            <div class="uppercase text-xs tracking-widest text-gray-500 mb-1.5">SIGNED UP TEAMS</div>
+                            <div id="team-list" class="text-xs text-gray-300 max-h-[90px] overflow-y-auto space-y-px pr-1"></div>
                         </div>
                     </div>
             
@@ -415,8 +421,77 @@
         </a>
         <p class="text-xs text-gray-500 tracking-widest mt-5">THE GAMECIRCUIT CHAMPIONSHIP • POWERED BY GAMECIRCUIT • BLACK OPS II 2026</p>
     </div>
+
+    <!-- SIGNUP MODAL -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black/80 z-[100] items-center justify-center">
+        <div class="dark-panel border border-[#FF0000] w-full max-w-md mx-4 p-6 rounded">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg text-[#FF0000]">KICKOFF TOURNAMENT SIGN UP</h3>
+                <button onclick="closeSignUpModal()" class="text-gray-400 hover:text-white text-xl leading-none">&times;</button>
+            </div>
+
+            <form id="signup-form" onsubmit="submitSignUp(event)">
+                <div class="space-y-3 text-sm">
+                    <!-- Team Name -->
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">TEAM NAME <span class="text-red-500">*</span></label>
+                        <input type="text" id="team-name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="e.g. Team Vortex" required>
+                    </div>
+
+                    <!-- Captain Discord -->
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">CAPTAIN'S DISCORD HANDLE <span class="text-red-500">*</span></label>
+                        <input type="text" id="discord" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="CaptainName" required>
+                    </div>
+
+                    <!-- Twitter -->
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">TWITTER @</label>
+                        <input type="text" id="twitter" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="@yourhandle">
+                    </div>
+
+                    <!-- PSN IDs -->
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">PSN IDs <span class="text-red-500">(minimum 2 players required)</span></label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="text" id="psn1" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="Player 1 PSN" required>
+                            <input type="text" id="psn2" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="Player 2 PSN" required>
+                            <input type="text" id="psn3" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="Player 3 PSN (optional)">
+                            <input type="text" id="psn4" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#FF0000] outline-none rounded" placeholder="Player 4 PSN (optional)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discord note -->
+                <div class="mt-4 p-3 bg-[#1a1a1a] border border-[#333] text-xs text-gray-400 rounded">
+                    ⚠️ <strong class="text-[#FF0000]">You must join the GameCircuit Discord</strong> to complete your sign up.<br>
+                    <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="text-[#FF0000] hover:underline font-medium">Join Discord →</a>
+                </div>
+
+                <div class="flex gap-3 mt-5">
+                    <button type="button" onclick="closeSignUpModal()" 
+                            class="flex-1 py-2.5 border border-[#333] text-sm font-bold hover:bg-[#222] transition-colors rounded">CANCEL</button>
+                    <button type="submit" 
+                            class="flex-1 py-2.5 bg-[#FF0000] hover:bg-red-600 text-black font-bold text-sm tracking-wider transition-colors rounded">SUBMIT SIGN UP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-black/80 z-[100] items-center justify-center">
+        <div class="dark-panel border border-[#FF0000] w-full max-w-sm mx-4 p-6 text-center rounded">
+            <div class="text-green-500 text-5xl mb-3"><i class="fas fa-check-circle"></i></div>
+            <h3 class="font-bold text-xl mb-2">SIGN UP SUBMITTED!</h3>
+            <p class="text-sm text-gray-400 mb-4">Your email client has opened with all details pre-filled.<br>Please send the email to <span class="text-[#FF0000]">gamecircuitsupport@gmail.com</span> to complete registration.<br><br>See you in the Discord!</p>
+            <button onclick="closeSuccessModal()" 
+                    class="w-full py-2.5 bg-[#FF0000] hover:bg-red-600 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
+        </div>
+    </div>
+
     <script>
         let currentSidebarTab = 0;
+        let signedUpTeams = 0;
    
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
@@ -431,32 +506,105 @@
         }
    
         function openSignUpModal() {
-            document.getElementById('signup-modal').classList.remove('hidden');
-            document.getElementById('signup-modal').classList.add('flex');
+            const modal = document.getElementById('signup-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Clear form when opening
+            document.getElementById('signup-form').reset();
         }
    
         function closeSignUpModal() {
-            document.getElementById('signup-modal').classList.remove('flex');
-            document.getElementById('signup-modal').classList.add('hidden');
+            const modal = document.getElementById('signup-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
         }
    
         function submitSignUp(event) {
             event.preventDefault();
+            
+            // Get values
+            const teamName = document.getElementById('team-name').value.trim();
+            const discord = document.getElementById('discord').value.trim();
+            const twitter = document.getElementById('twitter').value.trim();
+            const psn1 = document.getElementById('psn1').value.trim();
+            const psn2 = document.getElementById('psn2').value.trim();
+            const psn3 = document.getElementById('psn3').value.trim();
+            const psn4 = document.getElementById('psn4').value.trim();
+            
+            // Validation: Team name, Discord, and at least 2 PSN IDs required
+            if (!teamName) {
+                alert("Please enter a Team Name.");
+                return;
+            }
+            if (!discord) {
+                alert("Please enter Captain's Discord handle.");
+                return;
+            }
+            if (!psn1 || !psn2) {
+                alert("You must enter at least 2 player PSN IDs (Player 1 and Player 2).");
+                return;
+            }
+            
+            // Build email body
+            let body = `Team Name: ${teamName}%0A`;
+            body += `Captain Discord: ${discord}%0A`;
+            if (twitter) body += `Twitter: ${twitter}%0A`;
+            body += `%0APlayer Roster:%0A`;
+            body += `Player 1 PSN: ${psn1}%0A`;
+            body += `Player 2 PSN: ${psn2}%0A`;
+            if (psn3) body += `Player 3 PSN: ${psn3}%0A`;
+            if (psn4) body += `Player 4 PSN: ${psn4}%0A`;
+            body += `%0A---%0ASubmitted via GameCircuit Championship 2026 website`;
+            
+            const subject = encodeURIComponent("Kickoff tournament sign up");
+            const mailtoLink = `mailto:gamecircuitsupport@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client with pre-filled details
+            window.location.href = mailtoLink;
+            
+            // Close signup modal
             closeSignUpModal();
+            
+            // Update signed up count and list
+            signedUpTeams++;
+            const countEl = document.getElementById('team-count-text');
+            if (countEl) {
+                countEl.innerHTML = `${signedUpTeams} / 16 teams signed up`;
+            }
+            
+            // Add team to the signed up list
+            const list = document.getElementById('team-list');
+            if (list) {
+                const entry = document.createElement('div');
+                entry.className = 'flex items-center gap-x-1.5 py-[1px] text-xs';
+                let display = `<span class="font-mono text-[#FF0000] text-[10px]">#</span> <span class="font-semibold">${teamName}</span>`;
+                if (discord) display += ` <span class="text-[10px] text-gray-500">(${discord})</span>`;
+                entry.innerHTML = display;
+                list.appendChild(entry);
+            }
+            
+            // Show success modal after a short delay
             setTimeout(() => {
-                document.getElementById('success-modal').classList.remove('hidden');
-                document.getElementById('success-modal').classList.add('flex');
-            }, 300);
+                const successModal = document.getElementById('success-modal');
+                successModal.classList.remove('hidden');
+                successModal.classList.add('flex');
+            }, 600);
         }
    
         function closeSuccessModal() {
-            document.getElementById('success-modal').classList.remove('flex');
-            document.getElementById('success-modal').classList.add('hidden');
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
         }
    
         function init() {
             document.getElementById('sidebar-tab-btn-0').classList.add('active', 'border-b-2', 'border-[#FF0000]');
             document.getElementById('sidebar-tab-0').classList.remove('hidden');
+            
+            // Ensure signed up section starts empty
+            const list = document.getElementById('team-list');
+            if (list) list.innerHTML = '';
         }
    
         window.onload = init;
