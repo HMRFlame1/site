@@ -320,7 +320,6 @@
                         <div class="font-bold text-xl leading-none mb-1">KICKOFF TOURNAMENT</div>
                         <div class="text-xs text-gray-400 mb-3">01/06/2026 • FREE ENTRY</div>
                
-                        <!-- UPDATED: Now opens the signup modal -->
                         <button onclick="openSignUpModal()"
                                 class="w-full py-3 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider mt-2">
                             SIGN UP
@@ -470,13 +469,12 @@
             </form>
         </div>
     </div>
-    <!-- SUCCESS MODAL - UPDATED TEXT -->
+    <!-- SUCCESS MODAL -->
     <div id="success-modal" class="hidden fixed inset-0 bg-black/80 z-[100] items-center justify-center">
         <div class="dark-panel border border-[#FF0000] w-full max-w-sm mx-4 p-6 text-center rounded">
             <div class="text-green-500 text-5xl mb-3"><i class="fas fa-check-circle"></i></div>
             <h3 class="font-bold text-xl mb-2">SIGN UP SUBMITTED!</h3>
-            <p class="text-sm text-gray-400 mb-4">Thank you! Your signup has been received and sent directly to our team.<br><br>
-            You will be contacted via Discord. See you there!</p>
+            <p class="text-sm text-gray-400 mb-4">Thank you! Your signup has been received.<br>Your details have been sent to our team.<br><br>See you in the Discord!</p>
             <button onclick="closeSuccessModal()"
                     class="w-full py-2.5 bg-[#FF0000] hover:bg-red-600 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
         </div>
@@ -501,8 +499,6 @@
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-           
-            // Clear form when opening
             document.getElementById('signup-form').reset();
         }
   
@@ -514,8 +510,7 @@
   
         function submitSignUp(event) {
             event.preventDefault();
-           
-            // Get values
+          
             const teamName = document.getElementById('team-name').value.trim();
             const discord = document.getElementById('discord').value.trim();
             const twitter = document.getElementById('twitter').value.trim();
@@ -523,8 +518,7 @@
             const psn2 = document.getElementById('psn2').value.trim();
             const psn3 = document.getElementById('psn3').value.trim();
             const psn4 = document.getElementById('psn4').value.trim();
-           
-            // Validation
+          
             if (!teamName) {
                 alert("Please enter a Team Name.");
                 return;
@@ -537,8 +531,7 @@
                 alert("You must enter at least 2 player PSN IDs (Player 1 and Player 2).");
                 return;
             }
-           
-            // === Send to Google Apps Script (saves to sheet + auto-sends email) ===
+          
             const scriptURL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
 
             fetch(scriptURL, {
@@ -556,42 +549,40 @@
                     tournament: "Kickoff Tournament 2026"
                 })
             })
-            .then(res => res.json())
+            .then(response => response.json())
             .then(data => {
                 console.log("Server response:", data);
+
+                if (data.success) {
+                    closeSignUpModal();
+
+                    // Update local UI
+                    signedUpTeams++;
+                    document.getElementById('team-count-text').innerHTML = `${signedUpTeams} / 16 teams signed up`;
+
+                    const list = document.getElementById('team-list');
+                    const entry = document.createElement('div');
+                    entry.className = 'flex items-center gap-x-1.5 py-[1px] text-xs';
+                    entry.innerHTML = `
+                        <span class="font-mono text-[#FF0000] text-[10px]">#</span> 
+                        <span class="font-semibold">${teamName}</span>
+                        ${discord ? `<span class="text-[10px] text-gray-500">(${discord})</span>` : ''}
+                    `;
+                    list.appendChild(entry);
+
+                    // Show success modal
+                    setTimeout(() => {
+                        document.getElementById('success-modal').classList.remove('hidden');
+                        document.getElementById('success-modal').classList.add('flex');
+                    }, 400);
+                } else {
+                    alert("Error: " + (data.error || "Something went wrong."));
+                }
             })
             .catch(err => {
                 console.error("Submission error:", err);
+                alert("Failed to submit. Please try again or contact support.");
             });
-            // =====================================================================
-           
-            // Close signup modal
-            closeSignUpModal();
-           
-            // Update signed up count and list (local UI)
-            signedUpTeams++;
-            const countEl = document.getElementById('team-count-text');
-            if (countEl) {
-                countEl.innerHTML = `${signedUpTeams} / 16 teams signed up`;
-            }
-           
-            // Add team to the signed up list
-            const list = document.getElementById('team-list');
-            if (list) {
-                const entry = document.createElement('div');
-                entry.className = 'flex items-center gap-x-1.5 py-[1px] text-xs';
-                let display = `<span class="font-mono text-[#FF0000] text-[10px]">#</span> <span class="font-semibold">${teamName}</span>`;
-                if (discord) display += ` <span class="text-[10px] text-gray-500">(${discord})</span>`;
-                entry.innerHTML = display;
-                list.appendChild(entry);
-            }
-           
-            // Show success modal
-            setTimeout(() => {
-                const successModal = document.getElementById('success-modal');
-                successModal.classList.remove('hidden');
-                successModal.classList.add('flex');
-            }, 500);
         }
   
         function closeSuccessModal() {
@@ -603,8 +594,6 @@
         function init() {
             document.getElementById('sidebar-tab-btn-0').classList.add('active', 'border-b-2', 'border-[#FF0000]');
             document.getElementById('sidebar-tab-0').classList.remove('hidden');
-           
-            // Ensure signed up section starts empty
             const list = document.getElementById('team-list');
             if (list) list.innerHTML = '';
         }
