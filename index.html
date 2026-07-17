@@ -196,7 +196,7 @@
                     <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
                             class="sidebar-tab px-5 py-2.5 hover:text-white">UPDATES</button>
                     <button onclick="switchSidebarTab(4)" id="sidebar-tab-btn-4"
-                            class="sidebar-tab px-5 py-2.5 hover:text-white">LIVE</button>
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">WATCH</button>
                 </div>
 
                 <!-- PRESTIGE TAB CONTENT (was the main page content) -->
@@ -420,10 +420,205 @@
                     <p class="text-xs text-gray-500 mt-5">Check back here for schedule changes, rule updates, and official announcements.</p>
                 </div>
 
-                <!-- LIVE TAB CONTENT -->
+                <!-- CIRCUITTV TAB CONTENT -->
                 <div id="sidebar-tab-4" class="sidebar-tab-content hidden">
-                    <h5 class="font-bold text-[#ffffff] mb-3">LIVE MATCHES</h5>
-                    <p class="text-sm text-gray-400">No matches currently live.</p>
+                    <!-- Top bar -->
+                    <div class="flex items-center justify-between bg-black border border-[#333] px-4 py-2 text-xs mb-0">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-red-600 text-white font-bold px-2 py-0.5 tracking-wider">LIVE</span>
+                            <span class="text-white font-semibold">GameCircuit Championship • Kickoff Tournament</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-400">
+                            <span class="text-gray-500">UP NEXT: Open Event #1</span>
+                        </div>
+                    </div>
+
+                    <!-- Main CircuitTV layout -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 border border-[#333] border-t-0 bg-[#0d0d0d]">
+                        <!-- LEFT: Stream / Scoreboard area -->
+                        <div class="lg:col-span-8 relative min-h-[420px] bg-[#111] flex flex-col">
+                            <!-- In-game style scoreboard -->
+                            <div class="bg-black/90 border-b border-[#333] px-4 py-3">
+                                <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+                                    <span>Champ Winners Round 1</span>
+                                    <span class="text-white font-bold tracking-widest">UPLINK</span>
+                                    <span>Casted by GameCircuit</span>
+                                </div>
+                                <div class="flex items-center justify-center gap-6">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-zinc-800 border border-white/20 flex items-center justify-center">
+                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-white font-bold text-sm">TEAM ALPHA</div>
+                                            <div class="text-gray-500 text-xs">Coming Soon</div>
+                                        </div>
+                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
+                                    </div>
+                                    <div class="text-gray-500 font-mono text-lg">vs</div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
+                                        <div class="text-left">
+                                            <div class="text-white font-bold text-sm">TEAM BRAVO</div>
+                                            <div class="text-gray-500 text-xs">Coming Soon</div>
+                                        </div>
+                                        <div class="w-10 h-10 bg-zinc-800 border border-white/20 flex items-center justify-center">
+                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stream placeholder -->
+                            <div class="flex-1 flex items-center justify-center relative bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
+                                <div class="text-center">
+                                    <div class="text-6xl text-[#ffffff] mb-4 opacity-40"><i class="fas fa-play-circle"></i></div>
+                                    <div class="text-white font-bold text-xl tracking-wider mb-1">WATCH</div>
+                                    <div class="text-gray-500 text-sm">Stream goes live when matches begin</div>
+                                    <div class="mt-4 text-xs text-gray-600 font-mono">16/08/2026 • KICKOFF TOURNAMENT</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Side panel with sub-tabs -->
+                        <div class="lg:col-span-4 border-l border-[#333] bg-[#0a0a0a] flex flex-col min-h-[420px]">
+                            <!-- Sub tabs -->
+                            <div class="flex border-b border-[#333] text-[10px] font-bold tracking-wider">
+                                <button onclick="switchCircuitTab(0)" id="circuit-tab-btn-0" class="circuit-tab active flex-1 py-2.5 text-center text-white border-b-2 border-white">ROSTER</button>
+                                <button onclick="switchCircuitTab(1)" id="circuit-tab-btn-1" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SCORES</button>
+                                <button onclick="switchCircuitTab(2)" id="circuit-tab-btn-2" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SCHEDULE</button>
+                                <button onclick="switchCircuitTab(3)" id="circuit-tab-btn-3" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SOCIAL</button>
+                            </div>
+
+                            <!-- ROSTER panel -->
+                            <div id="circuit-tab-0" class="circuit-tab-content flex-1 overflow-y-auto p-3 space-y-4">
+                                <div>
+                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2 flex items-center gap-2">
+                                        <span class="text-[#ffffff]">»</span> TEAM ALPHA
+                                        <span class="ml-auto text-gray-500 font-mono">1</span>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2 flex items-center gap-2">
+                                        <span class="text-[#ffffff]">»</span> TEAM BRAVO
+                                        <span class="ml-auto text-gray-500 font-mono">2</span>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-12" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SCORES panel -->
+                            <div id="circuit-tab-1" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
+                                <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">SERIES SCORES</div>
+                                <div class="space-y-2 text-xs">
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-white font-semibold">Team Alpha</span>
+                                        <span class="font-mono text-white">0 - 0</span>
+                                        <span class="text-gray-400">Team Bravo</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-gray-400">Coming Soon</span>
+                                        <span class="font-mono text-gray-500">vs</span>
+                                        <span class="text-gray-400">Coming Soon</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-gray-400">Coming Soon</span>
+                                        <span class="font-mono text-gray-500">vs</span>
+                                        <span class="text-gray-400">Coming Soon</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SCHEDULE panel -->
+                            <div id="circuit-tab-2" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
+                                <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">UPCOMING</div>
+                                <div class="space-y-2 text-xs">
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Kickoff Tournament</div>
+                                        <div class="text-gray-500 mt-0.5">16/08/2026 • Single Elim • Bo5</div>
+                                    </div>
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Open Event #1</div>
+                                        <div class="text-gray-500 mt-0.5">TBA • 32 Teams • Bo3</div>
+                                    </div>
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Prestige League S1</div>
+                                        <div class="text-gray-500 mt-0.5">TBA • 16 Team League</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SOCIAL panel -->
+                            <div id="circuit-tab-3" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
+                                <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">FOLLOW US</div>
+                                <div class="space-y-2 text-xs">
+                                    <a href="https://discord.gg/6ffMvhcj6S" target="_blank" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-discord text-[#5865F2] text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">Discord</div>
+                                            <div class="text-gray-500">Join the community</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-twitter text-sky-400 text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">Twitter / X</div>
+                                            <div class="text-gray-500">@GameCircuit</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-youtube text-red-500 text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">YouTube</div>
+                                            <div class="text-gray-500">VODs & Highlights</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom facts / other scores bar -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 border border-[#333] border-t-0 bg-black text-xs">
+                        <div class="border-r border-[#333] px-4 py-3 flex items-center gap-3">
+                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
+                            <div>
+                                <div class="text-white font-bold text-[11px] leading-tight">GAMECIRCUIT</div>
+                                <div class="text-gray-500 text-[10px]">Championship 2026</div>
+                            </div>
+                        </div>
+                        <div class="border-r border-[#333] px-4 py-3">
+                            <div class="text-gray-500 text-[10px] mb-0.5">DID YOU KNOW?</div>
+                            <div class="text-white text-[11px] leading-tight">Black Ops II Uplink was first introduced at MLG Anaheim 2013.</div>
+                        </div>
+                        <div class="border-r border-[#333] px-4 py-3">
+                            <div class="text-gray-500 text-[10px] mb-0.5">SERIES RECORD</div>
+                            <div class="text-white font-mono text-[11px]">Team Alpha 0 - 0 Team Bravo</div>
+                        </div>
+                        <div class="px-4 py-3">
+                            <div class="text-gray-500 text-[10px] mb-0.5">NEXT MATCH</div>
+                            <div class="text-white text-[11px] font-semibold">Kickoff Tournament • 16/08/2026</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -512,6 +707,20 @@
             if (content) content.classList.remove('hidden');
       
             currentSidebarTab = tabIndex;
+        }
+        function switchCircuitTab(tabIndex) {
+            document.querySelectorAll('.circuit-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.circuit-tab').forEach(btn => {
+                btn.classList.remove('active', 'text-white', 'border-b-2', 'border-white');
+                btn.classList.add('text-gray-500');
+            });
+            const activeBtn = document.getElementById('circuit-tab-btn-' + tabIndex);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-white', 'border-b-2', 'border-white');
+                activeBtn.classList.remove('text-gray-500');
+            }
+            const content = document.getElementById('circuit-tab-' + tabIndex);
+            if (content) content.classList.remove('hidden');
         }
         function openSignUpModal() {
             if (signedUpTeams >= 16) {
