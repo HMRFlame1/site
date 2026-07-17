@@ -9,12 +9,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap');
         body {
-            background-color: #0a0a0a;
+            background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/f2vuy_orig.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #f1f1f1;
             font-family: 'Inter', system_ui, sans-serif;
         }
         .esports-card {
-            background-color: #111111;
+            background-color: transparent;
             border: 2px solid #FF0000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -24,7 +28,7 @@
         }
         .mlg-table {
             font-size: 14px;
-            background-color: #111111;
+            background-color: transparent;
         }
         .mlg-table th {
             background-color: #1a1a1a;
@@ -57,7 +61,7 @@
             border-bottom: 3px solid #FF0000;
         }
         .feature-box {
-            background-color: #111111;
+            background-color: transparent;
             border: 1px solid #333333;
             transition: all 0.2s ease;
         }
@@ -80,7 +84,7 @@
             background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.9) 80%);
         }
         .dark-panel {
-            background-color: #111111;
+            background-color: transparent;
             border: 2px solid #FF0000;
         }
         .hero-bg {
@@ -182,7 +186,7 @@
         </div>
     </div>
     <!-- MAIN CONTENT -->
-    <div class="w-full pt-1 pb-1 bg-[#0a0a0a]">
+    <div class="w-full pt-1 pb-1">
         <!-- FEATURED TEAMS -->
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="dark-panel border border-[#FF0000] p-8 mb-4">
@@ -245,7 +249,7 @@
                             <h4 class="section-header">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                             <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                         </div>
-         
+     
                         <table class="mlg-table w-full">
                             <thead>
                                 <tr>
@@ -277,14 +281,14 @@
                             </tbody>
                         </table>
                     </div>
-      
+  
                     <!-- STANDINGS -->
                     <div class="lg:col-span-5">
                         <div class="flex items-center justify-between mb-5">
                             <h4 class="section-header">PRESTIGE LEAGUE STANDINGS</h4>
                             <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                         </div>
-         
+     
                         <div class="max-h-[320px] overflow-y-auto pr-1" style="scrollbar-width: thin; scrollbar-color: #FF0000 #222;">
                             <table class="mlg-table w-full">
                                 <thead>
@@ -339,7 +343,7 @@
                         <div class="lg:col-span-7">
                             <div class="uppercase text-xs tracking-widest text-[#FF0000] mb-1">UPCOMING TOURNAMENT</div>
                             <div class="font-bold text-2xl leading-none mb-1">KICKOFF TOURNAMENT</div>
-                            <div class="text-sm text-gray-400 mb-4">01/06/2026 • FREE ENTRY</div>
+                            <div class="text-sm text-gray-400 mb-4">16/08/2026 • FREE ENTRY</div>
                             <button id="signup-btn" onclick="openSignUpModal()"
                                     class="w-full max-w-[280px] py-3.5 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider">
                                 SIGN UP
@@ -359,7 +363,7 @@
                 <div id="sidebar-tab-1" class="sidebar-tab-content hidden">
                     <h5 class="font-bold text-[#FF0000] mb-3">HOW THE CHAMPIONSHIP WORKS</h5>
                     <p class="text-sm text-gray-400 mb-4">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
-           
+       
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
                         <div>
                             <span class="font-bold text-[#FF0000]">1. KICKOFF TOURNAMENT</span><br>
@@ -397,7 +401,7 @@
         </div>
     </div>
     <!-- WHO TO WATCH (kept from original - not visible in your screenshot but harmless) -->
-    <div class="bg-black border-t border-b border-[#222222] py-[5px]">
+    <div class="border-t border-b border-[#222222] py-[5px]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <h2 class="text-center text-5xl font-black tracking-[3px] text-red-500 mb-[5px]">WHO TO WATCH</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -486,26 +490,24 @@
         let currentSidebarTab = 0;
         let signedUpTeams = 0;
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
-
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
-           
+       
             const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
             if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
-           
+       
             const content = document.getElementById('sidebar-tab-' + tabIndex);
             if (content) content.classList.remove('hidden');
-           
+       
             currentSidebarTab = tabIndex;
         }
-
         function openSignUpModal() {
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.getElementById('signup-form').reset();
-        
+    
             const btn = document.getElementById('submit-btn');
             if (btn) {
                 btn.disabled = false;
@@ -514,13 +516,11 @@
                 btn.classList.add('bg-[#FF0000]', 'hover:bg-red-600');
             }
         }
-
         function closeSignUpModal() {
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
-
         // Load real teams from Google Sheet
         function loadSignedUpTeams() {
             const url = SCRIPT_URL + "?action=getSignedUpTeams";
@@ -553,10 +553,8 @@
                     console.error("Failed to load signed up teams:", err);
                 });
         }
-
         function submitSignUp(event) {
             event.preventDefault();
- 
             const teamName = document.getElementById('team-name').value.trim();
             const discord = document.getElementById('discord').value.trim();
             const twitter = document.getElementById('twitter').value.trim();
@@ -564,12 +562,10 @@
             const psn2 = document.getElementById('psn2').value.trim();
             const psn3 = document.getElementById('psn3').value.trim();
             const psn4 = document.getElementById('psn4').value.trim();
- 
             if (!teamName || !discord || !psn1 || !psn2) {
                 alert("Please fill in Team Name, Discord, and at least 2 PSN IDs.");
                 return;
             }
- 
             const submitBtn = document.getElementById('submit-btn');
             if (submitBtn) {
                 submitBtn.disabled = true;
@@ -577,7 +573,7 @@
                 submitBtn.classList.remove('bg-[#FF0000]', 'hover:bg-red-600');
                 submitBtn.classList.add('bg-gray-500', 'cursor-not-allowed');
             }
-          
+      
             const params = new URLSearchParams({
                 action: "submitTournamentSignup",
                 teamName: teamName,
@@ -589,18 +585,17 @@
                 player4PSN: psn4 || "",
                 tournament: "Kickoff Tournament 2026"
             });
-           
+       
             fetch(`${SCRIPT_URL}?${params.toString()}`, {
                 method: "GET"
             })
             .then(() => {
                 closeSignUpModal();
-               
+           
                 // Reload the real list from the sheet after successful signup
                 setTimeout(() => {
                     loadSignedUpTeams();
                 }, 800);
-
                 setTimeout(() => {
                     document.getElementById('success-modal').classList.remove('hidden');
                     document.getElementById('success-modal').classList.add('flex');
@@ -609,7 +604,7 @@
             .catch(err => {
                 console.error("Submission error:", err);
                 alert("Failed to submit. Please try again or contact support.");
-            
+        
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'SUBMIT SIGN UP';
@@ -618,24 +613,21 @@
                 }
             });
         }
-
         function closeSuccessModal() {
             const modal = document.getElementById('success-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
-
         function init() {
             const tab0Btn = document.getElementById('sidebar-tab-btn-0');
             const tab0Content = document.getElementById('sidebar-tab-0');
-           
+       
             if (tab0Btn) tab0Btn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
             if (tab0Content) tab0Content.classList.remove('hidden');
-           
+       
             // Load real teams from Google Sheet on page load
             loadSignedUpTeams();
         }
-
         window.onload = init;
     </script>
 </body>
