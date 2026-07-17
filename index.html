@@ -9,16 +9,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap');
         body {
-            background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/f2vuy_orig.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-color: #0a0a0a;
             color: #f1f1f1;
             font-family: 'Inter', system_ui, sans-serif;
         }
         .esports-card {
-            background-color: transparent;
+            background-color: #111111;
             border: 2px solid #FF0000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -28,7 +24,7 @@
         }
         .mlg-table {
             font-size: 14px;
-            background-color: transparent;
+            background-color: #111111;
         }
         .mlg-table th {
             background-color: #1a1a1a;
@@ -61,7 +57,7 @@
             border-bottom: 3px solid #FF0000;
         }
         .feature-box {
-            background-color: transparent;
+            background-color: #111111;
             border: 1px solid #333333;
             transition: all 0.2s ease;
         }
@@ -84,7 +80,7 @@
             background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.9) 80%);
         }
         .dark-panel {
-            background-color: transparent;
+            background-color: #111111;
             border: 2px solid #FF0000;
         }
         .hero-bg {
@@ -186,7 +182,7 @@
         </div>
     </div>
     <!-- MAIN CONTENT -->
-    <div class="w-full pt-1 pb-1">
+    <div class="w-full pt-1 pb-1 bg-[#0a0a0a]">
         <!-- FEATURED TEAMS -->
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="dark-panel border border-[#FF0000] p-8 mb-4">
@@ -249,7 +245,7 @@
                             <h4 class="section-header">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                             <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                         </div>
-     
+    
                         <table class="mlg-table w-full">
                             <thead>
                                 <tr>
@@ -281,14 +277,14 @@
                             </tbody>
                         </table>
                     </div>
-  
+ 
                     <!-- STANDINGS -->
                     <div class="lg:col-span-5">
                         <div class="flex items-center justify-between mb-5">
                             <h4 class="section-header">PRESTIGE LEAGUE STANDINGS</h4>
                             <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                         </div>
-     
+    
                         <div class="max-h-[320px] overflow-y-auto pr-1" style="scrollbar-width: thin; scrollbar-color: #FF0000 #222;">
                             <table class="mlg-table w-full">
                                 <thead>
@@ -363,7 +359,7 @@
                 <div id="sidebar-tab-1" class="sidebar-tab-content hidden">
                     <h5 class="font-bold text-[#FF0000] mb-3">HOW THE CHAMPIONSHIP WORKS</h5>
                     <p class="text-sm text-gray-400 mb-4">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
-       
+      
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
                         <div>
                             <span class="font-bold text-[#FF0000]">1. KICKOFF TOURNAMENT</span><br>
@@ -401,7 +397,7 @@
         </div>
     </div>
     <!-- WHO TO WATCH (kept from original - not visible in your screenshot but harmless) -->
-    <div class="border-t border-b border-[#222222] py-[5px]">
+    <div class="bg-black border-t border-b border-[#222222] py-[5px]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <h2 class="text-center text-5xl font-black tracking-[3px] text-red-500 mb-[5px]">WHO TO WATCH</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -493,13 +489,13 @@
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#FF0000]'));
-       
+      
             const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
             if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
-       
+      
             const content = document.getElementById('sidebar-tab-' + tabIndex);
             if (content) content.classList.remove('hidden');
-       
+      
             currentSidebarTab = tabIndex;
         }
         function openSignUpModal() {
@@ -507,7 +503,7 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.getElementById('signup-form').reset();
-    
+   
             const btn = document.getElementById('submit-btn');
             if (btn) {
                 btn.disabled = false;
@@ -573,7 +569,7 @@
                 submitBtn.classList.remove('bg-[#FF0000]', 'hover:bg-red-600');
                 submitBtn.classList.add('bg-gray-500', 'cursor-not-allowed');
             }
-      
+     
             const params = new URLSearchParams({
                 action: "submitTournamentSignup",
                 teamName: teamName,
@@ -585,13 +581,13 @@
                 player4PSN: psn4 || "",
                 tournament: "Kickoff Tournament 2026"
             });
-       
+      
             fetch(`${SCRIPT_URL}?${params.toString()}`, {
                 method: "GET"
             })
             .then(() => {
                 closeSignUpModal();
-           
+          
                 // Reload the real list from the sheet after successful signup
                 setTimeout(() => {
                     loadSignedUpTeams();
@@ -604,7 +600,7 @@
             .catch(err => {
                 console.error("Submission error:", err);
                 alert("Failed to submit. Please try again or contact support.");
-        
+       
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'SUBMIT SIGN UP';
@@ -621,10 +617,10 @@
         function init() {
             const tab0Btn = document.getElementById('sidebar-tab-btn-0');
             const tab0Content = document.getElementById('sidebar-tab-0');
-       
+      
             if (tab0Btn) tab0Btn.classList.add('active', 'border-b-2', 'border-[#FF0000]');
             if (tab0Content) tab0Content.classList.remove('hidden');
-       
+      
             // Load real teams from Google Sheet on page load
             loadSignedUpTeams();
         }
