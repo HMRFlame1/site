@@ -10,24 +10,30 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Anton&amp;display=swap');
         body {
             background-color: #0a0a0a;
+            background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/back_orig.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #f1f1f1;
             font-family: 'Inter', system_ui, sans-serif;
         }
         .esports-card {
-            background-color: #111111;
+            background-color: transparent;
             border: 2px solid #FF0000;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .esports-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 25px -8px rgba(255, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.25);
         }
         .mlg-table {
             font-size: 14px;
-            background-color: #111111;
+            background-color: transparent;
         }
         .mlg-table th {
-            background-color: #1a1a1a;
+            background-color: transparent;
             color: #FF0000;
             font-weight: 700;
             text-transform: uppercase;
@@ -39,11 +45,11 @@
         }
         .mlg-table td {
             padding: 13px 16px;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: #f1f1f1;
         }
         .mlg-table tr:hover {
-            background-color: #151515;
+            background-color: rgba(0, 0, 0, 0.25);
         }
         .sidebar-tab {
             transition: all 0.2s ease;
@@ -57,13 +63,13 @@
             border-bottom: 3px solid #FF0000;
         }
         .feature-box {
-            background-color: #111111;
+            background-color: transparent;
             border: 1px solid #333333;
             transition: all 0.2s ease;
         }
         .feature-box:hover {
             border-color: #FF0000;
-            background-color: #1a1a1a;
+            background-color: rgba(0, 0, 0, 0.25);
         }
         .who-to-watch-card {
             position: relative;
@@ -80,7 +86,7 @@
             background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.9) 80%);
         }
         .dark-panel {
-            background-color: #111111;
+            background-color: transparent;
             border: 2px solid #FF0000;
         }
         .hero-bg {
@@ -185,7 +191,7 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="w-full pt-1 pb-1 bg-[#0a0a0a]">
+    <div class="w-full pt-1 pb-1">
         <!-- FEATURED TEAMS -->
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="dark-panel border border-[#FF0000] p-8 mb-4">
@@ -408,8 +414,8 @@
         </div>
     </div>
 
-    <!-- WHO TO WATCH (kept from original - not visible in your screenshot but harmless) -->
-    <div class="bg-black border-t border-b border-[#222222] py-[5px]">
+    <!-- WHO TO WATCH -->
+    <div class="border-t border-b border-[#222222] py-[5px]">
         <div class="max-w-screen-2xl mx-auto px-8">
             <h2 class="text-center text-5xl font-black tracking-[3px] text-red-500 mb-[5px]">WHO TO WATCH</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
