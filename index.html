@@ -194,8 +194,10 @@
                     <button onclick="switchSidebarTab(2)" id="sidebar-tab-btn-2"
                             class="sidebar-tab px-5 py-2.5 hover:text-white">INFO</button>
                     <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
-                            class="sidebar-tab px-5 py-2.5 hover:text-white">UPDATES</button>
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">RULESET</button>
                     <button onclick="switchSidebarTab(4)" id="sidebar-tab-btn-4"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">UPDATES</button>
+                    <button onclick="switchSidebarTab(5)" id="sidebar-tab-btn-5"
                             class="sidebar-tab px-5 py-2.5 hover:text-white">WATCH</button>
                 </div>
 
@@ -404,8 +406,315 @@
                     <p class="text-xs text-gray-500 mt-4">Series Points determine seeding for leagues and future events.</p>
                 </div>
 
-                <!-- UPDATES TAB CONTENT -->
+                <!-- RULESET TAB CONTENT -->
                 <div id="sidebar-tab-3" class="sidebar-tab-content hidden">
+                    <h5 class="font-bold text-[#ffffff] mb-4">OFFICIAL RULESET</h5>
+                    <div class="max-h-[600px] overflow-y-auto pr-3 space-y-6 text-sm" style="scrollbar-width: thin; scrollbar-color: #ffffff #222;">
+
+                        <!-- MAPSET -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">MAPSET</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Hardpoint</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Yemen</li>
+                                        <li>Slums</li>
+                                        <li>Hijacked</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Search &amp; Destroy</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Express</li>
+                                        <li>Meltdown</li>
+                                        <li>Slums</li>
+                                        <li>Aftermath</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Capture the Flag</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Slums</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BANNED ITEMS & WEAPONS -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">BANNED ITEMS &amp; WEAPONS</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Streaks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>UAV</li><li>COUNTER UAV</li><li>CARE PACKAGE</li><li>SENTRY GUN</li>
+                                        <li>GUARDIAN</li><li>ORBITAL VSAT</li><li>K9 UNIT</li><li>HUNTER KILLER</li>
+                                        <li>DRAGONFIRE</li><li>ESCORT DRONE</li><li>EMP SYSTEMS</li><li>LODSTAR</li>
+                                        <li>WARTHOG</li><li>DEATH MACHINE</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-green-400 font-semibold mb-1">Allowed Streaks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>RC-XD</li><li>LIGHTNING STRIKE</li><li>HELLSTORM MISSILE</li>
+                                        <li>WAR MACHINE</li><li>STEALTH CHOPPER</li><li>VTOL WARSHIP</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Perks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>HARDLINE</li><li>GHOST</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Wildcards</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>OVERKILL</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Weapons</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Assault Shield</li><li>S12 Shotgun</li><li>1216 Shotgun</li>
+                                        <li>ALL LMG's</li><li>Chicom CQB</li><li>FAL DSW</li><li>SMR</li>
+                                        <li>SMAW</li><li>RPG</li><li>CROSSBOW</li><li>BALLISTIC KNIFE</li>
+                                        <li>XPR-50</li><li>SVU</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Attachments</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>ACOG</li><li>TARGET FINDER</li><li>EO TECH</li>
+                                        <li>HYBRID OPTIC</li><li>LAUNCHER</li><li>MMS</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Lethals</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>CLAYMORE</li><li>BOUNCING BETTY</li><li>C4</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Tacticals</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>SHOCK CHARGE</li><li>TACTICAL INSERTION</li><li>SENSOR GRENADE</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MATCH SETTINGS -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">MATCH SETTINGS</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                                <div>
+                                    <div class="text-white font-semibold mb-1">General Settings</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Party Privacy: <span class="text-white">INVITE ONLY</span></li>
+                                        <li>Team Change In-Game: <span class="text-white">NOT ALLOWED</span></li>
+                                        <li>Dynamic Map Elements: <span class="text-white">OFF</span></li>
+                                        <li>Revenge Voice: <span class="text-white">OFF</span></li>
+                                        <li>ScoreStreaks: <span class="text-white">ALLOWED</span></li>
+                                        <li>Friendly Fire: <span class="text-white">ON</span></li>
+                                        <li>Battlechatter: <span class="text-white">OFF</span></li>
+                                        <li>Explosive Delay: <span class="text-white">OFF</span></li>
+                                        <li>CoD Casting: <span class="text-white">ON</span></li>
+                                        <li>Suicide Penalty: <span class="text-white">OFF</span></li>
+                                        <li>Pre-Match Timer: <span class="text-white">15 SECONDS</span></li>
+                                        <li>Pre-Round Timer: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Auto Team Balancing: <span class="text-white">OFF</span></li>
+                                        <li>Scorestreak Delay: <span class="text-white">15 SECONDS</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Health Settings</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Health: <span class="text-white">100%</span></li>
+                                        <li>Health Regeneration: <span class="text-white">NORMAL</span></li>
+                                        <li>Teamkill Kick Limit: <span class="text-white">OFF</span></li>
+                                        <li>Headshots Only: <span class="text-white">OFF</span></li>
+                                        <li>Hit Indicator: <span class="text-white">ON</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Search and Destroy</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Time Limit: <span class="text-white">1.5 MINUTES</span></li>
+                                        <li>Rounds to Win: <span class="text-white">6</span></li>
+                                        <li>Bomb Timer: <span class="text-white">45 SECONDS</span></li>
+                                        <li>Plant Time: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Defuse Time: <span class="text-white">7.5 SECONDS</span></li>
+                                        <li>Multi Bomb: <span class="text-white">OFF</span></li>
+                                        <li>Switch Side: <span class="text-white">EVERY ROUND</span></li>
+                                        <li>Silent Plant: <span class="text-white">YES</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Hardpoint</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Time Limit: <span class="text-white">10 MINUTES</span></li>
+                                        <li>Score Limit: <span class="text-white">250</span></li>
+                                        <li>Lifetime: <span class="text-white">1 MINUTE</span></li>
+                                        <li>Capture Time: <span class="text-white">NONE</span></li>
+                                        <li>Activation Delay Time: <span class="text-white">NONE</span></li>
+                                        <li>Location: <span class="text-white">LINEAR</span></li>
+                                        <li>Scoring: <span class="text-white">CONSTANT</span></li>
+                                        <li>Respawn Delay: <span class="text-white">NONE</span></li>
+                                        <li>Force Respawn: <span class="text-white">YES</span></li>
+                                        <li>Wave Respawn Delay: <span class="text-white">NONE</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Capture The Flag</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Win Condition: <span class="text-white">Total Flag Captures</span></li>
+                                        <li>Time Limit: <span class="text-white">5 MINUTES</span></li>
+                                        <li>Respawn Delay: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Capture Limit: <span class="text-white">10 FLAGS</span></li>
+                                        <li>Round Limit: <span class="text-white">2 ROUNDS</span></li>
+                                        <li>Round Win Limit: <span class="text-white">NONE</span></li>
+                                        <li>Enemy Carrier: <span class="text-white">DELAYED</span></li>
+                                        <li>Auto Return Time: <span class="text-white">30 SECONDS</span></li>
+                                        <li>Pickup Time: <span class="text-white">INSTANT</span></li>
+                                        <li>Return Time: <span class="text-white">INSTANT</span></li>
+                                        <li>Force Respawn: <span class="text-white">YES</span></li>
+                                        <li>Wave Respawn Delay: <span class="text-white">NONE</span></li>
+                                    </ul>
+                                    <p class="text-gray-400 mt-3 text-[11px] italic">In the event of a tie, overtime should be played in order to establish a winner.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COMPETITIVE RULES 2-14 -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4 space-y-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs border-b border-[#333] pb-2">COMPETITIVE RULES</h6>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">2. Player Accounts &amp; Eligibility</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[2.1]</span> Each player may only compete on one account.</li>
+                                    <li><span class="text-white">[2.2]</span> Account sharing is not allowed.</li>
+                                    <li><span class="text-white">[2.3]</span> All players must be listed on the team roster prior to match start.</li>
+                                    <li><span class="text-white">[2.4]</span> Playing with an unregistered or ineligible player will result in a forfeit loss.</li>
+                                    <li><span class="text-white">[2.5]</span> Players must use the GamerTag linked to their profile or they will forfeit the series.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">3. Gamertags</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[3.1]</span> Players must use the exact PSN gamertag listed on their profile.</li>
+                                    <li><span class="text-white">[3.2]</span> Incorrect, private, or unlisted gamertags are grounds for an automatic forfeit.</li>
+                                    <li><span class="text-white">[3.3]</span> Gamertag changes must be updated on the website before the match begins.</li>
+                                    <li><span class="text-white">[3.4]</span> “Substitute” or alternate accounts are not permitted.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">4. Match Scheduling &amp; Time</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[4.1]</span> Matches must be played at the scheduled match time.</li>
+                                    <li><span class="text-white">[4.2]</span> Teams are given 15 minutes after the scheduled start time to show up and be ready. If a team is not present after 15 minutes, they may be forfeited. Proof is required (messages, lobby screenshots, etc.).</li>
+                                    <li><span class="text-white">[4.3]</span> If both teams fail to show within 15 minutes, the match may be canceled.</li>
+                                    <li><span class="text-white">[4.4]</span> Teams have 5 minutes between maps to start the next map or the next map will be forfeited.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">5. No-Shows &amp; Forfeits</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[5.1]</span> A no-show occurs when a team fails to appear within the allowed time.</li>
+                                    <li><span class="text-white">[5.2]</span> The present team may claim a forfeit with proper proof.</li>
+                                    <li><span class="text-white">[5.3]</span> Any attempt to forfeit teams without justification may result in penalties.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">6. Hosting</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[6.1]</span> The higher-ranked team on the ladder hosts the 1, 3, 5, 7.</li>
+                                    <li><span class="text-white">[6.2]</span> If a host ends the game for no justified reason the given map will be forfeited by the host.</li>
+                                    <li><span class="text-white">[6.3]</span> Host must provide a stable and playable connection.</li>
+                                    <li><span class="text-white">[6.4]</span> Unplayable host may result in a host switch or forfeit at admin discretion.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">7. Game Settings</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[7.1]</span> All matches must be played using the official ladder settings.</li>
+                                    <li><span class="text-white">[7.2]</span> If any settings are incorrect, the opposing team must leave the match and have proof of the incorrect rules. If the team plays the full match out, then the map result will stand. The hosting team will forfeit the map if the rules are proven to be incorrect. If within the first 30 seconds the match is ended and restarted with the correct rules, the match will be restarted from the starting score.</li>
+                                    <li><span class="text-white">[7.3]</span> Playing with incorrect settings without notifying the opponent may result in a map or match forfeit.</li>
+                                    <li><span class="text-white">[7.4]</span> Intentional misuse of settings will be penalized.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">8. Maps &amp; Game Modes</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[8.1]</span> Maps and modes are determined by the ladder ruleset.</li>
+                                    <li><span class="text-white">[8.2]</span> Any deviation from approved maps or modes requires mutual agreement.</li>
+                                    <li><span class="text-white">[8.3]</span> Playing an unapproved map without consent may result in a forfeit.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">9. Disconnects &amp; Restarts</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[9.1]</span> If a disconnect occurs before first blood or before the first 30 seconds, the map may be restarted.</li>
+                                    <li><span class="text-white">[9.2]</span> If a disconnect occurs after significant progress: the team with advantage may choose to continue or accept a restart. Admins will determine the outcome if disputed.</li>
+                                    <li><span class="text-white">[9.3]</span> Intentional disconnects are grounds for forfeiture.</li>
+                                    <li><span class="text-white">[9.4]</span> In the event of a disconnection during a Search &amp; Destroy round, the host is required to end the match at the end of the current round. The round outcome will remain valid, and upon restarting the match, the existing score will carry over.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">10. Match Reporting</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[10.1]</span> Both teams are required to report the match result. If a team does not report within 2 hours the win will be automatically given to the opposing team.</li>
+                                    <li><span class="text-white">[10.2]</span> Reported scores must match the in-game results.</li>
+                                    <li><span class="text-white">[10.3]</span> False reporting will result in penalties or suspension.</li>
+                                    <li><span class="text-white">[10.4]</span> Screenshots are required for proof.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">11. Disputes</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[11.1]</span> Disputes must be opened within 2 hours of match completion.</li>
+                                    <li><span class="text-white">[11.2]</span> All disputes must include sufficient evidence: Screenshots, Video, Xbox messages.</li>
+                                    <li><span class="text-white">[11.3]</span> Incomplete disputes may be closed without action.</li>
+                                    <li><span class="text-white">[11.4]</span> Admin decisions are final.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">12. Cheating &amp; Exploits</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[12.1]</span> Cheating is strictly prohibited, including but not limited to: Modded controllers, Rapid fire, Macros, Scripts, Glitches or exploits, JTAGS, Cronus, Unauthorized third-party devices.</li>
+                                    <li><span class="text-white">[12.2]</span> Any confirmed cheating will result in: Match forfeit, Ladder removal, Possible permanent ban.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">13. Sportsmanship</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[13.1]</span> Players must conduct themselves in a respectful manner.</li>
+                                    <li><span class="text-white">[13.2]</span> Harassment, racism, threats, or excessive trash talk is not allowed.</li>
+                                    <li><span class="text-white">[13.3]</span> Unsportsmanlike conduct may result in warnings, forfeits, or suspension.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">14. Admin Rights</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[14.1]</span> Admins reserve the right to: Enforce forfeits, Adjust results, Penalize teams, Modify rules.</li>
+                                    <li><span class="text-white">[14.2]</span> Ignorance of the rules is not an excuse.</li>
+                                    <li><span class="text-white">[14.3]</span> Any abuse towards admins will not be tolerated and your account may be suspended.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- UPDATES TAB CONTENT -->
+                <div id="sidebar-tab-4" class="sidebar-tab-content hidden">
                     <h5 class="font-bold text-[#ffffff] mb-3">UPDATES</h5>
                     <div class="space-y-4 text-sm">
                         <div class="border-l-2 border-[#ffffff] pl-4">
@@ -420,8 +729,8 @@
                     <p class="text-xs text-gray-500 mt-5">Check back here for schedule changes, rule updates, and official announcements.</p>
                 </div>
 
-                <!-- CIRCUITTV TAB CONTENT -->
-                <div id="sidebar-tab-4" class="sidebar-tab-content hidden">
+                <!-- CIRCUITTV / WATCH TAB CONTENT -->
+                <div id="sidebar-tab-5" class="sidebar-tab-content hidden">
                     <!-- Top bar -->
                     <div class="flex items-center justify-between bg-black border border-[#333] px-4 py-2 text-xs mb-0">
                         <div class="flex items-center gap-3">
