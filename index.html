@@ -1647,6 +1647,15 @@
             const userInfoDiv = document.getElementById("userInfo");
             if (!userInfoDiv) return;
 
+            // Check for token in URL first (for cross-domain login from Weebly)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlToken = urlParams.get("sessionToken");
+            if (urlToken) {
+                localStorage.setItem("sessionToken", urlToken);
+                // Clean the URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
             const token = localStorage.getItem("sessionToken");
             if (!token) {
                 userInfoDiv.innerHTML = `
