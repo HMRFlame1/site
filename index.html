@@ -1,4 +1,3 @@
-<div id="gc2026">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-   #gc2026,
-#gc2026 * {
-    font-family: inherit;
-    line-height: 1.5;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    font-kerning: normal;
-}
-        }
         .esports-card {
             background-color: #111111;
             border: 2px solid #ffffff;
@@ -120,9 +109,9 @@
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            padding-right: 5rem;
+            padding-right: 4rem;
             color: #ffffff;
-            font-size: 0.92rem;
+            font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 0.6px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.4);
@@ -145,7 +134,7 @@
         .userInfo { 
             position: absolute !important; 
             right: 25px !important; 
-            top: 12px !important; 
+            top: 0px !important; 
             z-index: 100;
         }
         .userBar {
@@ -185,30 +174,29 @@
 </head>
 <body class="min-h-screen overflow-x-hidden">
     <!-- Top Navigation Bar -->
-    <nav class="bg-black border-b border-[#ffffff] sticky top-0 z-50" style="position: relative;">
+    <nav class="sticky top-0 z-50 border-b border-[#ffffff]" style="position: relative; background: linear-gradient(90deg, #000 0%, #000 55%, #6b0000 80%, #9c0000 100%);">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="flex items-center justify-between px-8 py-4">
-                <div class="flex items-center gap-x-3">
+            <div class="flex items-center px-8 py-4">
+                <!-- LEFT: Logo + Brand -->
+                <div class="flex items-center gap-x-3 z-20">
                     <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png"
                          alt="GameCircuit" class="h-9 w-auto">
                     <span class="text-white font-black text-3xl tracking-[-1.5px]">GAMECIRCUIT</span>
                 </div>
                 
-                <!-- User bar from Profile page (shows logged-in user + helps admin detection) -->
-                <div class="userInfo" id="userInfo"></div>
-                
-                <div class="hidden md:flex items-center gap-x-5 text-sm">
-                    <div class="flex items-center gap-x-4 text-xl text-white">
-                        <a href="https://discord.gg/K5eQtT63jQ" target="_blank" class="hover:text-[#ffffff] transition-colors"><i class="fab fa-discord"></i></a>
-                        <a href="https://x.com/gamecircuituk" target="_blank" class="hover:text-[#ffffff] transition-colors"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/UCwHyxPwiOJbodQJ7VTvxK3w" target="_blank" class="hover:text-[#ffffff] transition-colors"><i class="fab fa-youtube"></i></a>
+                <!-- CENTER: UK/EN + Powered by (social icons removed as requested) -->
+                <div class="flex-1 flex justify-center z-10">
+                    <div class="hidden md:flex items-center gap-x-5 text-sm">
+                        <div class="flex items-center gap-x-1.5 text-xs font-bold border border-[#333] px-4 py-1.5 rounded">
+                            <span>UK</span>
+                            <span class="text-[#ffffff]">EN</span>
+                        </div>
+                        <span class="text-gray-400 text-xs tracking-[1px] font-medium hidden md:block">POWERED BY GAMECIRCUIT • 2026</span>
                     </div>
-                    <div class="flex items-center gap-x-1.5 text-xs font-bold border border-[#333] px-4 py-1.5 rounded">
-                        <span>UK</span>
-                        <span class="text-[#ffffff]">EN</span>
-                    </div>
-                    <span class="text-gray-400 text-xs tracking-[1px] font-medium hidden md:block">POWERED BY GAMECIRCUIT • 2026</span>
                 </div>
+                
+                <!-- RIGHT: User bar (absolute positioned, exact same location & behaviour as Profile page) -->
+                <div class="userInfo" id="userInfo"></div>
             </div>
         </div>
     </nav>
@@ -224,8 +212,6 @@
     <div class="news-ticker">
         <div class="ticker-wrapper">
             <div class="ticker-content">
-                <span class="ticker-item">★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★</span>
-                <span class="ticker-item">★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★</span>
                 <span class="ticker-item">★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★</span>
                 <span class="ticker-item">★ KICKOFF TOURNAMENT SIGN-UPS NOW OPEN — 16 TEAM SINGLE ELIMINATION • £50 PRIZE POOL • 100 SERIES POINTS ★</span>
             </div>
@@ -258,55 +244,55 @@
                         <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/7c611750-621c-4fba-94e4-6c77939f71f8-1_orig.png" alt="GameCircuit Championship" class="h-20 md:h-28 w-auto object-contain">
                     </div>
                     <h3 class="section-header mb-6 text-center">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-                        <div class="esports-card p-5 flex items-start gap-x-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8 border border-[#ffffff] p-4">
+                        <div class="esports-card p-5 flex items-center gap-x-4">
                             <div>
                                 <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
                                     <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
                                 </div>
                             </div>
-                            <div class="flex-1 min-w-0 pt-1">
+                            <div class="flex-1 min-w-0">
                                 <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
-                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                                <div class="mt-1.5 p-2 border border-[#444] bg-[#1a1a1a] rounded text-sm text-gray-400">PlayerName • PlayerName • PlayerName • PlayerName</div>
                             </div>
                         </div>
-                        <div class="esports-card p-5 flex items-start gap-x-4">
+                        <div class="esports-card p-5 flex items-center gap-x-4">
                             <div>
                                 <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
                                     <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
                                 </div>
                             </div>
-                            <div class="flex-1 min-w-0 pt-1">
+                            <div class="flex-1 min-w-0">
                                 <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
-                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                                <div class="mt-1.5 p-2 border border-[#444] bg-[#1a1a1a] rounded text-sm text-gray-400">PlayerName • PlayerName • PlayerName • PlayerName</div>
                             </div>
                         </div>
-                        <div class="esports-card p-5 flex items-start gap-x-4">
+                        <div class="esports-card p-5 flex items-center gap-x-4">
                             <div>
                                 <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
                                     <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
                                 </div>
                             </div>
-                            <div class="flex-1 min-w-0 pt-1">
+                            <div class="flex-1 min-w-0">
                                 <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
-                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                                <div class="mt-1.5 p-2 border border-[#444] bg-[#1a1a1a] rounded text-sm text-gray-400">PlayerName • PlayerName • PlayerName • PlayerName</div>
                             </div>
                         </div>
-                        <div class="esports-card p-5 flex items-start gap-x-4">
+                        <div class="esports-card p-5 flex items-center gap-x-4">
                             <div>
                                 <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
                                     <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
                                 </div>
                             </div>
-                            <div class="flex-1 min-w-0 pt-1">
+                            <div class="flex-1 min-w-0">
                                 <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
-                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                                <div class="mt-1.5 p-2 border border-[#444] bg-[#1a1a1a] rounded text-sm text-gray-400">PlayerName • PlayerName • PlayerName • PlayerName</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- TABLES -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border border-[#ffffff] p-4">
                         <!-- UPCOMING MATCHES -->
                         <div class="lg:col-span-7">
                             <div class="flex items-center justify-between mb-5">
@@ -767,11 +753,11 @@
                 <div id="sidebar-tab-4" class="sidebar-tab-content hidden">
                     <h5 class="font-bold text-[#ffffff] mb-3">UPDATES</h5>
                     <div class="space-y-4 text-sm">
-                        <div class="border-l-2 border-[#ffffff] pl-4">
+                        <div class="border border-[#ffffff] p-4">
                             <div class="text-xs text-gray-500 font-mono mb-1">17/07/2026</div>
                             <p class="text-gray-300">Kickoff Tournament date confirmed for <span class="text-white font-semibold">16/08/2026</span>. Sign-ups are now open — 16 team single elimination, free entry, £50 prize pool + 100 Series Points.</p>
                         </div>
-                        <div class="border-l-2 border-[#333] pl-4">
+                        <div class="border border-[#333] p-4">
                             <div class="text-xs text-gray-500 font-mono mb-1">15/07/2026</div>
                             <p class="text-gray-400">GameCircuit Championship 2026 page launched. Full event structure and Prestige League details now available in the INFO tab.</p>
                         </div>
@@ -1059,6 +1045,20 @@
                 JOIN DISCORD
             </a>
             <button onclick="closeSuccessModal()"
+                    class="w-full py-2.5 bg-[#ffffff] hover:bg-gray-200 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- LIVE UPDATE SUCCESS MODAL -->
+    <div id="live-update-success-modal" class="hidden fixed inset-0 bg-black/80 z-[120] items-center justify-center">
+        <div class="dark-panel border border-[#ffffff] w-full max-w-sm mx-4 p-6 text-center rounded">
+            <div class="text-green-500 text-5xl mb-3"><i class="fas fa-check-circle"></i></div>
+            <h3 class="font-bold text-xl mb-2">LIVE MATCH UPDATED!</h3>
+            <p class="text-sm text-gray-400 mb-4">
+                All visitors will see changes within seconds.<br>
+                No page refresh needed.
+            </p>
+            <button onclick="closeLiveUpdateSuccessModal()"
                     class="w-full py-2.5 bg-[#ffffff] hover:bg-gray-200 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
         </div>
     </div>
@@ -1397,6 +1397,12 @@
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
+
+        function closeLiveUpdateSuccessModal() {
+            const modal = document.getElementById('live-update-success-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
         
         function initTwitchEmbed() {
             const iframe = document.getElementById('twitch-embed');
@@ -1593,6 +1599,14 @@
             const btns = document.querySelectorAll('#live-edit-modal button');
             btns.forEach(b => b.disabled = true);
 
+            // Grey out and change text on the Save button specifically
+            const saveBtn = Array.from(btns).find(b => b.textContent.includes('SAVE') || b.textContent.includes('PUSH'));
+            if (saveBtn) {
+                saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SAVING...';
+                saveBtn.classList.add('bg-gray-500', 'cursor-not-allowed');
+                saveBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-400');
+            }
+
             const params = new URLSearchParams({
                 action: "updateLiveMatch",
                 sessionToken: token,
@@ -1625,12 +1639,22 @@
                 const result = await res.json();
 
                 if (result.success) {
-                    alert("✅ Live match updated! All visitors will see changes within seconds.");
                     closeLiveEditModal();
-                    // Immediate refresh
+                    // Show nice modal instead of alert
+                    const successModal = document.getElementById('live-update-success-modal');
+                    successModal.classList.remove('hidden');
+                    successModal.classList.add('flex');
+                    // Immediate refresh of live data
                     await loadLiveMatch();
                 } else {
                     alert("Failed to update: " + (result.error || "Unknown error"));
+                    // Re-enable buttons on failure
+                    btns.forEach(b => b.disabled = false);
+                    if (saveBtn) {
+                        saveBtn.innerHTML = '<i class="fas fa-save"></i> SAVE &amp; PUSH LIVE UPDATE';
+                        saveBtn.classList.remove('bg-gray-500', 'cursor-not-allowed');
+                        saveBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-400');
+                    }
                 }
             } catch (err) {
                 alert("Save failed. Please check console.");
@@ -1680,7 +1704,11 @@
                     <div class="profilePic" style="background-image: url('https://iili.io/CHGreKQ.png')"></div>
                     <div class="userDetails">
                         <div class="username user-bar-username">Loading...</div>
-                        <div style="font-size:11.5px; color:#777;">Please wait...</div>
+                        <div class="userLinks"><a href="#">Please wait</a></div>
+                        <div style="font-size:11.5px; color:#777; margin-top:1px;">Joined ...</div>
+                    </div>
+                    <div class="userIcons">
+                        <img src="https://iili.io/CHGreKQ.png" alt="icon">
                     </div>
                 </div>
             `;
@@ -1703,7 +1731,8 @@
                             <div class="profilePic" style="background-image: url('${pic}')"></div>
                             <div class="userDetails">
                                 <div class="username user-bar-username">${user.username || "User"}</div>
-                                <div style="font-size:11px; color:#777;">Joined ${joinDate} • Rep: <strong style="color:#ffd700">${rep}</strong></div>
+                                <div style="font-size:11.5px; color:#777; margin-top:1px;">Joined ${joinDate}</div>
+                                <div style="font-size:11.5px; color:#ffd700;">Rep: <strong>${rep}</strong></div>
                                 <div class="userLinks">
                                     <a href="my-profile.html">My Profile</a>
                                     <span class="separator">|</span>
@@ -1751,4 +1780,3 @@
     </script>
 </body>
 </html>
-</div>
