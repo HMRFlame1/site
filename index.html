@@ -135,6 +135,45 @@
             font-weight: 800;
             color: #ffffff;
         }
+
+        /* === User bar styles from Profile page (added for logged-in state) === */
+        .userInfo { 
+            position: relative; 
+            z-index: 100;
+        }
+        .userBar {
+            background: linear-gradient(#1a1a1a, #0a0a0a);
+            border: 2px solid #444;
+            border-top: 4px solid #9c0000;
+            border-radius: 4px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 280px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.8);
+        }
+        .profilePic {
+            width: 48px; height: 48px;
+            border: 2px solid #00ccff;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 8px rgba(0, 204, 255, 0.6);
+        }
+        .userDetails { line-height: 1.3; }
+        .user-bar-username {
+            color: #00ffcc !important;
+            font-weight: bold !important;
+            font-size: 15.5px !important;
+            text-shadow: 0 0 4px rgba(0, 255, 204, 0.5) !important;
+        }
+        .userLinks { font-size: 13px; margin-top: 2px; display: flex; align-items: center; gap: 8px; }
+        .userLinks a { color: #ffd700; text-decoration: none; transition: all 0.2s ease; }
+        .userLinks a:hover { transform: scale(1.08); color: #ffea80; }
+        .separator { color: #777; }
+        .userIcons { display: flex; gap: 6px; margin-left: auto; }
+        .userIcons img { width: 22px; height: 22px; }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden">
@@ -147,6 +186,10 @@
                          alt="GameCircuit" class="h-9 w-auto">
                     <span class="text-white font-black text-3xl tracking-[-1.5px]">GAMECIRCUIT</span>
                 </div>
+                
+                <!-- User bar from Profile page (shows logged-in user + helps admin detection) -->
+                <div class="userInfo" id="userInfo"></div>
+                
                 <div class="hidden md:flex items-center gap-x-5 text-sm">
                     <div class="flex items-center gap-x-4 text-xl text-white">
                         <a href="https://discord.gg/K5eQtT63jQ" target="_blank" class="hover:text-[#ffffff] transition-colors"><i class="fab fa-discord"></i></a>
@@ -1384,19 +1427,27 @@
                 const data = await res.json();
                 if (data.success && data.isAdmin) {
                     isAdminWatch = true;
-                    // Inject EDIT button into the top bar of WATCH tab
-                    const topBar = document.querySelector('#sidebar-tab-5 .flex.items-center.justify-between.bg-black.border');
+                    console.log("%c[Admin] Admin detected — injecting EDIT LIVE button", "color:#ffd700");
+                    
+                    // Inject EDIT button into the top bar of WATCH tab (more robust selector)
+                    const topBar = document.querySelector('#sidebar-tab-5 .flex.items-center.justify-between.bg-black');
                     if (topBar) {
                         // Remove old button if exists
                         const oldBtn = topBar.querySelector('.admin-edit-btn');
                         if (oldBtn) oldBtn.remove();
 
                         const editBtn = document.createElement('button');
-                        editBtn.className = 'admin-edit-btn ml-3 px-3.5 py-1 bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-extrabold tracking-wider rounded flex items-center gap-1.5 shadow';
+                        editBtn.className = 'admin-edit-btn ml-3 px-4 py-1.5 bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-extrabold tracking-[1px] rounded flex items-center gap-2 shadow-lg border border-yellow-600';
                         editBtn.innerHTML = `<i class="fas fa-edit"></i> <span>EDIT LIVE</span>`;
                         editBtn.onclick = openLiveEditModal;
                         topBar.appendChild(editBtn);
+                        
+                        console.log("%c[Admin] EDIT LIVE button successfully added to WATCH tab", "color:#0f0");
+                    } else {
+                        console.warn("Could not find top bar to inject edit button");
                     }
+                } else {
+                    console.log("%c[Admin] Not an admin or check failed — no edit button shown", "color:#888");
                 }
             } catch (e) {
                 console.error("Admin check failed", e);
@@ -1591,6 +1642,67 @@
             }, 14000); // every 14 seconds
         }
 
+        // === User bar loader from Profile page (added so logged-in state is visible) ===
+        async function loadUserInfo() {
+            const userInfoDiv = document.getElementById("userInfo");
+            if (!userInfoDiv) return;
+
+            const token = localStorage.getItem("sessionToken");
+            if (!token) {
+                userInfoDiv.innerHTML = `
+                    <div class="userBar" style="min-width:auto; padding:6px 12px;">
+                        <a href="account.html" style="color:#ffd700; font-size:13px; text-decoration:none;">Login / Register</a>
+                    </div>
+                `;
+                return;
+            }
+
+            userInfoDiv.innerHTML = `
+                <div class="userBar">
+                    <div class="profilePic" style="background-image: url('https://iili.io/CHGreKQ.png')"></div>
+                    <div class="userDetails">
+                        <div class="username user-bar-username">Loading...</div>
+                        <div style="font-size:11.5px; color:#777;">Please wait...</div>
+                    </div>
+                </div>
+            `;
+
+            try {
+                const url = new URL(SCRIPT_URL);
+                url.searchParams.append("action", "getProfile");
+                url.searchParams.append("sessionToken", token);
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.success && data.user) {
+                    const user = data.user;
+                    const pic = user.profilePic || "https://iili.io/CHGreKQ.png";
+                    const joinDate = user.createdAt ? new Date(Number(user.createdAt)).toLocaleDateString('en-US', {year:'numeric', month:'short'}) : "Recently";
+                    const rep = user.Reputation || user.reputation || 0;
+
+                    userInfoDiv.innerHTML = `
+                        <div class="userBar">
+                            <div class="profilePic" style="background-image: url('${pic}')"></div>
+                            <div class="userDetails">
+                                <div class="username user-bar-username">${user.username || "User"}</div>
+                                <div style="font-size:11px; color:#777;">Joined ${joinDate} • Rep: <strong style="color:#ffd700">${rep}</strong></div>
+                                <div class="userLinks">
+                                    <a href="my-profile.html">My Profile</a>
+                                    <span class="separator">|</span>
+                                    <a href="#" onclick="localStorage.removeItem('sessionToken'); location.reload(); return false;">Log Out</a>
+                                </div>
+                            </div>
+                            <div class="userIcons">
+                                <img src="https://iili.io/CHGreKQ.png" alt="icon">
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (e) {
+                console.error("Failed to load user info", e);
+            }
+        }
+
         function init() {
             const tab0Btn = document.getElementById('sidebar-tab-btn-0');
             const tab0Content = document.getElementById('sidebar-tab-0');
@@ -1601,6 +1713,9 @@
             // Load real teams from Google Sheet on page load
             loadSignedUpTeams();
             initTwitchEmbed();
+
+            // Load logged-in user bar (from Profile page)
+            loadUserInfo();
 
             // === LIVE MATCH WATCH TAB SETUP ===
             checkAdminForWatch();
