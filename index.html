@@ -749,30 +749,30 @@
                             <!-- In-game style scoreboard -->
                             <div class="bg-black/90 border-b border-[#333] px-4 py-3">
                                 <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
-                                    <span>Champ Winners Round 1</span>
-                                    <span class="text-white font-bold tracking-widest">BEST OF 3</span>
+                                    <span id="watch-round-info">Champ Winners Round 1</span>
+                                    <span id="watch-format" class="text-white font-bold tracking-widest">BEST OF 5</span>
                                     <span>Casted by GameCircuit</span>
                                 </div>
                                 <div class="flex items-center justify-center gap-6">
                                     <div class="flex items-center gap-3">
                                         <div class="w-10 h-10 flex items-center justify-center">
-                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
+                                            <img id="watch-alpha-logo" src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
                                         </div>
                                         <div class="text-right">
-                                            <div class="text-white font-bold text-sm">TEAM ALPHA</div>
+                                            <div id="watch-alpha-name" class="text-white font-bold text-sm">TEAM ALPHA</div>
                                             <div class="text-gray-500 text-xs">Coming Soon</div>
                                         </div>
-                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
+                                        <div id="watch-alpha-score" class="text-4xl font-black text-white w-12 text-center">0</div>
                                     </div>
                                     <div class="text-gray-500 font-mono text-lg">vs</div>
                                     <div class="flex items-center gap-3">
-                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
+                                        <div id="watch-bravo-score" class="text-4xl font-black text-white w-12 text-center">0</div>
                                         <div class="text-left">
-                                            <div class="text-white font-bold text-sm">TEAM BRAVO</div>
+                                            <div id="watch-bravo-name" class="text-white font-bold text-sm">TEAM BRAVO</div>
                                             <div class="text-gray-500 text-xs">Coming Soon</div>
                                         </div>
                                         <div class="w-10 h-10 flex items-center justify-center">
-                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
+                                            <img id="watch-bravo-logo" src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -821,13 +821,13 @@
                                         <span class="ml-auto text-gray-500 font-mono">1</span>
                                     </div>
                                     <div class="space-y-1">
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="alpha-banner-1" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="alpha-banner-2" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="alpha-banner-3" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="alpha-banner-4" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
                                     </div>
                                 </div>
@@ -837,13 +837,13 @@
                                         <span class="ml-auto text-gray-500 font-mono">2</span>
                                     </div>
                                     <div class="space-y-1">
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="bravo-banner-1" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="bravo-banner-2" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="bravo-banner-3" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
-                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        <div id="bravo-banner-4" class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
                                         </div>
                                     </div>
                                 </div>
@@ -932,11 +932,11 @@
                         </div>
                         <div class="border-r border-[#333] px-4 py-3">
                             <div class="text-gray-500 text-[10px] mb-0.5">SERIES RECORD</div>
-                            <div class="text-white font-mono text-[11px]">Team Alpha 0 - 0 Team Bravo</div>
+                            <div id="watch-series-record" class="text-white font-mono text-[11px]">Team Alpha 0 - 0 Team Bravo</div>
                         </div>
                         <div class="px-4 py-3">
                             <div class="text-gray-500 text-[10px] mb-0.5">NEXT MATCH</div>
-                            <div class="text-white text-[11px] font-semibold">Kickoff Tournament • 16/08/2026</div>
+                            <div id="watch-schedule-text" class="text-white text-[11px] font-semibold">Kickoff Tournament • 16/08/2026</div>
                         </div>
                     </div>
                 </div>
@@ -1012,10 +1012,162 @@
                     class="w-full py-2.5 bg-[#ffffff] hover:bg-gray-200 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
         </div>
     </div>
+
+    <!-- LIVE MATCH EDIT MODAL (Admin Only) -->
+    <div id="live-edit-modal" class="hidden fixed inset-0 bg-black/80 z-[110] items-center justify-center">
+        <div class="dark-panel border border-[#ffffff] w-full max-w-5xl mx-4 p-6 rounded max-h-[92vh] overflow-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-xl text-[#ffffff] flex items-center gap-2">
+                    <i class="fas fa-edit text-yellow-400"></i> 
+                    EDIT LIVE MATCH — ADMIN
+                </h3>
+                <button onclick="closeLiveEditModal()" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 text-sm">
+                <!-- General -->
+                <div class="md:col-span-2">
+                    <div class="text-xs text-gray-400 mb-1 font-bold tracking-wider">GENERAL INFO</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Round Info</label>
+                            <input id="edit-round-info" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded" placeholder="Champ Winners Round 1">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Format</label>
+                            <input id="edit-format" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded" placeholder="Bo5">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Status</label>
+                            <input id="edit-status" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded" placeholder="LIVE">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Alpha -->
+                <div>
+                    <div class="text-xs text-gray-400 mb-1 font-bold tracking-wider">TEAM ALPHA</div>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Name</label>
+                            <input id="edit-alpha-name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Logo URL</label>
+                            <input id="edit-alpha-logo" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded" placeholder="https://...logo.png">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Current Map Score</label>
+                            <input type="number" id="edit-alpha-score" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Bravo -->
+                <div>
+                    <div class="text-xs text-gray-400 mb-1 font-bold tracking-wider">TEAM BRAVO</div>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Name</label>
+                            <input id="edit-bravo-name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Logo URL</label>
+                            <input id="edit-bravo-logo" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded" placeholder="https://...logo.png">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Current Map Score</label>
+                            <input type="number" id="edit-bravo-score" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Series Scores -->
+                <div class="md:col-span-2">
+                    <div class="text-xs text-gray-400 mb-1 font-bold tracking-wider">SERIES SCORE</div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Team Alpha Series Score</label>
+                            <input type="number" id="edit-series-alpha" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Team Bravo Series Score</label>
+                            <input type="number" id="edit-series-bravo" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text fields -->
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Schedule Text (bottom bar)</label>
+                    <input id="edit-schedule-text" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Series Record Text (bottom bar)</label>
+                    <input id="edit-series-record" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm rounded">
+                </div>
+
+                <!-- Player Banners -->
+                <div class="md:col-span-2 border-t border-[#444] pt-4 mt-2">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <div class="text-xs text-yellow-400 font-bold tracking-wider">PLAYER BANNERS (ROSTER TAB)</div>
+                            <div class="text-[10px] text-gray-500">Enter direct image URLs (recommended 300×120px or similar)</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                        <!-- Alpha Banners -->
+                        <div>
+                            <div class="text-xs font-bold text-white mb-2 flex items-center gap-2">
+                                <span class="text-[#ffffff]">TEAM ALPHA</span>
+                            </div>
+                            <div class="space-y-2.5">
+                                <div><label class="text-xs text-gray-400">Player 1 Banner URL</label><input id="edit-alpha-p1" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 2 Banner URL</label><input id="edit-alpha-p2" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 3 Banner URL</label><input id="edit-alpha-p3" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 4 Banner URL</label><input id="edit-alpha-p4" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                            </div>
+                        </div>
+
+                        <!-- Bravo Banners -->
+                        <div>
+                            <div class="text-xs font-bold text-white mb-2 flex items-center gap-2">
+                                <span class="text-[#ffffff]">TEAM BRAVO</span>
+                            </div>
+                            <div class="space-y-2.5">
+                                <div><label class="text-xs text-gray-400">Player 1 Banner URL</label><input id="edit-bravo-p1" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 2 Banner URL</label><input id="edit-bravo-p2" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 3 Banner URL</label><input id="edit-bravo-p3" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                                <div><label class="text-xs text-gray-400">Player 4 Banner URL</label><input id="edit-bravo-p4" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-1.5 text-white text-xs rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-7">
+                <button onclick="closeLiveEditModal()" 
+                        class="flex-1 py-3 border border-[#333] text-sm font-bold hover:bg-[#222] transition-colors rounded">CANCEL</button>
+                <button onclick="saveLiveMatchEdit()" 
+                        class="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-sm tracking-wider transition-colors rounded flex items-center justify-center gap-2">
+                    <i class="fas fa-save"></i> SAVE &amp; PUSH LIVE UPDATE
+                </button>
+            </div>
+            <p class="text-center text-[10px] text-gray-500 mt-3">Changes will appear instantly for all visitors (no refresh needed)</p>
+        </div>
+    </div>
+
     <script>
         let currentSidebarTab = 0;
         let signedUpTeams = 0;
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
+        
+        let currentLiveMatch = null;
+        let isAdminWatch = false;
+        let isEditingLive = false;
+        let livePollInterval = null;
+
         function switchSidebarTab(tabIndex) {
             document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#ffffff]'));
@@ -1027,7 +1179,13 @@
             if (content) content.classList.remove('hidden');
       
             currentSidebarTab = tabIndex;
+
+            // Auto-load live match when switching to WATCH tab
+            if (tabIndex === 5) {
+                loadLiveMatch();
+            }
         }
+        
         function switchCircuitTab(tabIndex) {
             document.querySelectorAll('.circuit-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('.circuit-tab').forEach(btn => {
@@ -1042,6 +1200,7 @@
             const content = document.getElementById('circuit-tab-' + tabIndex);
             if (content) content.classList.remove('hidden');
         }
+        
         function openSignUpModal() {
             if (signedUpTeams >= 16) {
                 alert("Tournament is full! No more sign-ups available.");
@@ -1060,11 +1219,13 @@
                 btn.classList.add('bg-[#ffffff]', 'hover:bg-gray-200');
             }
         }
+        
         function closeSignUpModal() {
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
+        
         // Load real teams from Google Sheet
         function loadSignedUpTeams() {
             const url = SCRIPT_URL + "?action=getSignedUpTeams";
@@ -1114,6 +1275,7 @@
                     console.error("Failed to load signed up teams:", err);
                 });
         }
+        
         function submitSignUp(event) {
             event.preventDefault();
             if (signedUpTeams >= 16) {
@@ -1179,11 +1341,13 @@
                 }
             });
         }
+        
         function closeSuccessModal() {
             const modal = document.getElementById('success-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
+        
         function initTwitchEmbed() {
             const iframe = document.getElementById('twitch-embed');
             const fallback = document.getElementById('twitch-fallback');
@@ -1204,6 +1368,229 @@
                 } catch (e) {}
             }, 1500);
         }
+
+        // ==================== LIVE MATCH (WATCH TAB) ====================
+        async function checkAdminForWatch() {
+            const token = localStorage.getItem("sessionToken");
+            if (!token) {
+                isAdminWatch = false;
+                return;
+            }
+            try {
+                const url = new URL(SCRIPT_URL);
+                url.searchParams.append("action", "checkAdminStatus");
+                url.searchParams.append("sessionToken", token);
+                const res = await fetch(url);
+                const data = await res.json();
+                if (data.success && data.isAdmin) {
+                    isAdminWatch = true;
+                    // Inject EDIT button into the top bar of WATCH tab
+                    const topBar = document.querySelector('#sidebar-tab-5 .flex.items-center.justify-between.bg-black.border');
+                    if (topBar) {
+                        // Remove old button if exists
+                        const oldBtn = topBar.querySelector('.admin-edit-btn');
+                        if (oldBtn) oldBtn.remove();
+
+                        const editBtn = document.createElement('button');
+                        editBtn.className = 'admin-edit-btn ml-3 px-3.5 py-1 bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-extrabold tracking-wider rounded flex items-center gap-1.5 shadow';
+                        editBtn.innerHTML = `<i class="fas fa-edit"></i> <span>EDIT LIVE</span>`;
+                        editBtn.onclick = openLiveEditModal;
+                        topBar.appendChild(editBtn);
+                    }
+                }
+            } catch (e) {
+                console.error("Admin check failed", e);
+            }
+        }
+
+        async function loadLiveMatch() {
+            try {
+                const url = `${SCRIPT_URL}?action=getLiveMatch`;
+                const res = await fetch(url);
+                const data = await res.json();
+                
+                if (!data.success || !data.match) {
+                    console.log("No live match data yet");
+                    return;
+                }
+                
+                currentLiveMatch = data.match;
+                const m = currentLiveMatch;
+
+                // Update scoreboard
+                const roundEl = document.getElementById('watch-round-info');
+                if (roundEl) roundEl.textContent = m.roundInfo || 'Champ Winners Round 1';
+
+                const formatEl = document.getElementById('watch-format');
+                if (formatEl) formatEl.textContent = m.format || 'BEST OF 5';
+
+                const alphaNameEl = document.getElementById('watch-alpha-name');
+                if (alphaNameEl) alphaNameEl.textContent = m.teamAlpha || 'TEAM ALPHA';
+
+                const bravoNameEl = document.getElementById('watch-bravo-name');
+                if (bravoNameEl) bravoNameEl.textContent = m.teamBravo || 'TEAM BRAVO';
+
+                const alphaScoreEl = document.getElementById('watch-alpha-score');
+                if (alphaScoreEl) alphaScoreEl.textContent = m.teamAlphaScore || 0;
+
+                const bravoScoreEl = document.getElementById('watch-bravo-score');
+                if (bravoScoreEl) bravoScoreEl.textContent = m.teamBravoScore || 0;
+
+                // Logos
+                const alphaLogo = document.getElementById('watch-alpha-logo');
+                if (alphaLogo && m.teamAlphaLogo) alphaLogo.src = m.teamAlphaLogo;
+
+                const bravoLogo = document.getElementById('watch-bravo-logo');
+                if (bravoLogo && m.teamBravoLogo) bravoLogo.src = m.teamBravoLogo;
+
+                // Bottom bar text
+                const scheduleEl = document.getElementById('watch-schedule-text');
+                if (scheduleEl) scheduleEl.textContent = m.scheduleText || 'Kickoff Tournament • 16/08/2026';
+
+                const recordEl = document.getElementById('watch-series-record');
+                if (recordEl) recordEl.textContent = m.seriesRecordText || 'Team Alpha 0 - 0 Team Bravo';
+
+                // Player Banners (ROSTER)
+                if (m.alphaPlayerBanners && Array.isArray(m.alphaPlayerBanners)) {
+                    m.alphaPlayerBanners.forEach((url, i) => {
+                        const el = document.getElementById(`alpha-banner-${i + 1}`);
+                        if (el && url) {
+                            el.style.backgroundImage = `url('${url}')`;
+                        }
+                    });
+                }
+                if (m.bravoPlayerBanners && Array.isArray(m.bravoPlayerBanners)) {
+                    m.bravoPlayerBanners.forEach((url, i) => {
+                        const el = document.getElementById(`bravo-banner-${i + 1}`);
+                        if (el && url) {
+                            el.style.backgroundImage = `url('${url}')`;
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error("Failed to load live match:", err);
+            }
+        }
+
+        function openLiveEditModal() {
+            if (!isAdminWatch || !currentLiveMatch) {
+                alert("Admin access only or no match data loaded yet.");
+                return;
+            }
+            isEditingLive = true;
+
+            const m = currentLiveMatch;
+            const modal = document.getElementById('live-edit-modal');
+
+            // Prefill all fields
+            document.getElementById('edit-round-info').value = m.roundInfo || '';
+            document.getElementById('edit-format').value = m.format || 'Bo5';
+            document.getElementById('edit-status').value = m.status || 'LIVE';
+
+            document.getElementById('edit-alpha-name').value = m.teamAlpha || '';
+            document.getElementById('edit-alpha-logo').value = m.teamAlphaLogo || '';
+            document.getElementById('edit-alpha-score').value = m.teamAlphaScore || 0;
+
+            document.getElementById('edit-bravo-name').value = m.teamBravo || '';
+            document.getElementById('edit-bravo-logo').value = m.teamBravoLogo || '';
+            document.getElementById('edit-bravo-score').value = m.teamBravoScore || 0;
+
+            document.getElementById('edit-series-alpha').value = m.seriesAlphaScore || 0;
+            document.getElementById('edit-series-bravo').value = m.seriesBravoScore || 0;
+
+            document.getElementById('edit-schedule-text').value = m.scheduleText || '';
+            document.getElementById('edit-series-record').value = m.seriesRecordText || '';
+
+            // Player banners
+            const alphaBanners = m.alphaPlayerBanners || [];
+            const bravoBanners = m.bravoPlayerBanners || [];
+            for (let i = 0; i < 4; i++) {
+                const alphaInput = document.getElementById(`edit-alpha-p${i + 1}`);
+                if (alphaInput) alphaInput.value = alphaBanners[i] || '';
+                
+                const bravoInput = document.getElementById(`edit-bravo-p${i + 1}`);
+                if (bravoInput) bravoInput.value = bravoBanners[i] || '';
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLiveEditModal() {
+            const modal = document.getElementById('live-edit-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            isEditingLive = false;
+            // Refresh data after closing in case of changes
+            setTimeout(loadLiveMatch, 600);
+        }
+
+        async function saveLiveMatchEdit() {
+            const token = localStorage.getItem("sessionToken");
+            if (!token) {
+                alert("You must be logged in as admin.");
+                return;
+            }
+
+            const btns = document.querySelectorAll('#live-edit-modal button');
+            btns.forEach(b => b.disabled = true);
+
+            const params = new URLSearchParams({
+                action: "updateLiveMatch",
+                sessionToken: token,
+                status: document.getElementById('edit-status').value.trim() || "LIVE",
+                roundInfo: document.getElementById('edit-round-info').value.trim(),
+                format: document.getElementById('edit-format').value.trim(),
+                teamAlpha: document.getElementById('edit-alpha-name').value.trim(),
+                teamAlphaLogo: document.getElementById('edit-alpha-logo').value.trim(),
+                teamAlphaScore: document.getElementById('edit-alpha-score').value || 0,
+                teamBravo: document.getElementById('edit-bravo-name').value.trim(),
+                teamBravoLogo: document.getElementById('edit-bravo-logo').value.trim(),
+                teamBravoScore: document.getElementById('edit-bravo-score').value || 0,
+                seriesAlphaScore: document.getElementById('edit-series-alpha').value || 0,
+                seriesBravoScore: document.getElementById('edit-series-bravo').value || 0,
+                scheduleText: document.getElementById('edit-schedule-text').value.trim(),
+                seriesRecordText: document.getElementById('edit-series-record').value.trim(),
+                // Player banners
+                alphaP1Banner: document.getElementById('edit-alpha-p1').value.trim(),
+                alphaP2Banner: document.getElementById('edit-alpha-p2').value.trim(),
+                alphaP3Banner: document.getElementById('edit-alpha-p3').value.trim(),
+                alphaP4Banner: document.getElementById('edit-alpha-p4').value.trim(),
+                bravoP1Banner: document.getElementById('edit-bravo-p1').value.trim(),
+                bravoP2Banner: document.getElementById('edit-bravo-p2').value.trim(),
+                bravoP3Banner: document.getElementById('edit-bravo-p3').value.trim(),
+                bravoP4Banner: document.getElementById('edit-bravo-p4').value.trim()
+            });
+
+            try {
+                const res = await fetch(`${SCRIPT_URL}?${params.toString()}`);
+                const result = await res.json();
+
+                if (result.success) {
+                    alert("✅ Live match updated! All visitors will see changes within seconds.");
+                    closeLiveEditModal();
+                    // Immediate refresh
+                    await loadLiveMatch();
+                } else {
+                    alert("Failed to update: " + (result.error || "Unknown error"));
+                }
+            } catch (err) {
+                alert("Save failed. Please check console.");
+                console.error(err);
+            } finally {
+                btns.forEach(b => b.disabled = false);
+            }
+        }
+
+        function startLivePolling() {
+            if (livePollInterval) clearInterval(livePollInterval);
+            livePollInterval = setInterval(() => {
+                if (!isEditingLive) {
+                    loadLiveMatch();
+                }
+            }, 14000); // every 14 seconds
+        }
+
         function init() {
             const tab0Btn = document.getElementById('sidebar-tab-btn-0');
             const tab0Content = document.getElementById('sidebar-tab-0');
@@ -1214,6 +1601,18 @@
             // Load real teams from Google Sheet on page load
             loadSignedUpTeams();
             initTwitchEmbed();
+
+            // === LIVE MATCH WATCH TAB SETUP ===
+            checkAdminForWatch();
+            loadLiveMatch();
+            startLivePolling();
+
+            // Optional: refresh live data when user comes back to tab
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden && currentSidebarTab === 5 && !isEditingLive) {
+                    loadLiveMatch();
+                }
+            });
         }
         window.onload = init;
     </script>
