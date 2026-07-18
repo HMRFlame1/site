@@ -1650,8 +1650,10 @@
             const token = localStorage.getItem("sessionToken");
             if (!token) {
                 userInfoDiv.innerHTML = `
-                    <div class="userBar" style="min-width:auto; padding:6px 12px;">
-                        <a href="account.html" style="color:#ffd700; font-size:13px; text-decoration:none;">Login / Register</a>
+                    <div class="userBar" style="min-width:auto; padding:6px 12px; gap:10px;">
+                        <a href="Account.html" style="color:#ffd700; font-size:13px; text-decoration:none;">Login</a>
+                        <span style="color:#555;">|</span>
+                        <a href="Register.html" style="color:#ffd700; font-size:13px; text-decoration:none;">Sign Up</a>
                     </div>
                 `;
                 return;
