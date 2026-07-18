@@ -138,7 +138,9 @@
 
         /* === User bar styles from Profile page (added for logged-in state) === */
         .userInfo { 
-            position: relative; 
+            position: absolute !important; 
+            right: 25px !important; 
+            top: 12px !important; 
             z-index: 100;
         }
         .userBar {
@@ -178,7 +180,7 @@
 </head>
 <body class="min-h-screen overflow-x-hidden">
     <!-- Top Navigation Bar -->
-    <nav class="bg-black border-b border-[#ffffff] sticky top-0 z-50">
+    <nav class="bg-black border-b border-[#ffffff] sticky top-0 z-50" style="position: relative;">
         <div class="max-w-screen-2xl mx-auto">
             <div class="flex items-center justify-between px-8 py-4">
                 <div class="flex items-center gap-x-3">
