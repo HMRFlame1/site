@@ -95,6 +95,7 @@
         .dark-panel, .esports-card, .feature-box, .mlg-table td {
             color: #f1f1f1;
         }
+        /* Red ticker bar with gold text */
         .news-ticker {
             background-color: #b30000;
             border-bottom: 1px solid #FF0000;
@@ -134,14 +135,6 @@
             font-weight: 800;
             color: #ffffff;
         }
-        .player-banner {
-            background-size: cover;
-            background-position: center;
-            transition: background-image 0.3s ease;
-        }
-        .live-score {
-            font-variant-numeric: tabular-nums;
-        }
     </style>
 </head>
 <body class="min-h-screen overflow-x-hidden">
@@ -169,15 +162,15 @@
             </div>
         </div>
     </nav>
-
-    <!-- HERO / BANNER -->
+    <!-- HERO / BANNER - Exact match to reference -->
     <div class="hero-bg min-h-[580px] flex items-center justify-center border-b border-[#222222] relative">
         <div class="max-w-screen-2xl mx-auto px-8 text-center relative z-10">
-            <div class="flex flex-col items-center"></div>
+            <div class="flex flex-col items-center">
+                <!-- Logo removed from banner as requested -->
+            </div>
         </div>
     </div>
-
-    <!-- NEWS TICKER -->
+    <!-- NEWS TICKER - Red bar matching reference -->
     <div class="news-ticker">
         <div class="ticker-wrapper">
             <div class="ticker-content">
@@ -188,209 +181,758 @@
             </div>
         </div>
     </div>
-
     <!-- MAIN CONTENT -->
     <div class="w-full pt-0 pb-0 bg-[#0a0a0a]">
         <div class="w-full">
-            <div class="dark-panel border-0 border-b border-[#ffffff] p-6 md:px-10 md:py-8 rounded-none">
-                
-                <!-- Tabs -->
+            <div class="dark-panel border-0 border-b border-[#ffffff] p-6 md:px-10 md:py-8 rounded-none" style="border-left: none; border-right: none; border-top: none;">
+                <!-- Tabs - directly under banner -->
                 <div class="flex border-b border-[#ffffff] mb-6 text-xs overflow-x-auto">
-                    <button onclick="switchSidebarTab(0)" id="sidebar-tab-btn-0" class="sidebar-tab active px-5 py-2.5 border-b-2 border-[#ffffff] text-[#ffffff]">PRESTIGE</button>
-                    <button onclick="switchSidebarTab(1)" id="sidebar-tab-btn-1" class="sidebar-tab px-5 py-2.5 hover:text-white">TOURNAMENTS</button>
-                    <button onclick="switchSidebarTab(2)" id="sidebar-tab-btn-2" class="sidebar-tab px-5 py-2.5 hover:text-white">INFO</button>
-                    <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3" class="sidebar-tab px-5 py-2.5 hover:text-white">RULESET</button>
-                    <button onclick="switchSidebarTab(4)" id="sidebar-tab-btn-4" class="sidebar-tab px-5 py-2.5 hover:text-white">UPDATES</button>
-                    <button onclick="switchSidebarTab(5)" id="sidebar-tab-btn-5" class="sidebar-tab px-5 py-2.5 hover:text-white">WATCH</button>
+                    <button onclick="switchSidebarTab(0)" id="sidebar-tab-btn-0"
+                            class="sidebar-tab active px-5 py-2.5 border-b-2 border-[#ffffff] text-[#ffffff]">PRESTIGE</button>
+                    <button onclick="switchSidebarTab(1)" id="sidebar-tab-btn-1"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">TOURNAMENTS</button>
+                    <button onclick="switchSidebarTab(2)" id="sidebar-tab-btn-2"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">INFO</button>
+                    <button onclick="switchSidebarTab(3)" id="sidebar-tab-btn-3"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">RULESET</button>
+                    <button onclick="switchSidebarTab(4)" id="sidebar-tab-btn-4"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">UPDATES</button>
+                    <button onclick="switchSidebarTab(5)" id="sidebar-tab-btn-5"
+                            class="sidebar-tab px-5 py-2.5 hover:text-white">WATCH</button>
                 </div>
 
-                <!-- PRESTIGE TAB (kept mostly original) -->
+                <!-- PRESTIGE TAB CONTENT (was the main page content) -->
                 <div id="sidebar-tab-0" class="sidebar-tab-content">
+                    <!-- FEATURED TEAMS -->
                     <div class="flex justify-center mb-4">
                         <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/7c611750-621c-4fba-94e4-6c77939f71f8-1_orig.png" alt="GameCircuit Championship" class="h-20 md:h-28 w-auto object-contain">
                     </div>
                     <h3 class="section-header mb-6 text-center">WATCH YOUR FAVORITE TEAMS BATTLE LIVE!</h3>
-                    
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-                        <!-- Team cards (original) -->
                         <div class="esports-card p-5 flex items-start gap-x-4">
-                            <div><div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden"><img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain"></div></div>
-                            <div class="flex-1 min-w-0 pt-1"><div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div><div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div></div>
+                            <div>
+                                <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
+                                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0 pt-1">
+                                <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
+                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                            </div>
                         </div>
                         <div class="esports-card p-5 flex items-start gap-x-4">
-                            <div><div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden"><img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain"></div></div>
-                            <div class="flex-1 min-w-0 pt-1"><div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div><div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div></div>
+                            <div>
+                                <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
+                                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0 pt-1">
+                                <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
+                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                            </div>
                         </div>
                         <div class="esports-card p-5 flex items-start gap-x-4">
-                            <div><div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden"><img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain"></div></div>
-                            <div class="flex-1 min-w-0 pt-1"><div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div><div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div></div>
+                            <div>
+                                <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
+                                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0 pt-1">
+                                <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
+                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                            </div>
                         </div>
                         <div class="esports-card p-5 flex items-start gap-x-4">
-                            <div><div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden"><img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain"></div></div>
-                            <div class="flex-1 min-w-0 pt-1"><div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div><div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div></div>
+                            <div>
+                                <div class="w-12 h-12 bg-zinc-800 border border-[#ffffff]/40 flex items-center justify-center mb-2 overflow-hidden">
+                                    <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" alt="GameCircuit" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0 pt-1">
+                                <div class="font-bold text-xl leading-none tracking-tight">Coming Soon</div>
+                                <div class="text-sm text-gray-400 mt-2">PlayerName • PlayerName • PlayerName • PlayerName</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tables (original standings & upcoming) -->
+                    <!-- TABLES -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- UPCOMING MATCHES -->
                         <div class="lg:col-span-7">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="section-header">UPCOMING PRESTIGE LEAGUE MATCHES</h4>
                                 <span class="text-xs text-gray-500 font-mono">ALL TIMES BST</span>
                             </div>
                             <table class="mlg-table w-full">
-                                <thead><tr><th>DATE / TIME</th><th>MATCH</th><th>FORMAT</th><th></th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>DATE / TIME</th>
+                                        <th>MATCH</th>
+                                        <th>FORMAT</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-sm">
-                                    <tr><td class="font-mono text-gray-400">TBA</td><td><span class="font-semibold">Coming Soon</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Coming Soon</span></td><td class="font-mono">Bo5</td><td><button class="text-[#ffffff] hover:underline text-xs font-bold">WATCH</button></td></tr>
-                                    <tr><td class="font-mono text-gray-400">TBA</td><td><span class="font-semibold">Coming Soon</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Coming Soon</span></td><td class="font-mono">Bo5</td><td><button class="text-[#ffffff] hover:underline text-xs font-bold">WATCH</button></td></tr>
+                                    <tr>
+                                        <td class="font-mono text-gray-400">TBA</td>
+                                        <td><span class="font-semibold">Coming Soon</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Coming Soon</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#ffffff] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-gray-400">TBA</td>
+                                        <td><span class="font-semibold">Coming Soon</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Coming Soon</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#ffffff] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-gray-400">TBA</td>
+                                        <td><span class="font-semibold">Coming Soon</span> <span class="text-gray-500">vs</span> <span class="font-semibold">Coming Soon</span></td>
+                                        <td class="font-mono">Bo5</td>
+                                        <td><button class="text-[#ffffff] hover:underline text-xs font-bold">WATCH</button></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <!-- STANDINGS -->
                         <div class="lg:col-span-5">
                             <div class="flex items-center justify-between mb-5">
                                 <h4 class="section-header">PRESTIGE LEAGUE STANDINGS</h4>
+                                <span class="text-xs text-gray-500 font-mono">UPDATED LIVE</span>
                             </div>
-                            <div class="max-h-[320px] overflow-y-auto pr-1">
+                            <div class="max-h-[320px] overflow-y-auto pr-1" style="scrollbar-width: thin; scrollbar-color: #ffffff #222;">
                                 <table class="mlg-table w-full">
-                                    <thead><tr><th>#</th><th>TEAM</th><th class="text-right">POINTS</th><th class="text-right">W/L</th></tr></thead>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>TEAM</th>
+                                            <th class="text-right">POINTS</th>
+                                            <th class="text-right">W/L</th>
+                                            <th class="text-right">MAP RECORD</th>
+                                        </tr>
+                                    </thead>
                                     <tbody class="text-sm">
-                                        <tr><td class="font-mono font-bold">1</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
-                                        <!-- ... other rows kept short for file size ... -->
+                                        <tr><td class="font-mono font-bold">1</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">2</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">3</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">4</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">5</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">6</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">7</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">8</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">9</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">10</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">11</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold">12</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold" style="color: #f87171 !important;">13</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold" style="color: #ef4444 !important;">14</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold" style="color: #dc2626 !important;">15</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
+                                        <tr><td class="font-mono font-bold" style="color: #b91c1c !important;">16</td><td class="font-semibold">Coming Soon</td><td class="font-mono text-right text-[#ffffff]">0</td><td class="font-mono text-right text-gray-400">0-0</td><td class="font-mono text-right text-gray-400">0-0</td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
+                    <!-- WHO TO WATCH (inside Prestige tab) -->
+                    <div class="mt-10 pt-8 border-t border-[#333]">
+                        <h2 class="text-center text-4xl md:text-5xl font-black tracking-[3px] text-[#ffffff] mb-6">WHO TO WATCH</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                                <div class="relative z-10"><div class="text-[#ffffff] text-3xl">⟪ ⟫</div></div>
+                            </div>
+                            <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                                <div class="relative z-10"><div class="text-[#ffffff] text-3xl">⟪ ⟫</div></div>
+                            </div>
+                            <div class="who-to-watch-card rounded-sm flex items-end p-6" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/whotowatch_orig.jpg')">
+                                <div class="relative z-10"><div class="text-[#ffffff] text-3xl">⟪ ⟫</div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- TOURNAMENTS / INFO / RULESET / UPDATES tabs kept as original for brevity -->
+                <!-- TOURNAMENTS TAB CONTENT -->
+                <div id="sidebar-tab-1" class="sidebar-tab-content hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-7">
+                            <div class="uppercase text-xs tracking-widest text-[#ffffff] mb-1">UPCOMING TOURNAMENT</div>
+                            <div class="font-bold text-2xl leading-none mb-1">KICKOFF TOURNAMENT</div>
+                            <div class="text-sm text-gray-400 mb-4">16/08/2026 • FREE ENTRY<br>Sign ups close 17/08/2026 6PM<br>100 Series points to participating teams</div>
+                            <button id="signup-btn" onclick="openSignUpModal()"
+                                    class="w-full max-w-[280px] py-3.5 bg-green-500 hover:bg-green-600 transition-colors text-black font-bold text-sm tracking-wider">
+                                SIGN UP
+                            </button>
+                            <div class="mt-3">
+                                <span id="team-count-text" class="text-sm text-gray-400">0 / 16 teams signed up</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <div class="uppercase text-xs tracking-widest text-gray-500 mb-2">SIGNED UP TEAMS</div>
+                            <div id="team-list" class="text-sm text-gray-300 max-h-[140px] overflow-y-auto space-y-1 pr-2 border-l border-[#333] pl-4"></div>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- ==================== WATCH TAB - FULLY UPDATED ==================== -->
-                <div id="sidebar-tab-5" class="sidebar-tab-content hidden">
-                    
-                    <!-- Top bar + Edit Button -->
-                    <div class="flex items-center justify-between bg-black border border-[#333] px-4 py-2 text-xs mb-0">
-                        <div class="flex items-center gap-3">
-                            <span id="live-status-badge" class="bg-red-600 text-white font-bold px-2 py-0.5 tracking-wider">LIVE</span>
-                            <span id="live-match-title" class="text-white font-semibold">GameCircuit Championship • Kickoff Tournament</span>
+                <!-- INFO TAB CONTENT -->
+                <div id="sidebar-tab-2" class="sidebar-tab-content hidden">
+                    <h5 class="font-bold text-[#ffffff] mb-3">HOW THE CHAMPIONSHIP WORKS</h5>
+                    <p class="text-sm text-gray-400 mb-4">The GameCircuit Championship 2026 features 6 key events. Teams earn Series Points from Open Tournaments to qualify and seed for the Prestige League and future events.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div>
+                            <span class="font-bold text-[#ffffff]">1. KICKOFF TOURNAMENT</span><br>
+                            <span class="text-gray-400 text-xs">Free entry • 16-team Single Elimination • £50 prize pool • 100 Series Points</span>
                         </div>
                         <div>
-                            <button onclick="openLiveEditPanel()" 
-                                    class="px-4 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded flex items-center gap-2">
-                                <i class="fas fa-edit"></i>
-                                <span>Edit Live Broadcast</span>
-                            </button>
+                            <span class="font-bold text-[#ffffff]">2. OPEN EVENT #1</span><br>
+                            <span class="text-gray-400 text-xs">£15 entry • 32-team Single Elimination • Bo3 • Prize pool based on sign-ups</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#ffffff]">3. PRESTIGE LEAGUE SEASON 1</span><br>
+                            <span class="text-gray-400 text-xs">16-team league for top 16 by Series Points • £20 entry to lock spot</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#ffffff]">4. OPEN EVENT #2</span><br>
+                            <span class="text-gray-400 text-xs">£15 entry • 32-team Single Elimination • Bo3 • Prize pool based on sign-ups</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#ffffff]">5. OPEN EVENT #3</span><br>
+                            <span class="text-gray-400 text-xs">£15 entry • 32-team Single Elimination • Bo3 • Prize pool based on sign-ups</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#ffffff]">6. CHAMPIONSHIP FINALS</span><br>
+                            <span class="text-gray-400 text-xs">16-team Pool Play + Double Elimination • Free for top 12 • £20 qualifiers for final spots</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Series Points determine seeding for leagues and future events.</p>
+                </div>
+
+                <!-- RULESET TAB CONTENT -->
+                <div id="sidebar-tab-3" class="sidebar-tab-content hidden">
+                    <h5 class="font-bold text-[#ffffff] mb-4">OFFICIAL RULESET</h5>
+                    <div class="max-h-[600px] overflow-y-auto pr-3 space-y-6 text-sm" style="scrollbar-width: thin; scrollbar-color: #ffffff #222;">
+
+                        <!-- MAPSET -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">MAPSET</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Hardpoint</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Yemen</li>
+                                        <li>Slums</li>
+                                        <li>Hijacked</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Search &amp; Destroy</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Express</li>
+                                        <li>Meltdown</li>
+                                        <li>Slums</li>
+                                        <li>Aftermath</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Capture the Flag</div>
+                                    <ul class="text-gray-400 text-xs space-y-0.5">
+                                        <li>Raid</li>
+                                        <li>Standoff</li>
+                                        <li>Slums</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BANNED ITEMS & WEAPONS -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">BANNED ITEMS &amp; WEAPONS</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Streaks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>UAV</li><li>COUNTER UAV</li><li>CARE PACKAGE</li><li>SENTRY GUN</li>
+                                        <li>GUARDIAN</li><li>ORBITAL VSAT</li><li>K9 UNIT</li><li>HUNTER KILLER</li>
+                                        <li>DRAGONFIRE</li><li>ESCORT DRONE</li><li>EMP SYSTEMS</li><li>LODSTAR</li>
+                                        <li>WARTHOG</li><li>DEATH MACHINE</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-green-400 font-semibold mb-1">Allowed Streaks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>RC-XD</li><li>LIGHTNING STRIKE</li><li>HELLSTORM MISSILE</li>
+                                        <li>WAR MACHINE</li><li>STEALTH CHOPPER</li><li>VTOL WARSHIP</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Perks</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>HARDLINE</li><li>GHOST</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Wildcards</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>OVERKILL</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Weapons</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Assault Shield</li><li>S12 Shotgun</li><li>1216 Shotgun</li>
+                                        <li>ALL LMG's</li><li>Chicom CQB</li><li>FAL DSW</li><li>SMR</li>
+                                        <li>SMAW</li><li>RPG</li><li>CROSSBOW</li><li>BALLISTIC KNIFE</li>
+                                        <li>XPR-50</li><li>SVU</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Attachments</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>ACOG</li><li>TARGET FINDER</li><li>EO TECH</li>
+                                        <li>HYBRID OPTIC</li><li>LAUNCHER</li><li>MMS</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-red-400 font-semibold mb-1">Banned Lethals</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>CLAYMORE</li><li>BOUNCING BETTY</li><li>C4</li>
+                                    </ul>
+                                    <div class="text-red-400 font-semibold mt-3 mb-1">Banned Tacticals</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>SHOCK CHARGE</li><li>TACTICAL INSERTION</li><li>SENSOR GRENADE</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MATCH SETTINGS -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs mb-3 border-b border-[#333] pb-2">MATCH SETTINGS</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                                <div>
+                                    <div class="text-white font-semibold mb-1">General Settings</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Party Privacy: <span class="text-white">INVITE ONLY</span></li>
+                                        <li>Team Change In-Game: <span class="text-white">NOT ALLOWED</span></li>
+                                        <li>Dynamic Map Elements: <span class="text-white">OFF</span></li>
+                                        <li>Revenge Voice: <span class="text-white">OFF</span></li>
+                                        <li>ScoreStreaks: <span class="text-white">ALLOWED</span></li>
+                                        <li>Friendly Fire: <span class="text-white">ON</span></li>
+                                        <li>Battlechatter: <span class="text-white">OFF</span></li>
+                                        <li>Explosive Delay: <span class="text-white">OFF</span></li>
+                                        <li>CoD Casting: <span class="text-white">ON</span></li>
+                                        <li>Suicide Penalty: <span class="text-white">OFF</span></li>
+                                        <li>Pre-Match Timer: <span class="text-white">15 SECONDS</span></li>
+                                        <li>Pre-Round Timer: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Auto Team Balancing: <span class="text-white">OFF</span></li>
+                                        <li>Scorestreak Delay: <span class="text-white">15 SECONDS</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Health Settings</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Health: <span class="text-white">100%</span></li>
+                                        <li>Health Regeneration: <span class="text-white">NORMAL</span></li>
+                                        <li>Teamkill Kick Limit: <span class="text-white">OFF</span></li>
+                                        <li>Headshots Only: <span class="text-white">OFF</span></li>
+                                        <li>Hit Indicator: <span class="text-white">ON</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Search and Destroy</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Time Limit: <span class="text-white">1.5 MINUTES</span></li>
+                                        <li>Rounds to Win: <span class="text-white">6</span></li>
+                                        <li>Bomb Timer: <span class="text-white">45 SECONDS</span></li>
+                                        <li>Plant Time: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Defuse Time: <span class="text-white">7.5 SECONDS</span></li>
+                                        <li>Multi Bomb: <span class="text-white">OFF</span></li>
+                                        <li>Switch Side: <span class="text-white">EVERY ROUND</span></li>
+                                        <li>Silent Plant: <span class="text-white">YES</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Hardpoint</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Time Limit: <span class="text-white">10 MINUTES</span></li>
+                                        <li>Score Limit: <span class="text-white">250</span></li>
+                                        <li>Lifetime: <span class="text-white">1 MINUTE</span></li>
+                                        <li>Capture Time: <span class="text-white">NONE</span></li>
+                                        <li>Activation Delay Time: <span class="text-white">NONE</span></li>
+                                        <li>Location: <span class="text-white">LINEAR</span></li>
+                                        <li>Scoring: <span class="text-white">CONSTANT</span></li>
+                                        <li>Respawn Delay: <span class="text-white">NONE</span></li>
+                                        <li>Force Respawn: <span class="text-white">YES</span></li>
+                                        <li>Wave Respawn Delay: <span class="text-white">NONE</span></li>
+                                    </ul>
+                                    <div class="text-white font-semibold mt-3 mb-1">Capture The Flag</div>
+                                    <ul class="text-gray-400 space-y-0.5">
+                                        <li>Win Condition: <span class="text-white">Total Flag Captures</span></li>
+                                        <li>Time Limit: <span class="text-white">5 MINUTES</span></li>
+                                        <li>Respawn Delay: <span class="text-white">5 SECONDS</span></li>
+                                        <li>Capture Limit: <span class="text-white">10 FLAGS</span></li>
+                                        <li>Round Limit: <span class="text-white">2 ROUNDS</span></li>
+                                        <li>Round Win Limit: <span class="text-white">NONE</span></li>
+                                        <li>Enemy Carrier: <span class="text-white">DELAYED</span></li>
+                                        <li>Auto Return Time: <span class="text-white">30 SECONDS</span></li>
+                                        <li>Pickup Time: <span class="text-white">INSTANT</span></li>
+                                        <li>Return Time: <span class="text-white">INSTANT</span></li>
+                                        <li>Force Respawn: <span class="text-white">YES</span></li>
+                                        <li>Wave Respawn Delay: <span class="text-white">NONE</span></li>
+                                    </ul>
+                                    <p class="text-gray-400 mt-3 text-[11px] italic">In the event of a tie, overtime should be played in order to establish a winner.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COMPETITIVE RULES 2-14 -->
+                        <div class="border border-[#333] bg-[#0d0d0d] p-4 space-y-4">
+                            <h6 class="text-[#ffffff] font-bold tracking-widest text-xs border-b border-[#333] pb-2">COMPETITIVE RULES</h6>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">2. Player Accounts &amp; Eligibility</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[2.1]</span> Each player may only compete on one account.</li>
+                                    <li><span class="text-white">[2.2]</span> Account sharing is not allowed.</li>
+                                    <li><span class="text-white">[2.3]</span> All players must be listed on the team roster prior to match start.</li>
+                                    <li><span class="text-white">[2.4]</span> Playing with an unregistered or ineligible player will result in a forfeit loss.</li>
+                                    <li><span class="text-white">[2.5]</span> Players must use the GamerTag linked to their profile or they will forfeit the series.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">3. Gamertags</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[3.1]</span> Players must use the exact PSN gamertag listed on their profile.</li>
+                                    <li><span class="text-white">[3.2]</span> Incorrect, private, or unlisted gamertags are grounds for an automatic forfeit.</li>
+                                    <li><span class="text-white">[3.3]</span> Gamertag changes must be updated on the website before the match begins.</li>
+                                    <li><span class="text-white">[3.4]</span> “Substitute” or alternate accounts are not permitted.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">4. Match Scheduling &amp; Time</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[4.1]</span> Matches must be played at the scheduled match time.</li>
+                                    <li><span class="text-white">[4.2]</span> Teams are given 15 minutes after the scheduled start time to show up and be ready. If a team is not present after 15 minutes, they may be forfeited. Proof is required (messages, lobby screenshots, etc.).</li>
+                                    <li><span class="text-white">[4.3]</span> If both teams fail to show within 15 minutes, the match may be canceled.</li>
+                                    <li><span class="text-white">[4.4]</span> Teams have 5 minutes between maps to start the next map or the next map will be forfeited.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">5. No-Shows &amp; Forfeits</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[5.1]</span> A no-show occurs when a team fails to appear within the allowed time.</li>
+                                    <li><span class="text-white">[5.2]</span> The present team may claim a forfeit with proper proof.</li>
+                                    <li><span class="text-white">[5.3]</span> Any attempt to forfeit teams without justification may result in penalties.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">6. Hosting</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[6.1]</span> The higher-ranked team on the ladder hosts the 1, 3, 5, 7.</li>
+                                    <li><span class="text-white">[6.2]</span> If a host ends the game for no justified reason the given map will be forfeited by the host.</li>
+                                    <li><span class="text-white">[6.3]</span> Host must provide a stable and playable connection.</li>
+                                    <li><span class="text-white">[6.4]</span> Unplayable host may result in a host switch or forfeit at admin discretion.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">7. Game Settings</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[7.1]</span> All matches must be played using the official ladder settings.</li>
+                                    <li><span class="text-white">[7.2]</span> If any settings are incorrect, the opposing team must leave the match and have proof of the incorrect rules. If the team plays the full match out, then the map result will stand. The hosting team will forfeit the map if the rules are proven to be incorrect. If within the first 30 seconds the match is ended and restarted with the correct rules, the match will be restarted from the starting score.</li>
+                                    <li><span class="text-white">[7.3]</span> Playing with incorrect settings without notifying the opponent may result in a map or match forfeit.</li>
+                                    <li><span class="text-white">[7.4]</span> Intentional misuse of settings will be penalized.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">8. Maps &amp; Game Modes</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[8.1]</span> Maps and modes are determined by the ladder ruleset.</li>
+                                    <li><span class="text-white">[8.2]</span> Any deviation from approved maps or modes requires mutual agreement.</li>
+                                    <li><span class="text-white">[8.3]</span> Playing an unapproved map without consent may result in a forfeit.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">9. Disconnects &amp; Restarts</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[9.1]</span> If a disconnect occurs before first blood or before the first 30 seconds, the map may be restarted.</li>
+                                    <li><span class="text-white">[9.2]</span> If a disconnect occurs after significant progress: the team with advantage may choose to continue or accept a restart. Admins will determine the outcome if disputed.</li>
+                                    <li><span class="text-white">[9.3]</span> Intentional disconnects are grounds for forfeiture.</li>
+                                    <li><span class="text-white">[9.4]</span> In the event of a disconnection during a Search &amp; Destroy round, the host is required to end the match at the end of the current round. The round outcome will remain valid, and upon restarting the match, the existing score will carry over.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">10. Match Reporting</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[10.1]</span> Both teams are required to report the match result. If a team does not report within 2 hours the win will be automatically given to the opposing team.</li>
+                                    <li><span class="text-white">[10.2]</span> Reported scores must match the in-game results.</li>
+                                    <li><span class="text-white">[10.3]</span> False reporting will result in penalties or suspension.</li>
+                                    <li><span class="text-white">[10.4]</span> Screenshots are required for proof.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">11. Disputes</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[11.1]</span> Disputes must be opened within 2 hours of match completion.</li>
+                                    <li><span class="text-white">[11.2]</span> All disputes must include sufficient evidence: Screenshots, Video, Xbox messages.</li>
+                                    <li><span class="text-white">[11.3]</span> Incomplete disputes may be closed without action.</li>
+                                    <li><span class="text-white">[11.4]</span> Admin decisions are final.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">12. Cheating &amp; Exploits</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[12.1]</span> Cheating is strictly prohibited, including but not limited to: Modded controllers, Rapid fire, Macros, Scripts, Glitches or exploits, JTAGS, Cronus, Unauthorized third-party devices.</li>
+                                    <li><span class="text-white">[12.2]</span> Any confirmed cheating will result in: Match forfeit, Ladder removal, Possible permanent ban.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">13. Sportsmanship</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[13.1]</span> Players must conduct themselves in a respectful manner.</li>
+                                    <li><span class="text-white">[13.2]</span> Harassment, racism, threats, or excessive trash talk is not allowed.</li>
+                                    <li><span class="text-white">[13.3]</span> Unsportsmanlike conduct may result in warnings, forfeits, or suspension.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="text-white font-semibold text-xs mb-1">14. Admin Rights</div>
+                                <ul class="text-gray-400 text-xs space-y-1">
+                                    <li><span class="text-white">[14.1]</span> Admins reserve the right to: Enforce forfeits, Adjust results, Penalize teams, Modify rules.</li>
+                                    <li><span class="text-white">[14.2]</span> Ignorance of the rules is not an excuse.</li>
+                                    <li><span class="text-white">[14.3]</span> Any abuse towards admins will not be tolerated and your account may be suspended.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- UPDATES TAB CONTENT -->
+                <div id="sidebar-tab-4" class="sidebar-tab-content hidden">
+                    <h5 class="font-bold text-[#ffffff] mb-3">UPDATES</h5>
+                    <div class="space-y-4 text-sm">
+                        <div class="border-l-2 border-[#ffffff] pl-4">
+                            <div class="text-xs text-gray-500 font-mono mb-1">17/07/2026</div>
+                            <p class="text-gray-300">Kickoff Tournament date confirmed for <span class="text-white font-semibold">16/08/2026</span>. Sign-ups are now open — 16 team single elimination, free entry, £50 prize pool + 100 Series Points.</p>
+                        </div>
+                        <div class="border-l-2 border-[#333] pl-4">
+                            <div class="text-xs text-gray-500 font-mono mb-1">15/07/2026</div>
+                            <p class="text-gray-400">GameCircuit Championship 2026 page launched. Full event structure and Prestige League details now available in the INFO tab.</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-5">Check back here for schedule changes, rule updates, and official announcements.</p>
+                </div>
+
+                <!-- CIRCUITTV / WATCH TAB CONTENT -->
+                <div id="sidebar-tab-5" class="sidebar-tab-content hidden">
+                    <!-- Top bar -->
+                    <div class="flex items-center justify-between bg-black border border-[#333] px-4 py-2 text-xs mb-0">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-red-600 text-white font-bold px-2 py-0.5 tracking-wider">LIVE</span>
+                            <span class="text-white font-semibold">GameCircuit Championship • Kickoff Tournament</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-400">
+                            <span class="text-gray-500">UP NEXT: Open Event #1</span>
                         </div>
                     </div>
 
-                    <!-- Main Broadcast Area -->
+                    <!-- Main CircuitTV layout -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 border border-[#333] border-t-0 bg-[#0d0d0d]">
-                        
-                        <!-- LEFT: Stream + Scoreboard -->
+                        <!-- LEFT: Stream / Scoreboard area -->
                         <div class="lg:col-span-8 relative min-h-[420px] bg-[#111] flex flex-col">
-                            
-                            <!-- LIVE SCOREBOARD -->
+                            <!-- In-game style scoreboard -->
                             <div class="bg-black/90 border-b border-[#333] px-4 py-3">
                                 <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
-                                    <span id="live-round-info">Champ Winners Round 1</span>
-                                    <span id="live-format" class="text-white font-bold tracking-widest">Bo5</span>
+                                    <span>Champ Winners Round 1</span>
+                                    <span class="text-white font-bold tracking-widest">BEST OF 3</span>
                                     <span>Casted by GameCircuit</span>
                                 </div>
-                                
                                 <div class="flex items-center justify-center gap-6">
-                                    <!-- Team Alpha -->
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 flex items-center justify-center overflow-hidden rounded border border-[#333]">
-                                            <img id="team-alpha-logo" src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain" alt="">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
                                         </div>
                                         <div class="text-right">
-                                            <div id="team-alpha-name" class="text-white font-bold text-sm">TEAM ALPHA</div>
+                                            <div class="text-white font-bold text-sm">TEAM ALPHA</div>
+                                            <div class="text-gray-500 text-xs">Coming Soon</div>
                                         </div>
-                                        <div id="team-alpha-score" class="live-score text-4xl font-black text-white w-14 text-center">0</div>
+                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
                                     </div>
-                                    
                                     <div class="text-gray-500 font-mono text-lg">vs</div>
-                                    
-                                    <!-- Team Bravo -->
                                     <div class="flex items-center gap-3">
-                                        <div id="team-bravo-score" class="live-score text-4xl font-black text-white w-14 text-center">0</div>
+                                        <div class="text-4xl font-black text-white w-12 text-center">0</div>
                                         <div class="text-left">
-                                            <div id="team-bravo-name" class="text-white font-bold text-sm">TEAM BRAVO</div>
+                                            <div class="text-white font-bold text-sm">TEAM BRAVO</div>
+                                            <div class="text-gray-500 text-xs">Coming Soon</div>
                                         </div>
-                                        <div class="w-10 h-10 flex items-center justify-center overflow-hidden rounded border border-[#333]">
-                                            <img id="team-bravo-logo" src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-10 h-10 object-contain" alt="">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="w-8 h-8 object-contain" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Twitch Embed -->
+                            <!-- Twitch embed -->
                             <div class="flex-1 relative bg-black min-h-[420px]">
-                                <iframe id="twitch-embed" src="" height="100%" width="100%" allowfullscreen class="absolute inset-0 w-full h-full border-0"></iframe>
+                                <iframe
+                                    id="twitch-embed"
+                                    src=""
+                                    height="100%"
+                                    width="100%"
+                                    allowfullscreen
+                                    allow="autoplay; fullscreen"
+                                    class="absolute inset-0 w-full h-full border-0"
+                                    title="GameCircuitUK Twitch Stream">
+                                </iframe>
+                                <!-- Fallback if embed blocked -->
+                                <div id="twitch-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-[#111] text-center px-4">
+                                    <i class="fab fa-twitch text-5xl text-purple-500 mb-4"></i>
+                                    <div class="text-white font-bold text-xl mb-2">Watch Live on Twitch</div>
+                                    <div class="text-gray-400 text-sm mb-5">Stream may not load in this preview — open on Twitch instead</div>
+                                    <a href="https://www.twitch.tv/gamecircuituk" target="_blank" rel="noopener"
+                                       class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm tracking-wider transition-colors">
+                                        <i class="fab fa-twitch"></i> OPEN TWITCH
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- RIGHT PANEL -->
+                        <!-- RIGHT: Side panel with sub-tabs -->
                         <div class="lg:col-span-4 border-l border-[#333] bg-[#0a0a0a] flex flex-col min-h-[420px]">
+                            <!-- Sub tabs -->
                             <div class="flex border-b border-[#333] text-[10px] font-bold tracking-wider">
                                 <button onclick="switchCircuitTab(0)" id="circuit-tab-btn-0" class="circuit-tab active flex-1 py-2.5 text-center text-white border-b-2 border-white">ROSTER</button>
                                 <button onclick="switchCircuitTab(1)" id="circuit-tab-btn-1" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SCORES</button>
                                 <button onclick="switchCircuitTab(2)" id="circuit-tab-btn-2" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SCHEDULE</button>
+                                <button onclick="switchCircuitTab(3)" id="circuit-tab-btn-3" class="circuit-tab flex-1 py-2.5 text-center text-gray-500 hover:text-white">SOCIAL</button>
                             </div>
 
-                            <!-- ROSTER (Dynamic Player Banners) -->
+                            <!-- ROSTER panel -->
                             <div id="circuit-tab-0" class="circuit-tab-content flex-1 overflow-y-auto p-3 space-y-4">
                                 <div>
-                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2">» TEAM ALPHA</div>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        <div id="alpha-player-1" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="alpha-player-2" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="alpha-player-3" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="alpha-player-4" class="player-banner h-[72px] rounded border border-[#333]"></div>
+                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2 flex items-center gap-2">
+                                        <span class="text-[#ffffff]">»</span> TEAM ALPHA
+                                        <span class="ml-auto text-gray-500 font-mono">1</span>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2">» TEAM BRAVO</div>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        <div id="bravo-player-1" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="bravo-player-2" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="bravo-player-3" class="player-banner h-[72px] rounded border border-[#333]"></div>
-                                        <div id="bravo-player-4" class="player-banner h-[72px] rounded border border-[#333]"></div>
+                                    <div class="text-[10px] font-bold text-white tracking-wider mb-2 flex items-center gap-2">
+                                        <span class="text-[#ffffff]">»</span> TEAM BRAVO
+                                        <span class="ml-auto text-gray-500 font-mono">2</span>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
+                                        <div class="relative overflow-hidden rounded-sm h-[63px]" style="background-image: url('https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/webbannernoface_orig.jpg'); background-size: cover; background-position: center;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- SCORES Tab (Dynamic) -->
+                            <!-- SCORES panel -->
                             <div id="circuit-tab-1" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
                                 <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">SERIES SCORES</div>
-                                <div id="dynamic-series-scores" class="space-y-2 text-xs">
-                                    <!-- Populated by JS -->
+                                <div class="space-y-2 text-xs">
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-white font-semibold">Team Alpha</span>
+                                        <span class="font-mono text-white">0 - 0</span>
+                                        <span class="text-gray-400">Team Bravo</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-gray-400">Coming Soon</span>
+                                        <span class="font-mono text-gray-500">vs</span>
+                                        <span class="text-gray-400">Coming Soon</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
+                                        <span class="text-gray-400">Coming Soon</span>
+                                        <span class="font-mono text-gray-500">vs</span>
+                                        <span class="text-gray-400">Coming Soon</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- SCHEDULE Tab (Dynamic) -->
+                            <!-- SCHEDULE panel -->
                             <div id="circuit-tab-2" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
                                 <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">UPCOMING</div>
-                                <div id="dynamic-schedule" class="bg-[#151515] px-3 py-2 text-xs">
-                                    <!-- Populated by JS -->
+                                <div class="space-y-2 text-xs">
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Kickoff Tournament</div>
+                                        <div class="text-gray-500 mt-0.5">16/08/2026 • Single Elim • Bo5</div>
+                                    </div>
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Open Event #1</div>
+                                        <div class="text-gray-500 mt-0.5">TBA • 32 Teams • Bo3</div>
+                                    </div>
+                                    <div class="bg-[#151515] px-3 py-2">
+                                        <div class="text-white font-semibold">Prestige League S1</div>
+                                        <div class="text-gray-500 mt-0.5">TBA • 16 Team League</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SOCIAL panel -->
+                            <div id="circuit-tab-3" class="circuit-tab-content hidden flex-1 overflow-y-auto p-3">
+                                <div class="text-[10px] font-bold text-gray-500 tracking-wider mb-3">FOLLOW US</div>
+                                <div class="space-y-2 text-xs">
+                                    <a href="https://discord.gg/K5eQtT63jQ" target="_blank" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-discord text-[#5865F2] text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">Discord</div>
+                                            <div class="text-gray-500">Join the community</div>
+                                        </div>
+                                    </a>
+                                    <a href="https://x.com/gamecircuituk" target="_blank" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-twitter text-sky-400 text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">Twitter / X</div>
+                                            <div class="text-gray-500">@gamecircuituk</div>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCwHyxPwiOJbodQJ7VTvxK3w" target="_blank" class="flex items-center gap-3 bg-[#151515] hover:bg-[#1a1a1a] px-3 py-2.5 transition-colors">
+                                        <i class="fab fa-youtube text-red-500 text-lg"></i>
+                                        <div>
+                                            <div class="text-white font-semibold">YouTube</div>
+                                            <div class="text-gray-500">VODs & Highlights</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bottom Bar -->
+                    <!-- Bottom facts / other scores bar -->
                     <div class="grid grid-cols-1 md:grid-cols-4 border border-[#333] border-t-0 bg-black text-xs">
                         <div class="border-r border-[#333] px-4 py-3 flex items-center gap-3">
                             <span class="text-gray-400 text-[11px] font-medium">Powered by</span>
-                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="h-8 w-auto object-contain">
+                            <img src="https://www.gamecircuit.co.uk/uploads/1/5/2/9/152994747/chatgpt-image-jul-15-2026-03-28-29-am_orig.png" class="h-8 w-auto object-contain" alt="GameCircuit">
                         </div>
                         <div class="border-r border-[#333] px-4 py-3">
                             <div class="text-gray-500 text-[10px] mb-0.5">DID YOU KNOW?</div>
-                            <div class="text-white text-[11px]">GameCircuit has 8 Free multiplayer games</div>
+                            <div class="text-white text-[11px] leading-tight">GameCircuit has 8 Free multiplayer games on their site</div>
                         </div>
                         <div class="border-r border-[#333] px-4 py-3">
                             <div class="text-gray-500 text-[10px] mb-0.5">SERIES RECORD</div>
-                            <div id="dynamic-series-record" class="text-white font-mono text-[11px]">Team Alpha 0 - 0 Team Bravo</div>
+                            <div class="text-white font-mono text-[11px]">Team Alpha 0 - 0 Team Bravo</div>
                         </div>
                         <div class="px-4 py-3">
                             <div class="text-gray-500 text-[10px] mb-0.5">NEXT MATCH</div>
@@ -398,319 +940,281 @@
                         </div>
                     </div>
                 </div>
-                <!-- END WATCH TAB -->
-
             </div>
         </div>
     </div>
-
-    <!-- ==================== ADMIN EDIT PANEL ==================== -->
-    <div id="live-edit-panel" class="hidden fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4">
-        <div class="bg-[#111111] border border-red-600 w-full max-w-5xl rounded-xl p-6 max-h-[92vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-red-500">Edit Live Broadcast</h3>
-                <button onclick="closeLiveEditPanel()" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+    <!-- Footer -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-10 text-center">
+        <a href="https://www.gamecircuit.co.uk" class="inline-flex items-center justify-center gap-x-2 px-8 py-3.5 border border-[#ffffff] hover:bg-[#ffffff] hover:text-black transition-all text-sm font-bold tracking-wider">
+            <i class="fas fa-arrow-left"></i>
+            <span>RETURN TO GAMECIRCUIT.CO.UK</span>
+        </a>
+        <p class="text-xs text-gray-500 tracking-widest mt-5">THE GAMECIRCUIT CHAMPIONSHIP • POWERED BY GAMECIRCUIT • BLACK OPS II 2026</p>
+    </div>
+    <!-- SIGNUP MODAL -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black/80 z-[100] items-center justify-center">
+        <div class="dark-panel border border-[#ffffff] w-full max-w-md mx-4 p-6 rounded">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg text-[#ffffff]">KICKOFF TOURNAMENT SIGN UP</h3>
+                <button onclick="closeSignUpModal()" class="text-gray-400 hover:text-white text-xl leading-none">&times;</button>
             </div>
-
-            <!-- Status / Round / Format -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">STATUS</label>
-                    <select id="edit-status" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded text-white">
-                        <option value="LIVE">LIVE</option>
-                        <option value="UP NEXT">UP NEXT</option>
-                        <option value="HALFTIME">HALFTIME</option>
-                        <option value="ENDED">ENDED</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">ROUND INFO</label>
-                    <input id="edit-round-info" type="text" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded text-white">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">FORMAT</label>
-                    <input id="edit-format" type="text" value="Bo5" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded text-white font-mono">
-                </div>
-            </div>
-
-            <!-- Teams -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <!-- Alpha -->
-                <div class="border border-[#333] p-4 rounded">
-                    <div class="font-bold text-red-400 mb-3">TEAM ALPHA</div>
-                    <div class="space-y-3 text-sm">
-                        <input id="edit-alpha-name" type="text" placeholder="Team Name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded">
-                        <input id="edit-alpha-logo" type="text" placeholder="Logo URL" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div><label class="text-xs text-gray-400">Map Score</label><input id="edit-alpha-score" type="number" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded font-mono"></div>
-                            <div><label class="text-xs text-gray-400">Series Score</label><input id="edit-alpha-series" type="number" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded font-mono"></div>
+            <form id="signup-form" onsubmit="submitSignUp(event)">
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">TEAM NAME <span class="text-[#ffffff]">*</span></label>
+                        <input type="text" id="team-name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="e.g. Team Vortex" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">CAPTAIN'S DISCORD HANDLE <span class="text-[#ffffff]">*</span></label>
+                        <input type="text" id="discord" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="CaptainName" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">TWITTER @</label>
+                        <input type="text" id="twitter" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="@yourhandle">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">PSN IDs <span class="text-[#ffffff]">(minimum 2 players required)</span></label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="text" id="psn1" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="Player 1 PSN" required>
+                            <input type="text" id="psn2" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="Player 2 PSN" required>
+                            <input type="text" id="psn3" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="Player 3 PSN (optional)">
+                            <input type="text" id="psn4" class="bg-[#1a1a1a] border border-[#333] px-3 py-2 text-white text-sm focus:border-[#ffffff] outline-none rounded" placeholder="Player 4 PSN (optional)">
                         </div>
                     </div>
                 </div>
-                <!-- Bravo -->
-                <div class="border border-[#333] p-4 rounded">
-                    <div class="font-bold text-red-400 mb-3">TEAM BRAVO</div>
-                    <div class="space-y-3 text-sm">
-                        <input id="edit-bravo-name" type="text" placeholder="Team Name" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded">
-                        <input id="edit-bravo-logo" type="text" placeholder="Logo URL" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div><label class="text-xs text-gray-400">Map Score</label><input id="edit-bravo-score" type="number" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded font-mono"></div>
-                            <div><label class="text-xs text-gray-400">Series Score</label><input id="edit-bravo-series" type="number" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded font-mono"></div>
-                        </div>
-                    </div>
+                <div class="mt-4 p-3 bg-[#1a1a1a] border border-[#333] text-xs text-gray-400 rounded">
+                    ⚠️ <strong class="text-[#ffffff]">You must join the GameCircuit Discord</strong> to complete your sign up.<br>
+                    <a href="https://discord.gg/K5eQtT63jQ" target="_blank" class="text-[#ffffff] hover:underline font-medium">Join Discord →</a>
                 </div>
-            </div>
-
-            <!-- Schedule & Record -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div><label class="block text-xs text-gray-400 mb-1">SCHEDULE TEXT</label><input id="edit-schedule" type="text" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded"></div>
-                <div><label class="block text-xs text-gray-400 mb-1">SERIES RECORD</label><input id="edit-series-record" type="text" class="w-full bg-[#1a1a1a] border border-[#333] px-3 py-2 rounded"></div>
-            </div>
-
-            <!-- Player Banners -->
-            <div class="mb-6">
-                <div class="font-bold text-red-400 mb-3">PLAYER BANNERS (ROSTER)</div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-                    <!-- Alpha -->
-                    <div><div class="text-gray-400 mb-1">Alpha P1</div><img id="preview-alpha-1" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-alpha-p1" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Alpha P2</div><img id="preview-alpha-2" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-alpha-p2" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Alpha P3</div><img id="preview-alpha-3" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-alpha-p3" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Alpha P4</div><img id="preview-alpha-4" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-alpha-p4" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    
-                    <!-- Bravo -->
-                    <div><div class="text-gray-400 mb-1">Bravo P1</div><img id="preview-bravo-1" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-bravo-p1" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Bravo P2</div><img id="preview-bravo-2" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-bravo-p2" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Bravo P3</div><img id="preview-bravo-3" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-bravo-p3" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
-                    <div><div class="text-gray-400 mb-1">Bravo P4</div><img id="preview-bravo-4" class="w-full h-14 object-cover rounded mb-1 border border-[#333]"><input id="edit-bravo-p4" type="text" placeholder="URL" class="w-full bg-[#1a1a1a] border border-[#333] px-2 py-1 rounded text-xs"></div>
+                <div class="flex gap-3 mt-5">
+                    <button type="button" onclick="closeSignUpModal()"
+                            class="flex-1 py-2.5 border border-[#333] text-sm font-bold hover:bg-[#222] transition-colors rounded">CANCEL</button>
+                    <button id="submit-btn" type="submit"
+                            class="flex-1 py-2.5 bg-[#ffffff] hover:bg-gray-200 text-black font-bold text-sm tracking-wider transition-colors rounded">SUBMIT SIGN UP</button>
                 </div>
-            </div>
-
-            <div class="flex gap-3">
-                <button onclick="saveLiveEditChanges()" class="flex-1 py-3.5 bg-green-600 hover:bg-green-700 text-white font-bold text-lg rounded">SAVE CHANGES (Live Update)</button>
-                <button onclick="closeLiveEditPanel()" class="px-8 py-3.5 border border-[#444] hover:bg-[#222] font-bold rounded">Cancel</button>
-            </div>
+            </form>
         </div>
     </div>
-
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-black/80 z-[100] items-center justify-center">
+        <div class="dark-panel border border-[#ffffff] w-full max-w-sm mx-4 p-6 text-center rounded">
+            <div class="text-green-500 text-5xl mb-3"><i class="fas fa-check-circle"></i></div>
+            <h3 class="font-bold text-xl mb-2">SIGN UP SUBMITTED!</h3>
+            <p class="text-sm text-gray-400 mb-4">
+                Thank you! Your signup has been received and sent to our team.<br><br>
+                <strong>Please join our Discord</strong> to complete registration and get updates:
+            </p>
+            <a href="https://discord.gg/K5eQtT63jQ" target="_blank"
+               class="inline-block w-full py-2.5 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-sm tracking-wider rounded mb-3 transition-colors">
+                JOIN DISCORD
+            </a>
+            <button onclick="closeSuccessModal()"
+                    class="w-full py-2.5 bg-[#ffffff] hover:bg-gray-200 text-black font-bold text-sm tracking-wider transition-colors rounded">CLOSE</button>
+        </div>
+    </div>
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
         let currentSidebarTab = 0;
-        let adminToken = null;
-
+        let signedUpTeams = 0;
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFL1ruzcSQk70WjZ0O1AZjw2pD5jStZOU_smmj5aVONp-2wus-9xL4EhdeYIPC6I69/exec";
         function switchSidebarTab(tabIndex) {
-            document.querySelectorAll('.sidebar-tab-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(b => b.classList.remove('active', 'border-b-2', 'border-[#ffffff]'));
-            const btn = document.getElementById('sidebar-tab-btn-' + tabIndex);
+            document.querySelectorAll('.sidebar-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('[id^="sidebar-tab-btn-"]').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-[#ffffff]'));
+      
+            const activeBtn = document.getElementById('sidebar-tab-btn-' + tabIndex);
+            if (activeBtn) activeBtn.classList.add('active', 'border-b-2', 'border-[#ffffff]');
+      
             const content = document.getElementById('sidebar-tab-' + tabIndex);
-            if (btn) btn.classList.add('active', 'border-b-2', 'border-[#ffffff]');
             if (content) content.classList.remove('hidden');
+      
             currentSidebarTab = tabIndex;
-            if (tabIndex === 5) setTimeout(loadLiveMatch, 150);
         }
-
         function switchCircuitTab(tabIndex) {
-            document.querySelectorAll('.circuit-tab-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('.circuit-tab').forEach(b => b.classList.remove('active', 'text-white', 'border-b-2', 'border-white'));
-            const btn = document.getElementById('circuit-tab-btn-' + tabIndex);
+            document.querySelectorAll('.circuit-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.circuit-tab').forEach(btn => {
+                btn.classList.remove('active', 'text-white', 'border-b-2', 'border-white');
+                btn.classList.add('text-gray-500');
+            });
+            const activeBtn = document.getElementById('circuit-tab-btn-' + tabIndex);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-white', 'border-b-2', 'border-white');
+                activeBtn.classList.remove('text-gray-500');
+            }
             const content = document.getElementById('circuit-tab-' + tabIndex);
-            if (btn) btn.classList.add('active', 'text-white', 'border-b-2', 'border-white');
             if (content) content.classList.remove('hidden');
         }
-
-        // ==================== LIVE MATCH SYSTEM ====================
-        async function loadLiveMatch() {
-            try {
-                const res = await fetch(`${SCRIPT_URL}?action=getLiveMatch`);
-                const data = await res.json();
-                if (!data.success || !data.match) return;
-                const m = data.match;
-
-                // Main Scoreboard
-                document.getElementById('team-alpha-name').textContent = m.teamAlpha || 'TEAM ALPHA';
-                document.getElementById('team-alpha-score').textContent = m.teamAlphaScore || 0;
-                if (m.teamAlphaLogo) document.getElementById('team-alpha-logo').src = m.teamAlphaLogo;
-
-                document.getElementById('team-bravo-name').textContent = m.teamBravo || 'TEAM BRAVO';
-                document.getElementById('team-bravo-score').textContent = m.teamBravoScore || 0;
-                if (m.teamBravoLogo) document.getElementById('team-bravo-logo').src = m.teamBravoLogo;
-
-                document.getElementById('live-format').textContent = m.format || 'Bo5';
-                document.getElementById('live-round-info').textContent = m.roundInfo || 'Champ Winners Round 1';
-
-                // Status
-                const badge = document.getElementById('live-status-badge');
-                badge.textContent = m.status || 'LIVE';
-                badge.className = m.status === 'LIVE' ? 'bg-red-600 text-white font-bold px-2 py-0.5 tracking-wider' : 'bg-yellow-600 text-white font-bold px-2 py-0.5 tracking-wider';
-
-                // Player Banners (ROSTER)
-                if (m.alphaPlayerBanners) {
-                    for (let i = 0; i < 4; i++) {
-                        const el = document.getElementById('alpha-player-' + (i+1));
-                        if (el && m.alphaPlayerBanners[i]) el.style.backgroundImage = `url('${m.alphaPlayerBanners[i]}')`;
-                    }
-                }
-                if (m.bravoPlayerBanners) {
-                    for (let i = 0; i < 4; i++) {
-                        const el = document.getElementById('bravo-player-' + (i+1));
-                        if (el && m.bravoPlayerBanners[i]) el.style.backgroundImage = `url('${m.bravoPlayerBanners[i]}')`;
-                    }
-                }
-
-                // SCORES Tab
-                const scoresContainer = document.getElementById('dynamic-series-scores');
-                if (scoresContainer) {
-                    scoresContainer.innerHTML = `
-                        <div class="flex justify-between items-center bg-[#151515] px-3 py-2">
-                            <span class="text-white font-semibold">${m.teamAlpha || 'Team Alpha'}</span>
-                            <span class="font-mono text-white">${m.seriesAlphaScore || 0} - ${m.seriesBravoScore || 0}</span>
-                            <span class="text-gray-400">${m.teamBravo || 'Team Bravo'}</span>
-                        </div>`;
-                }
-
-                // SCHEDULE Tab
-                const scheduleContainer = document.getElementById('dynamic-schedule');
-                if (scheduleContainer) {
-                    scheduleContainer.innerHTML = `<div class="text-white font-semibold">${m.scheduleText || 'Kickoff Tournament • 16/08/2026'}</div>`;
-                }
-
-                // Series Record
-                const recordEl = document.getElementById('dynamic-series-record');
-                if (recordEl) recordEl.textContent = m.seriesRecordText || `${m.teamAlpha || 'Team Alpha'} 0 - 0 ${m.teamBravo || 'Team Bravo'}`;
-
-                // Auto refresh while on WATCH tab
-                if (currentSidebarTab === 5) setTimeout(loadLiveMatch, 12000);
-            } catch (e) {
-                console.error("Live match load error", e);
-            }
-        }
-
-        // ==================== ADMIN EDIT PANEL ====================
-        function openLiveEditPanel() {
-            if (!adminToken) {
-                const token = prompt("Enter your Admin Session Token:");
-                if (!token) return;
-                adminToken = token;
-            }
-            document.getElementById('live-edit-panel').classList.remove('hidden');
-            loadDataIntoEditPanel();
-        }
-
-        function closeLiveEditPanel() {
-            document.getElementById('live-edit-panel').classList.add('hidden');
-        }
-
-        async function loadDataIntoEditPanel() {
-            try {
-                const res = await fetch(`${SCRIPT_URL}?action=getLiveMatch`);
-                const data = await res.json();
-                if (!data.success) return;
-                const m = data.match;
-
-                document.getElementById('edit-status').value = m.status || 'LIVE';
-                document.getElementById('edit-round-info').value = m.roundInfo || '';
-                document.getElementById('edit-format').value = m.format || 'Bo5';
-
-                document.getElementById('edit-alpha-name').value = m.teamAlpha || '';
-                document.getElementById('edit-alpha-logo').value = m.teamAlphaLogo || '';
-                document.getElementById('edit-alpha-score').value = m.teamAlphaScore || 0;
-                document.getElementById('edit-alpha-series').value = m.seriesAlphaScore || 0;
-
-                document.getElementById('edit-bravo-name').value = m.teamBravo || '';
-                document.getElementById('edit-bravo-logo').value = m.teamBravoLogo || '';
-                document.getElementById('edit-bravo-score').value = m.teamBravoScore || 0;
-                document.getElementById('edit-bravo-series').value = m.seriesBravoScore || 0;
-
-                document.getElementById('edit-schedule').value = m.scheduleText || '';
-                document.getElementById('edit-series-record').value = m.seriesRecordText || '';
-
-                // Player Banners
-                if (m.alphaPlayerBanners) {
-                    for (let i = 0; i < 4; i++) {
-                        const url = m.alphaPlayerBanners[i] || '';
-                        document.getElementById('edit-alpha-p' + (i+1)).value = url;
-                        const preview = document.getElementById('preview-alpha-' + (i+1));
-                        if (preview) preview.src = url || 'https://via.placeholder.com/300x60?text=No+Image';
-                    }
-                }
-                if (m.bravoPlayerBanners) {
-                    for (let i = 0; i < 4; i++) {
-                        const url = m.bravoPlayerBanners[i] || '';
-                        document.getElementById('edit-bravo-p' + (i+1)).value = url;
-                        const preview = document.getElementById('preview-bravo-' + (i+1));
-                        if (preview) preview.src = url || 'https://via.placeholder.com/300x60?text=No+Image';
-                    }
-                }
-            } catch (e) { console.error(e); }
-        }
-
-        async function saveLiveEditChanges() {
-            if (!adminToken) {
-                alert("Admin token missing. Please re-enter.");
+        function openSignUpModal() {
+            if (signedUpTeams >= 16) {
+                alert("Tournament is full! No more sign-ups available.");
                 return;
             }
-
-            const params = new URLSearchParams({
-                action: "updateLiveMatch",
-                sessionToken: adminToken,
-                status: document.getElementById('edit-status').value,
-                roundInfo: document.getElementById('edit-round-info').value,
-                format: document.getElementById('edit-format').value,
-                teamAlpha: document.getElementById('edit-alpha-name').value,
-                teamAlphaLogo: document.getElementById('edit-alpha-logo').value,
-                teamAlphaScore: document.getElementById('edit-alpha-score').value,
-                teamBravo: document.getElementById('edit-bravo-name').value,
-                teamBravoLogo: document.getElementById('edit-bravo-logo').value,
-                teamBravoScore: document.getElementById('edit-bravo-score').value,
-                seriesAlphaScore: document.getElementById('edit-alpha-series').value,
-                seriesBravoScore: document.getElementById('edit-bravo-series').value,
-                scheduleText: document.getElementById('edit-schedule').value,
-                seriesRecordText: document.getElementById('edit-series-record').value,
-                alphaP1Banner: document.getElementById('edit-alpha-p1').value,
-                alphaP2Banner: document.getElementById('edit-alpha-p2').value,
-                alphaP3Banner: document.getElementById('edit-alpha-p3').value,
-                alphaP4Banner: document.getElementById('edit-alpha-p4').value,
-                bravoP1Banner: document.getElementById('edit-bravo-p1').value,
-                bravoP2Banner: document.getElementById('edit-bravo-p2').value,
-                bravoP3Banner: document.getElementById('edit-bravo-p3').value,
-                bravoP4Banner: document.getElementById('edit-bravo-p4').value
-            });
-
-            const res = await fetch(`${SCRIPT_URL}?${params.toString()}`);
-            const result = await res.json();
-
-            if (result.success) {
-                alert("✅ Live broadcast updated for everyone!");
-                closeLiveEditPanel();
-                loadLiveMatch();
-            } else {
-                alert("Failed to save: " + (result.error || "Unknown error"));
+            const modal = document.getElementById('signup-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('signup-form').reset();
+   
+            const btn = document.getElementById('submit-btn');
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = 'SUBMIT SIGN UP';
+                btn.classList.remove('bg-gray-500', 'cursor-not-allowed');
+                btn.classList.add('bg-[#ffffff]', 'hover:bg-gray-200');
             }
         }
-
-        function init() {
-            // Activate Prestige tab
-            const tab0 = document.getElementById('sidebar-tab-btn-0');
-            const content0 = document.getElementById('sidebar-tab-0');
-            if (tab0) tab0.classList.add('active', 'border-b-2', 'border-[#ffffff]');
-            if (content0) content0.classList.remove('hidden');
-
-            // Load tournament signups if elements exist
-            if (typeof loadSignedUpTeams === 'function') loadSignedUpTeams();
-            if (typeof initTwitchEmbed === 'function') initTwitchEmbed();
-
-            // Start live match system
-            setTimeout(() => {
-                if (document.getElementById('sidebar-tab-5')) {
-                    loadLiveMatch();
-                }
-            }, 600);
-
-            // Global auto-refresh for live data
-            setInterval(() => {
-                if (currentSidebarTab === 5) loadLiveMatch();
-            }, 15000);
+        function closeSignUpModal() {
+            const modal = document.getElementById('signup-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
         }
-
+        // Load real teams from Google Sheet
+        function loadSignedUpTeams() {
+            const url = SCRIPT_URL + "?action=getSignedUpTeams";
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && Array.isArray(data.teams)) {
+                        const list = document.getElementById('team-list');
+                        const countText = document.getElementById('team-count-text');
+                        if (list) {
+                            list.innerHTML = '';
+                            data.teams.forEach((team, index) => {
+                                const entry = document.createElement('div');
+                                entry.className = 'flex items-center gap-x-1.5 py-[1px] text-sm';
+                                let display = `<span class="font-mono text-[#ffffff] text-xs">#${index + 1}</span> <span class="font-semibold">${team.teamName || 'Unknown'}</span>`;
+                                if (team.captainsDiscord) {
+                                    display += ` <span class="text-xs text-gray-500">(${team.captainsDiscord})</span>`;
+                                }
+                                entry.innerHTML = display;
+                                list.appendChild(entry);
+                            });
+                        }
+                        signedUpTeams = data.teams.length;
+                        if (countText) {
+                            countText.innerHTML = `${signedUpTeams} / 16 teams signed up`;
+                        }
+                        // Update SIGN UP button based on whether tournament is full
+                        const signupBtn = document.getElementById('signup-btn');
+                        if (signupBtn) {
+                            if (signedUpTeams >= 16) {
+                                signupBtn.disabled = true;
+                                signupBtn.innerHTML = 'TOURNAMENT FULL';
+                                signupBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+                                signupBtn.classList.add('bg-gray-600', 'cursor-not-allowed', 'opacity-80');
+                                signupBtn.onclick = null;
+                            } else {
+                                signupBtn.disabled = false;
+                                signupBtn.innerHTML = 'SIGN UP';
+                                signupBtn.classList.remove('bg-gray-600', 'cursor-not-allowed', 'opacity-80');
+                                signupBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                                signupBtn.onclick = openSignUpModal;
+                            }
+                        }
+                    }
+                })
+                .catch(err => {
+                    console.error("Failed to load signed up teams:", err);
+                });
+        }
+        function submitSignUp(event) {
+            event.preventDefault();
+            if (signedUpTeams >= 16) {
+                alert("Tournament is full! No more sign-ups available.");
+                closeSignUpModal();
+                return;
+            }
+            const teamName = document.getElementById('team-name').value.trim();
+            const discord = document.getElementById('discord').value.trim();
+            const twitter = document.getElementById('twitter').value.trim();
+            const psn1 = document.getElementById('psn1').value.trim();
+            const psn2 = document.getElementById('psn2').value.trim();
+            const psn3 = document.getElementById('psn3').value.trim();
+            const psn4 = document.getElementById('psn4').value.trim();
+            if (!teamName || !discord || !psn1 || !psn2) {
+                alert("Please fill in Team Name, Discord, and at least 2 PSN IDs.");
+                return;
+            }
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'SIGNING UP...';
+                submitBtn.classList.remove('bg-[#ffffff]', 'hover:bg-gray-200');
+                submitBtn.classList.add('bg-gray-500', 'cursor-not-allowed');
+            }
+     
+            const params = new URLSearchParams({
+                action: "submitTournamentSignup",
+                teamName: teamName,
+                captainsDiscord: discord,
+                captainsTwitter: twitter || "",
+                player1PSN: psn1,
+                player2PSN: psn2,
+                player3PSN: psn3 || "",
+                player4PSN: psn4 || "",
+                tournament: "Kickoff Tournament 2026"
+            });
+      
+            fetch(`${SCRIPT_URL}?${params.toString()}`, {
+                method: "GET"
+            })
+            .then(() => {
+                closeSignUpModal();
+          
+                // Reload the real list from the sheet after successful signup
+                setTimeout(() => {
+                    loadSignedUpTeams();
+                }, 800);
+                setTimeout(() => {
+                    document.getElementById('success-modal').classList.remove('hidden');
+                    document.getElementById('success-modal').classList.add('flex');
+                }, 400);
+            })
+            .catch(err => {
+                console.error("Submission error:", err);
+                alert("Failed to submit. Please try again or contact support.");
+       
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'SUBMIT SIGN UP';
+                    submitBtn.classList.remove('bg-gray-500', 'cursor-not-allowed');
+                    submitBtn.classList.add('bg-[#ffffff]', 'hover:bg-gray-200');
+                }
+            });
+        }
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        function initTwitchEmbed() {
+            const iframe = document.getElementById('twitch-embed');
+            const fallback = document.getElementById('twitch-fallback');
+            if (!iframe) return;
+            // Twitch requires parent = current hostname
+            const host = window.location.hostname || 'localhost';
+            const parents = [host, 'www.gamecircuit.co.uk', 'gamecircuit.co.uk', 'localhost', '127.0.0.1']
+                .filter((v, i, a) => a.indexOf(v) === i)
+                .map(p => 'parent=' + encodeURIComponent(p))
+                .join('&');
+            iframe.src = 'https://player.twitch.tv/?channel=gamecircuituk&' + parents;
+            // Show fallback link after a short delay if still blank / blocked (file:// etc.)
+            setTimeout(function () {
+                try {
+                    if (window.location.protocol === 'file:' && fallback) {
+                        fallback.classList.remove('hidden');
+                    }
+                } catch (e) {}
+            }, 1500);
+        }
+        function init() {
+            const tab0Btn = document.getElementById('sidebar-tab-btn-0');
+            const tab0Content = document.getElementById('sidebar-tab-0');
+      
+            if (tab0Btn) tab0Btn.classList.add('active', 'border-b-2', 'border-[#ffffff]');
+            if (tab0Content) tab0Content.classList.remove('hidden');
+      
+            // Load real teams from Google Sheet on page load
+            loadSignedUpTeams();
+            initTwitchEmbed();
+        }
         window.onload = init;
     </script>
 </body>
